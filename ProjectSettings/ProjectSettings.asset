@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Starry Sky
   productName: Star Path
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -729,8 +729,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Star Path
-  metroPackageVersion: 
+  metroPackageName: StarPath
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -738,7 +738,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Star Path
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Star Path
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
