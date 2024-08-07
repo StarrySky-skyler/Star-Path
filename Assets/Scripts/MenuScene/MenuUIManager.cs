@@ -20,22 +20,13 @@ public class MenuUIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            Screen.fullScreen = !Screen.fullScreen;
-            Debug.Log($"切换全屏模式，当前全屏为{Screen.fullScreen}");
-        }
-    }
-
     /// <summary>
     /// 新游戏
     /// </summary>
     public void ButtonNewGameClick()
     {
         Debug.Log("点击新游戏按钮");
-        MenuAudioManager.Instance.PlaySound("Hit");
+        AudioManager.Instance.PlaySound("Hit");
         StartCoroutine(WaitForScreenMask());
     }
 
@@ -60,7 +51,7 @@ public class MenuUIManager : MonoBehaviour
     public void ButtonReadGameClick()
     {
         Debug.Log("点击读取游戏按钮");
-        MenuAudioManager.Instance.PlaySound("Hit");
+        AudioManager.Instance.PlaySound("Hit");
         // 隐藏主界面
         btnLayoutMain.SetActive(false);
         // 显示存档UI
@@ -73,7 +64,7 @@ public class MenuUIManager : MonoBehaviour
     public void ButtonHelpClick()
     {
         Debug.Log("点击帮助按钮");
-        MenuAudioManager.Instance.PlaySound("Hit");
+        AudioManager.Instance.PlaySound("Hit");
         // UI控制
         btnLayoutMain.SetActive(false);
         panelHelp.SetActive(true);
@@ -99,7 +90,7 @@ public class MenuUIManager : MonoBehaviour
     /// </summary>
     public void ButtonBackClick()
     {
-        MenuAudioManager.Instance.PlaySound("Hit");
+        AudioManager.Instance.PlaySound("Hit");
         panelArchive.SetActive(false);
         panelHelp.SetActive(false);
         btnLayoutMain.SetActive(true);

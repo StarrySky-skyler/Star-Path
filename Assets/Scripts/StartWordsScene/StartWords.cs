@@ -21,6 +21,7 @@ public class StartWords : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(WaitMask());
     }
 

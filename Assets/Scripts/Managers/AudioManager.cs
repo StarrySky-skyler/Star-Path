@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuAudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public static MenuAudioManager Instance;
+    public static AudioManager Instance;
 
     public AudioSource BgmPlayer;              // 背景音乐播放组件
     public AudioSource SoundPlayer;            // 点击音效播放组件

@@ -1,0 +1,64 @@
+﻿{
+    "list": [
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "啊，头好晕（扶住额头），这里是哪儿？"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "总感觉<color=#FF6666>似曾相识</color>，四处走走看吧"
+        },
+        {
+            "eventString": "CloseDialogue"
+        },
+        {
+            "characterString": "StrangeA",
+            "eventString": "Dialogue",
+            "eventData": "终于有人来了？好开心，好激动，我快无聊死了"
+        },
+        {
+            "eventString": "CloseDialogue"
+        },
+        {
+            "characterString": "StrangeB",
+            "eventString": "Dialogue",
+            "eventData": "嘛~你记得他是第几次来这里了吗？"
+        },
+        {
+            "eventString": "CloseDialogue"
+        },
+        {
+            "characterString": "StrangeA",
+            "eventString": "Dialogue",
+            "eventData": "谁会记那种奇怪的东西啊，不过我跟你说，上次呀......"
+        },
+        {
+            "eventString": "CloseDialogue"
+        },
+        {
+            "characterString": "StrangeC",
+            "eventString": "Dialogue",
+            "eventData": "星痕sky...星痕sky..."
+        },
+        {
+            "eventString": "CloseDialogue"
+        },
+        {
+            "characterString": "StrangeC",
+            "eventString": "Dialogue",
+            "eventData": "星痕sky！"
+        },
+        {
+            "characterString": "Jing",
+            "eventString": "Dialogue",
+            "eventData": "这可是高三上学期开学第一节物理课，你到底在没在听，又走神去了？"
+        },
+        {
+            "characterString": "Jing",
+            "eventString": "Dialogue",
+            "eventData": "你来解答一下，双星系统围绕同一点做匀速圆周运动时，这个共同点又是整个系统的什么？"
+        }
+    ]
+}
