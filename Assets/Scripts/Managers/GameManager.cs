@@ -2,17 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // 单例
     public static GameManager Instance;
 
-    void Start()
+    void Awake()
     {
         Instance = this;
         // 限制最高帧率200
         Application.targetFrameRate = 200;
+    }
+
+    private void Start()
+    {
+        foreach (var gameEvent in GameEventManager.Instance.GameEvents)
+        {
+            Debug.Log($"{gameEvent.characterType}:\n{gameEvent.eventData}");
+        }
+        Action rest = new Action(restStart);
+        WaitForScreenMaskFinished(rest);
     }
 
     private void Update()
@@ -23,6 +34,15 @@ public class GameManager : MonoBehaviour
         {
             HandleKeyZ();
         }
+    }
+
+    /// <summary>
+    /// 剩下的start代码（委托需要）
+    /// </summary>
+    private void restStart()
+    {
+        // 加载剧情
+        LoadNextEvent();
     }
 
     /// <summary>
@@ -134,14 +154,59 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void LoadNextEvent()
     {
-        UIManager.Instance.LoadNextEvent();
+        // 获取下一事件
+        GameEvent nextEvent = GameEventManager.Instance.LoadNextEvent();
+        switch (nextEvent.eventType)
+        {
+            // 对话事件
+            case EventType.Dialogue:
+                Debug.Log("触发对话事件");
+                SetDialogueUICharacterName(nextEvent.characterType);
+                SetDialogueUIContent(nextEvent.eventData);
+                DisplayDialogueUI(true);
+                break;
+            // 选择事件
+            case EventType.Choose:
+                Debug.Log("触发多项选择事件");
+
+                break;
+            // 音效事件
+            case EventType.Sound:
+                Debug.Log("触发播放音效事件");
+                break;
+            // 关闭对话框事件
+            case EventType.CloseDialogue:
+                Debug.Log("触发关闭对话框事件");
+                DisplayDialogueUI(false);
+                GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
+                break;
+            // 载入下一场景事件
+            case EventType.LoadNextScene:
+                Debug.Log("触发载入下一场景事件");
+                DisplayDialogueUI(false);
+                Action loadNext = new Action(ScenesManager.Instance.LoadNextScene);
+                WaitForScreenMaskFinished(loadNext, false);
+                break;
+            default:
+                break;
+        }
     }
 
     /// <summary>
     /// 等待遮罩结束
     /// </summary>
-    public void WaitForScreenMaskFinished(Action action)
+    /// <param name="action">剩下的操作</param>
+    /// <param name="isStart">是否为起始遮罩</param>
+    public void WaitForScreenMaskFinished(Action action, bool isStart = true)
     {
-        UIManager.Instance.WaitForScreenMaskFinished(action);
+        UIManager.Instance.WaitForScreenMaskFinished(action, isStart);
+    }
+
+    /// <summary>
+    /// 载入下一场景
+    /// </summary>
+    public void LoadNextScene()
+    {
+        ScenesManager.Instance.LoadNextScene();
     }
 }

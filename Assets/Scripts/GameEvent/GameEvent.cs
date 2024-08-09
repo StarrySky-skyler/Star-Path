@@ -70,35 +70,43 @@ public class Wrapper
 
 public enum CharacterType
 {
-    Sky = 1,
-    Yuki = 2,
-    Jing = 3,
-    Tsuki = 4,
-    PangBai = 5,
-    StrangeA = 6,
-    StrangeB = 7,
-    StrangeC = 8
+    Blank,
+    Sky,
+    Yuki,
+    Jing,
+    Tsuki,
+    PangBai,
+    StrangeA,
+    StrangeB,
+    StrangeC
 }
 
 public enum EventType
 {
+    Blank,
+
     /// <summary>
     /// 对话事件，事件数据为剧本
     /// </summary>
-    Dialogue = 1,
+    Dialogue,
 
     /// <summary>
     /// 选择事件
     /// </summary>
-    Choose = 2,
+    Choose,
 
     /// <summary>
     /// 音效事件，事件数据为音效文件
     /// </summary>
-    Sound = 3,
+    Sound,
 
     /// <summary>
     /// 关闭对话框
     /// </summary>
-    CloseDialogue = 4
+    CloseDialogue,
+
+    /// <summary>
+    /// 载入下一场景
+    /// </summary>
+    LoadNextScene
 }

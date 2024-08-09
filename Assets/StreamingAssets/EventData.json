@@ -11,7 +11,9 @@
             "eventData": "总感觉<color=#FF6666>似曾相识</color>，四处走走看吧"
         },
         {
-            "eventString": "CloseDialogue"
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
         },
         {
             "characterString": "StrangeA",
@@ -19,15 +21,19 @@
             "eventData": "终于有人来了？好开心，好激动，我快无聊死了"
         },
         {
-            "eventString": "CloseDialogue"
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
         },
         {
             "characterString": "StrangeB",
             "eventString": "Dialogue",
-            "eventData": "嘛~你记得他是第几次来这里了吗？"
+            "eventData": "诶诶诶，你记得他是第几次来这里了吗？"
         },
         {
-            "eventString": "CloseDialogue"
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
         },
         {
             "characterString": "StrangeA",
@@ -35,7 +41,9 @@
             "eventData": "谁会记那种奇怪的东西啊，不过我跟你说，上次呀......"
         },
         {
-            "eventString": "CloseDialogue"
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
         },
         {
             "characterString": "StrangeC",
@@ -43,12 +51,19 @@
             "eventData": "星痕sky...星痕sky..."
         },
         {
-            "eventString": "CloseDialogue"
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
         },
         {
             "characterString": "StrangeC",
             "eventString": "Dialogue",
             "eventData": "星痕sky！"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "LoadNextScene",
+            "eventData": ""
         },
         {
             "characterString": "Jing",

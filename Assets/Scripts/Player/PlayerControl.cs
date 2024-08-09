@@ -31,24 +31,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Start()
     {
-        foreach (var gameEvent in GameEventManager.Instance.GameEvents)
+        Cursor.lockState = CursorLockMode.Locked;
+        // 如果是教室场景，玩家默认朝上
+        if (SceneManager.GetActiveScene().name == "ClassroomScene")
         {
-            Debug.Log($"{gameEvent.characterType}:\n{gameEvent.eventData}");
-        }
-        Action rest = new Action(restStart);
-        GameManager.Instance.WaitForScreenMaskFinished(rest);
-    }
-
-    /// <summary>
-    /// 剩下的start代码（委托需要）
-    /// </summary>
-    private void restStart()
-    {
-        // 如果是sky的梦，加载剧情
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "SkyDreamScene")
-        {
-            GameManager.Instance.LoadNextEvent();
+            animator.SetFloat("VerticalValue", 1f);
         }
     }
 

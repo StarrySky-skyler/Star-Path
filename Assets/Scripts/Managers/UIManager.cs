@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,10 +17,14 @@ public class UIManager : MonoBehaviour
     // TMP剧情内容文字组件
     public TextMeshProUGUI tmpDialogueContent;
     // 全屏遮罩
-    public GameObject screenMask;
+    public GameObject startScreenMask;
+    public GameObject endScreenMask;
+
+    // 选择框
+    public GameObject[] buttonChoices;
 
     // 是否正在逐字输出
-    public bool IsOutputingDialogue {get; private set;}
+    public bool IsOutputingDialogue { get; private set; }
     // 是否跳过逐字输出
     public bool NeedSkip { get; set; }
 
@@ -94,48 +99,35 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 载入下一事件并处理
-    /// </summary>
-    public void LoadNextEvent()
-    {
-        // 获取下一事件
-        GameEvent nextEvent = GameEventManager.Instance.LoadNextEvent();
-        switch (nextEvent.eventType)
-        {
-            // 对话事件
-            case EventType.Dialogue:
-                SetDialogueUICharacterName(nextEvent.characterType);
-                SetDialogueUIContent(nextEvent.eventData);
-                DisplayDialogueUI(true);
-                break;
-            // 选择事件
-            case EventType.Choose:
-                DisplayDialogueUI(false);
-                break;
-            // 音效事件
-            case EventType.Sound:
-                break;
-            default:
-                DisplayDialogueUI(false);
-                GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
-                break;
-        }
-    }
-
-    /// <summary>
     /// 等待遮罩结束
     /// </summary>
-    public void WaitForScreenMaskFinished(Action action)
+    /// <param name="action">剩下的操作</param>
+    /// <param name="isStart">是否为起始遮罩</param>
+    public void WaitForScreenMaskFinished(Action action, bool isStart = true)
     {
-        StartCoroutine(WaitMask(action));
+        StartCoroutine(WaitMask(action, isStart));
     }
 
-    private IEnumerator WaitMask(Action restOperation)
+    private IEnumerator WaitMask(Action restOperation, bool isStart)
     {
-        while (!screenMask.GetComponent<ScreenMask>().isFinished)
+        // 如果为起始遮罩
+        if (isStart)
         {
-            yield return null;
+            while (!startScreenMask.GetComponent<ScreenMask>().isFinished)
+            {
+                yield return null;
+            }
+            restOperation();
         }
-        restOperation();
+        // 结束遮罩
+        else
+        {
+            endScreenMask.SetActive(true);
+            while (!endScreenMask.GetComponent<ScreenMask>().isFinished)
+            {
+                yield return null;
+            }
+            restOperation();
+        }
     }
 }
