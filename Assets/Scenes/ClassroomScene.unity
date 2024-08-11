@@ -132,9 +132,10 @@ GameObject:
   m_Component:
   - component: {fileID: 50233209}
   - component: {fileID: 50233208}
-  m_Layer: 0
+  - component: {fileID: 50233210}
+  m_Layer: 3
   m_Name: ObjectCollider (13)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,8 +198,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &50233210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50233207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &53751869
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,9 +228,10 @@ GameObject:
   m_Component:
   - component: {fileID: 53751871}
   - component: {fileID: 53751870}
-  m_Layer: 0
+  - component: {fileID: 53751872}
+  m_Layer: 3
   m_Name: ObjectCollider (4)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,8 +294,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53751872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53751869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &191694606
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,9 +324,10 @@ GameObject:
   m_Component:
   - component: {fileID: 191694607}
   - component: {fileID: 191694608}
-  m_Layer: 0
+  - component: {fileID: 191694609}
+  m_Layer: 3
   m_Name: ObjectCollider (17)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,11 +341,11 @@ Transform:
   m_GameObject: {fileID: 191694606}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.752, y: -1.502, z: 0}
+  m_LocalPosition: {x: -1.7519999, y: -1.502, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &191694608
 BoxCollider2D:
@@ -353,6 +392,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &191694609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191694606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1 &222726623
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,9 +419,10 @@ GameObject:
   m_Component:
   - component: {fileID: 222726624}
   - component: {fileID: 222726625}
-  m_Layer: 0
+  - component: {fileID: 222726626}
+  m_Layer: 3
   m_Name: ObjectCollider (21)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &222726625
 BoxCollider2D:
@@ -430,6 +487,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &222726626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222726623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1 &261797913
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +516,8 @@ GameObject:
   - component: {fileID: 261797915}
   - component: {fileID: 261797914}
   - component: {fileID: 261797917}
-  m_Layer: 0
+  - component: {fileID: 261797918}
+  m_Layer: 3
   m_Name: BlondeWoodClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +644,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.022754297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -580,8 +655,23 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.71}
+  m_Size: {x: 0.18, y: 0.6644913}
   m_EdgeRadius: 0
+--- !u!114 &261797918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261797913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E0D\u505C\u6446\u52A8\u7684\u949F\uFF0C\u8C61\u5F81\u7740\u6C38\u6052..."
 --- !u!1 &295078079
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +684,7 @@ GameObject:
   - component: {fileID: 295078080}
   m_Layer: 0
   m_Name: LeftAirWall
-  m_TagString: Untagged
+  m_TagString: ClassroomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -974,7 +1064,7 @@ GameObject:
   - component: {fileID: 402042625}
   m_Layer: 0
   m_Name: TopAirWall
-  m_TagString: Untagged
+  m_TagString: ClassroomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,7 +1141,7 @@ GameObject:
   - component: {fileID: 424726961}
   m_Layer: 0
   m_Name: BottomAirWall
-  m_TagString: Untagged
+  m_TagString: ClassroomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1126,9 +1216,10 @@ GameObject:
   m_Component:
   - component: {fileID: 470745662}
   - component: {fileID: 470745663}
-  m_Layer: 0
+  - component: {fileID: 470745664}
+  m_Layer: 3
   m_Name: ObjectCollider (15)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1142,11 +1233,11 @@ Transform:
   m_GameObject: {fileID: 470745661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.78, y: 0.586, z: 0}
+  m_LocalPosition: {x: -1.7800002, y: 0.58599997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &470745663
 BoxCollider2D:
@@ -1193,6 +1284,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &470745664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470745661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1001 &470797529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1261,11 +1369,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yuki_up
       objectReference: {fileID: 0}
+    - target: {fileID: 8227005591207542968, guid: 3dcd4a541038e5543862c0de35d9420e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8227005591207542968, guid: 3dcd4a541038e5543862c0de35d9420e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 470797531}
   m_SourcePrefab: {fileID: 100100000, guid: 3dcd4a541038e5543862c0de35d9420e, type: 3}
+--- !u!1 &470797530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8227005591207542968, guid: 3dcd4a541038e5543862c0de35d9420e,
+    type: 3}
+  m_PrefabInstance: {fileID: 470797529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &470797531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470797530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u6211\u7684\u540C\u684C\u661F\u68A6yuki\uFF0C\u73B0\u5728\u5E94\u8BE5\u8D70\u51FA\u6559\u5BA4\u4E86"
 --- !u!1 &471604090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,9 +1414,10 @@ GameObject:
   m_Component:
   - component: {fileID: 471604091}
   - component: {fileID: 471604092}
-  m_Layer: 0
+  - component: {fileID: 471604093}
+  m_Layer: 3
   m_Name: ObjectCollider (20)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,7 +1435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &471604092
 BoxCollider2D:
@@ -1343,6 +1482,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &471604093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471604090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1 &586720071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,9 +1509,10 @@ GameObject:
   m_Component:
   - component: {fileID: 586720073}
   - component: {fileID: 586720072}
-  m_Layer: 0
+  - component: {fileID: 586720074}
+  m_Layer: 3
   m_Name: ObjectCollider
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1418,8 +1575,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &586720074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586720071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &594506214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,9 +1605,10 @@ GameObject:
   m_Component:
   - component: {fileID: 594506216}
   - component: {fileID: 594506215}
-  m_Layer: 0
+  - component: {fileID: 594506217}
+  m_Layer: 3
   m_Name: ObjectCollider (2)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1495,8 +1671,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &594506217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594506214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &610833930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,9 +1701,10 @@ GameObject:
   m_Component:
   - component: {fileID: 610833932}
   - component: {fileID: 610833931}
-  m_Layer: 0
+  - component: {fileID: 610833933}
+  m_Layer: 3
   m_Name: ObjectCollider (10)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1572,6 +1767,70 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 639560766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &610833933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610833930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
+--- !u!1 &639560765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639560766}
+  m_Layer: 0
+  m_Name: DeskColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &639560766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639560765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 586720073}
+  - {fileID: 929458930}
+  - {fileID: 594506216}
+  - {fileID: 1465369317}
+  - {fileID: 53751871}
+  - {fileID: 1649330811}
+  - {fileID: 1432626460}
+  - {fileID: 895233407}
+  - {fileID: 1182068194}
+  - {fileID: 1427914809}
+  - {fileID: 610833932}
+  - {fileID: 1531249618}
+  - {fileID: 1662913722}
+  - {fileID: 50233209}
+  - {fileID: 1379253504}
   m_Father: {fileID: 827063630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653831686
@@ -1585,7 +1844,8 @@ GameObject:
   - component: {fileID: 653831689}
   - component: {fileID: 653831688}
   - component: {fileID: 653831687}
-  m_Layer: 0
+  - component: {fileID: 653831690}
+  m_Layer: 3
   m_Name: JiangTai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1704,6 +1964,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653831690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653831686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u9759\u7684\u8BB2\u53F0\uFF0C\u4E0D\u77E5\u9053\u91CC\u9762\u85CF\u4E86\u4EC0\u4E48\u5462"
+  - "\u8981\u7FFB\u7FFB\u770B\u5417"
+  - "\u563F\u54BB\u4F60\u5C1D\u8BD5\u7FFB\u4E86\u7FFB\u8BB2\u53F0\uFF0C\u9759\u7A81\u7136\u6CE8\u89C6\u5230\u4E86\u4F60"
+  - "\u8FD8\u662F\u4E0D\u8981\u8FD9\u4E48\u660E\u663E\u7FFB\u8BB2\u53F0\u4E86\u5427..."
 --- !u!1001 &664077638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1885,29 +2163,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 586720073}
-  - {fileID: 929458930}
-  - {fileID: 594506216}
-  - {fileID: 1465369317}
-  - {fileID: 53751871}
-  - {fileID: 1649330811}
-  - {fileID: 1432626460}
-  - {fileID: 895233407}
-  - {fileID: 1182068194}
-  - {fileID: 1427914809}
-  - {fileID: 610833932}
-  - {fileID: 1531249618}
-  - {fileID: 1662913722}
-  - {fileID: 50233209}
-  - {fileID: 1379253504}
-  - {fileID: 470745662}
-  - {fileID: 2002127571}
-  - {fileID: 191694607}
-  - {fileID: 844921068}
-  - {fileID: 1918053410}
-  - {fileID: 471604091}
-  - {fileID: 222726624}
-  - {fileID: 2108140806}
+  - {fileID: 639560766}
+  - {fileID: 921661418}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839717875
@@ -1921,7 +2178,8 @@ GameObject:
   - component: {fileID: 839717878}
   - component: {fileID: 839717877}
   - component: {fileID: 839717876}
-  m_Layer: 0
+  - component: {fileID: 839717879}
+  m_Layer: 3
   m_Name: YukiDesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2040,6 +2298,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &839717879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839717875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u540C\u684C\u661F\u68A6yuki\u7684\u8BFE\u684C"
 --- !u!1 &844921067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,9 +2323,10 @@ GameObject:
   m_Component:
   - component: {fileID: 844921068}
   - component: {fileID: 844921069}
-  m_Layer: 0
+  - component: {fileID: 844921070}
+  m_Layer: 3
   m_Name: ObjectCollider (18)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2066,11 +2340,11 @@ Transform:
   m_GameObject: {fileID: 844921067}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.093, y: -6.416, z: 0}
+  m_LocalPosition: {x: -1.0929999, y: -6.416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &844921069
 BoxCollider2D:
@@ -2117,6 +2391,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &844921070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844921067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1 &895233405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,9 +2418,10 @@ GameObject:
   m_Component:
   - component: {fileID: 895233407}
   - component: {fileID: 895233406}
-  m_Layer: 0
+  - component: {fileID: 895233408}
+  m_Layer: 3
   m_Name: ObjectCollider (7)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2192,6 +2484,63 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 639560766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &895233408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895233405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
+--- !u!1 &921661417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921661418}
+  m_Layer: 0
+  m_Name: ChairColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &921661418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921661417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 470745662}
+  - {fileID: 2002127571}
+  - {fileID: 191694607}
+  - {fileID: 844921068}
+  - {fileID: 1918053410}
+  - {fileID: 471604091}
+  - {fileID: 222726624}
+  - {fileID: 2108140806}
   m_Father: {fileID: 827063630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929458928
@@ -2204,9 +2553,10 @@ GameObject:
   m_Component:
   - component: {fileID: 929458930}
   - component: {fileID: 929458929}
-  m_Layer: 0
+  - component: {fileID: 929458931}
+  m_Layer: 3
   m_Name: ObjectCollider (1)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2269,8 +2619,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &929458931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929458928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &979851415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,7 +2651,7 @@ GameObject:
   - component: {fileID: 979851416}
   m_Layer: 0
   m_Name: RightAirWall
-  m_TagString: Untagged
+  m_TagString: ClassroomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2426,9 +2794,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1182068194}
   - component: {fileID: 1182068193}
-  m_Layer: 0
+  - component: {fileID: 1182068195}
+  m_Layer: 3
   m_Name: ObjectCollider (8)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2491,8 +2860,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1182068195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182068192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1001 &1255675025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2734,9 +3121,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1379253504}
   - component: {fileID: 1379253503}
-  m_Layer: 0
+  - component: {fileID: 1379253505}
+  m_Layer: 3
   m_Name: ObjectCollider (14)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2799,8 +3187,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1379253505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379253502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1420528801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,9 +3307,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1427914809}
   - component: {fileID: 1427914808}
-  m_Layer: 0
+  - component: {fileID: 1427914810}
+  m_Layer: 3
   m_Name: ObjectCollider (9)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2966,8 +3373,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427914810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427914807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1432626458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,9 +3403,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1432626460}
   - component: {fileID: 1432626459}
-  m_Layer: 0
+  - component: {fileID: 1432626461}
+  m_Layer: 3
   m_Name: ObjectCollider (6)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3043,8 +3469,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1432626461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432626458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1465369315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,9 +3499,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1465369317}
   - component: {fileID: 1465369316}
-  m_Layer: 0
+  - component: {fileID: 1465369318}
+  m_Layer: 3
   m_Name: ObjectCollider (3)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3120,8 +3565,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1465369318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465369315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1531249616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,9 +3595,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1531249618}
   - component: {fileID: 1531249617}
-  m_Layer: 0
+  - component: {fileID: 1531249619}
+  m_Layer: 3
   m_Name: ObjectCollider (11)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3197,8 +3661,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531249619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531249616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1649330809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,9 +3691,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1649330811}
   - component: {fileID: 1649330810}
-  m_Layer: 0
+  - component: {fileID: 1649330812}
+  m_Layer: 3
   m_Name: ObjectCollider (5)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3274,8 +3757,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649330812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649330809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1662913720
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,9 +3787,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1662913722}
   - component: {fileID: 1662913721}
-  m_Layer: 0
+  - component: {fileID: 1662913723}
+  m_Layer: 3
   m_Name: ObjectCollider (12)
-  m_TagString: Untagged
+  m_TagString: ClassroomDesk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3351,8 +3853,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 639560766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662913723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662913720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
+  - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
+  - "\u4E0D\u8981\u518D\u7FFB\u684C\u5B50\u4E86\u554A\u554A\u554A\u554A\uFF0C\u8FD9\u91CC\u4EC0\u4E48\u90FD\u6CA1\u6709"
+  - "\u8BFE\u684C\u6210\u529F\u88AB\u4F60\u6574\u65E0\u8BED\u4E86..."
 --- !u!1 &1918053409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,9 +3883,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1918053410}
   - component: {fileID: 1918053411}
-  m_Layer: 0
+  - component: {fileID: 1918053412}
+  m_Layer: 3
   m_Name: ObjectCollider (19)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3383,7 +3904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1918053411
 BoxCollider2D:
@@ -3430,6 +3951,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &1918053412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918053409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1 &1991217455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3979,8 @@ GameObject:
   - component: {fileID: 1991217458}
   - component: {fileID: 1991217457}
   - component: {fileID: 1991217459}
-  m_Layer: 0
+  - component: {fileID: 1991217460}
+  m_Layer: 3
   m_Name: SkyDesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3560,6 +4099,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &1991217460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991217455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u8FD9\u662F\u6211\u7684\u8BFE\u684C\uFF0C\u6700\u719F\u6089\u7684\u5730\u65B9"
 --- !u!1 &2002127570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,9 +4124,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2002127571}
   - component: {fileID: 2002127572}
-  m_Layer: 0
+  - component: {fileID: 2002127573}
+  m_Layer: 3
   m_Name: ObjectCollider (16)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3586,11 +4141,11 @@ Transform:
   m_GameObject: {fileID: 2002127570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.015, y: 1.993, z: 0}
+  m_LocalPosition: {x: -1.0149999, y: 1.993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2002127572
 BoxCollider2D:
@@ -3637,6 +4192,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &2002127573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002127570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1001 &2037242343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3720,9 +4292,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2108140806}
   - component: {fileID: 2108140807}
-  m_Layer: 0
+  - component: {fileID: 2108140808}
+  m_Layer: 3
   m_Name: ObjectCollider (22)
-  m_TagString: Untagged
+  m_TagString: ClassroomChair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3740,7 +4313,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 827063630}
+  m_Father: {fileID: 921661418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2108140807
 BoxCollider2D:
@@ -3787,6 +4360,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75772166, y: 1.0458367}
   m_EdgeRadius: 0
+--- !u!114 &2108140808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108140805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
+  - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
+  - "\u666E\u666E\u901A\u901A\u7684\u51F3\u5B50..."
 --- !u!1 &2135448487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,6 +4413,74 @@ Transform:
   - {fileID: 1420528803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3313561929145387016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2719674442339418181, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneObjectManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15892434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6354506
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355395670219591303, guid: 9637c99b62293204398329d64d789f90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9637c99b62293204398329d64d789f90, type: 3}
 --- !u!1001 &5466822435729221011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4031,8 +4689,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -618.82
       objectReference: {fileID: 0}
+    - target: {fileID: 8403432973645008385, guid: 2c02c78f5e813c34baafdcc4f08d44a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3049802512245169407, guid: 2c02c78f5e813c34baafdcc4f08d44a2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c02c78f5e813c34baafdcc4f08d44a2, type: 3}
@@ -4058,3 +4722,4 @@ SceneRoots:
   - {fileID: 664077638}
   - {fileID: 2037242343}
   - {fileID: 1102274887}
+  - {fileID: 3313561929145387016}

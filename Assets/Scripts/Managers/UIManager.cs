@@ -17,8 +17,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI tmpDialogueCharacter;
     // TMP剧情内容文字组件
     public TextMeshProUGUI tmpDialogueContent;
-    // 对话框点击按钮
-    public Button buttonDialogue;
 
     // 全屏遮罩
     public GameObject startScreenMask;
@@ -105,7 +103,6 @@ public class UIManager : MonoBehaviour
     /// <param name="interactable">是否可点击</param>
     public void SetDialogueUIInteractable(bool interactable = true)
     {
-        buttonDialogue.interactable = interactable;
         GameManager.Instance.interactableZ = interactable;
     }
 

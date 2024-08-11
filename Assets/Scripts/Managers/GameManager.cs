@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     // z键是否可用
     public bool interactableZ;
+    // 是否加载主剧情
+    public bool loadMainDialogue;
+    // 对话框显示状态
+    public bool dialogueDisplayStatus;
 
     void Awake()
     {
@@ -18,6 +22,7 @@ public class GameManager : MonoBehaviour
         // 限制最高帧率200
         Application.targetFrameRate = 200;
         interactableZ = true;
+        loadMainDialogue = true;
     }
 
     private void Start()
@@ -34,7 +39,9 @@ public class GameManager : MonoBehaviour
     {
         HandleFullScreen();
         HandleCursorDisplay();
-        if (Input.GetKeyDown(KeyCode.Z) && interactableZ)
+        dialogueDisplayStatus = UIManager.Instance.parentDialogueUI.activeSelf;
+        // 按下z键 且 允许继续剧情
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             HandleKeyZ();
         }
@@ -62,7 +69,31 @@ public class GameManager : MonoBehaviour
         // 如果输出完成
         else
         {
-            LoadNextEvent();
+            // 加载主线剧情
+            if (loadMainDialogue && interactableZ)
+            {
+                LoadNextEvent();
+            }
+            // 加载场景物品交互对话
+            else
+            {
+                if (SceneObjectManager.Instance.minDistanceGameObject != null)
+                {
+                    // 对话框显示，关闭对话框
+                    if (dialogueDisplayStatus)
+                    {
+                        Debug.Log("触发关闭场景物品交互对话框事件");
+                        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
+                        DisplayDialogueUI(false);
+                        interactableZ = false;
+                    }
+                    // 对话框隐藏，显示物品交互对话
+                    else
+                    {
+                        SceneObjectManager.Instance.HandleObjectInteract();
+                    }
+                }
+            }
         }
     }
 
@@ -160,11 +191,13 @@ public class GameManager : MonoBehaviour
     {
         // 获取下一事件
         GameEvent nextEvent = GameEventManager.Instance.LoadNextEvent();
+        loadMainDialogue = true;
         switch (nextEvent.eventType)
         {
             // 对话事件
             case EventType.Dialogue:
                 Debug.Log("触发对话事件");
+                SetDialogueUIInteractable(true);
                 SetDialogueUICharacterName(nextEvent.characterType);
                 SetDialogueUIContent(nextEvent.eventData);
                 DisplayDialogueUI(true);
@@ -204,6 +237,8 @@ public class GameManager : MonoBehaviour
             case EventType.CloseDialogue:
                 Debug.Log("触发关闭对话框事件");
                 DisplayDialogueUI(false);
+                interactableZ = false;
+                loadMainDialogue = false;
                 GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
                 break;
 
