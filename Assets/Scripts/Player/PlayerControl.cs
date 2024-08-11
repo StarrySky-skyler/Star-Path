@@ -8,6 +8,8 @@ public class PlayerControl : MonoBehaviour
 {
     // 允许移动
     public bool allowMove;
+    // 玩家朝向
+    public Vector2 vector2Towards;
 
     private Animator animator;
     private Rigidbody2D rigidbody2;
@@ -31,24 +33,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Start()
     {
-        foreach (var gameEvent in GameEventManager.Instance.GameEvents)
+        Cursor.lockState = CursorLockMode.Locked;
+        // 如果是教室场景，玩家默认朝上
+        if (SceneManager.GetActiveScene().name == "ClassroomScene")
         {
-            Debug.Log($"{gameEvent.characterType}:\n{gameEvent.eventData}");
-        }
-        Action rest = new Action(restStart);
-        GameManager.Instance.WaitForScreenMaskFinished(rest);
-    }
-
-    /// <summary>
-    /// 剩下的start代码（委托需要）
-    /// </summary>
-    private void restStart()
-    {
-        // 如果是sky的梦，加载剧情
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "SkyDreamScene")
-        {
-            GameManager.Instance.LoadNextEvent();
+            animator.SetFloat("VerticalValue", 1f);
         }
     }
 
@@ -69,7 +58,8 @@ public class PlayerControl : MonoBehaviour
         if ((horizontalValue != 0 || verticalValue != 0) && allowMove)
         {
             isMove = true;
-            Vector2 speed = moveSpeed * new Vector2(horizontalValue, verticalValue);
+            vector2Towards = new Vector2(horizontalValue, verticalValue);
+            Vector2 speed = moveSpeed * vector2Towards;
             rigidbody2.velocity = speed;
             animator.SetFloat("HorizontalValue", horizontalValue);
             animator.SetFloat("VerticalValue", verticalValue);

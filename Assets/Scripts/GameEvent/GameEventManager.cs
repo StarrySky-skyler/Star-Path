@@ -13,7 +13,7 @@ public class GameEventManager
 
     private static GameEventManager instance;
     // 事件索引
-    private int eventIndex = 0;
+    public int eventIndex = 0;
 
     // 私有构造器
     private GameEventManager()
@@ -43,7 +43,9 @@ public class GameEventManager
     /// <param name="character">角色枚举</param>
     /// <param name="eventType">事件类型枚举</param>
     /// <param name="eventData">事件数据</param>
-    public void AddEvent(CharacterType character, EventType eventType, string eventData)
+    public void AddEvent(CharacterType character = CharacterType.Blank,
+                         EventType eventType = EventType.CloseDialogue,
+                         string eventData = "")
     {
         GameEvent gameEvent = new GameEvent();
         gameEvent.characterType = character;
@@ -55,10 +57,10 @@ public class GameEventManager
     /// <summary>
     /// 保存事件泛型集合至 json 文件
     /// </summary>
-    public void SaveEvents()
+    public void SaveDefaultEvents()
     {
         // 转换 json
-        string json = JsonUtility.ToJson(new Wrapper() { list = GameEvents}, true);
+        string json = JsonUtility.ToJson(new Wrapper() { list = GameEvents }, true);
         // utf8 编码写入
         using (StreamWriter writer = new StreamWriter(Application.streamingAssetsPath + "/EventData.json",
                                                             false, Encoding.UTF8))
@@ -88,7 +90,7 @@ public class GameEventManager
     /// </summary>
     public GameEvent LoadNextEvent()
     {
-        if (eventIndex <= GameEvents.Count)
+        if (eventIndex < GameEvents.Count)
         {
             return GameEvents[eventIndex++];
         }
@@ -118,13 +120,34 @@ public class GameEventManager
             case CharacterType.PangBai:
                 return "<color=#18C32B>旁白</color>";
             case CharacterType.StrangeA:
-                return "<color=#2936C8>陌生的声音A</color>";
+                return "<color=#FFFFFF>陌生的声音A</color>";
             case CharacterType.StrangeB:
-                return "<color=#2936C8>陌生的声音B</color>";
+                return "<color=#FFFFFF>陌生的声音B</color>";
             case CharacterType.StrangeC:
-                return "<color=#2936C8>陌生的声音C</color>";
+                return "<color=#FFFFFF>陌生的声音C</color>";
             default:
                 return "null";
         }
+    }
+
+    /// <summary>
+    /// 获取多选按钮文本
+    /// </summary>
+    /// <param name="choicesCount">选项数</param>
+    /// <returns>按钮文本数组</returns>
+    public string[] GetChoicesContent(int choicesCount)
+    {
+        string[] contents = GameEvents[eventIndex - 1].eventData.Split('|');
+
+        return contents;
+    }
+
+    /// <summary>
+    /// 获取选项数
+    /// </summary>
+    /// <returns>选项数</returns>
+    public int GetChoicesCount()
+    {
+        return GameEvents[eventIndex - 1].eventData.Split('|').Length;
     }
 }

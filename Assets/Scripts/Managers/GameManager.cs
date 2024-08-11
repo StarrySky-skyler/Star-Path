@@ -2,27 +2,58 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // 单例
     public static GameManager Instance;
 
-    void Start()
+    // z键是否可用
+    public bool interactableZ;
+    // 是否加载主剧情
+    public bool loadMainDialogue;
+    // 对话框显示状态
+    public bool dialogueDisplayStatus;
+
+    void Awake()
     {
         Instance = this;
         // 限制最高帧率200
         Application.targetFrameRate = 200;
+        interactableZ = true;
+        loadMainDialogue = true;
+    }
+
+    private void Start()
+    {
+        foreach (var gameEvent in GameEventManager.Instance.GameEvents)
+        {
+            Debug.Log($"{gameEvent.characterType}:\n{gameEvent.eventData}");
+        }
+        Action rest = new Action(restStart);
+        WaitForScreenMaskFinished(rest);
     }
 
     private void Update()
     {
         HandleFullScreen();
         HandleCursorDisplay();
+        dialogueDisplayStatus = UIManager.Instance.parentDialogueUI.activeSelf;
+        // 按下z键 且 允许继续剧情
         if (Input.GetKeyDown(KeyCode.Z))
         {
             HandleKeyZ();
         }
+    }
+
+    /// <summary>
+    /// 剩下的start代码（委托需要）
+    /// </summary>
+    private void restStart()
+    {
+        // 加载剧情
+        LoadNextEvent();
     }
 
     /// <summary>
@@ -38,7 +69,31 @@ public class GameManager : MonoBehaviour
         // 如果输出完成
         else
         {
-            LoadNextEvent();
+            // 加载主线剧情
+            if (loadMainDialogue && interactableZ)
+            {
+                LoadNextEvent();
+            }
+            // 加载场景物品交互对话
+            else
+            {
+                if (SceneObjectManager.Instance.minDistanceGameObject != null)
+                {
+                    // 对话框显示，关闭对话框
+                    if (dialogueDisplayStatus)
+                    {
+                        Debug.Log("触发关闭场景物品交互对话框事件");
+                        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
+                        DisplayDialogueUI(false);
+                        interactableZ = false;
+                    }
+                    // 对话框隐藏，显示物品交互对话
+                    else
+                    {
+                        SceneObjectManager.Instance.HandleObjectInteract();
+                    }
+                }
+            }
         }
     }
 
@@ -134,14 +189,123 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void LoadNextEvent()
     {
-        UIManager.Instance.LoadNextEvent();
+        // 获取下一事件
+        GameEvent nextEvent = GameEventManager.Instance.LoadNextEvent();
+        loadMainDialogue = true;
+        switch (nextEvent.eventType)
+        {
+            // 对话事件
+            case EventType.Dialogue:
+                Debug.Log("触发对话事件");
+                SetDialogueUIInteractable(true);
+                SetDialogueUICharacterName(nextEvent.characterType);
+                SetDialogueUIContent(nextEvent.eventData);
+                DisplayDialogueUI(true);
+                DisplayChoicePanel(false);
+                SetDialogueUIInteractable(true);
+                // 处理非选择的剧情跳转
+                if (nextEvent.toId != 0)
+                {
+                    bool activate = true;
+                    while (activate)
+                    {
+                        GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                        if (next.toDesId == nextEvent.toId)
+                        {
+                            GameEventManager.Instance.eventIndex -= 1;
+                            activate = false;
+                        }
+                    }
+                }
+                break;
+
+            // 选择事件
+            case EventType.Choice:
+                Debug.Log("触发多项选择事件");
+                SetDialogueUIInteractable(false);
+                DisplayChoicePanel(true, GameEventManager.Instance.GetChoicesCount());
+                Cursor.lockState = CursorLockMode.None;
+                break;
+
+            // 音效事件
+            case EventType.Sound:
+                Debug.Log("触发播放音效事件");
+                PlaySound(nextEvent.eventData);
+                break;
+
+            // 关闭对话框事件
+            case EventType.CloseDialogue:
+                Debug.Log("触发关闭对话框事件");
+                DisplayDialogueUI(false);
+                interactableZ = false;
+                loadMainDialogue = false;
+                GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
+                break;
+
+            // 载入下一场景事件
+            case EventType.LoadNextScene:
+                Debug.Log("触发载入下一场景事件");
+                DisplayDialogueUI(false);
+                DisplayChoicePanel(false);
+                Action loadNext = new Action(ScenesManager.Instance.LoadNextScene);
+                WaitForScreenMaskFinished(loadNext, false);
+                break;
+
+            case EventType.LoadMenuScene:
+                Debug.Log("载入初始界面");
+                DisplayChoicePanel(false);
+                DisplayDialogueUI(false);
+                GameEventManager.Instance.eventIndex = 0;
+                Action loadMenu = new Action(LoadMenuSceneAction);
+                WaitForScreenMaskFinished(loadMenu, false);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    /// <summary>
+    /// 载入初始场景委托回调
+    /// </summary>
+    private void LoadMenuSceneAction()
+    {
+        SceneManager.LoadScene(0);
     }
 
     /// <summary>
     /// 等待遮罩结束
     /// </summary>
-    public void WaitForScreenMaskFinished(Action action)
+    /// <param name="action">剩下的操作</param>
+    /// <param name="isStart">是否为起始遮罩</param>
+    public void WaitForScreenMaskFinished(Action action, bool isStart = true)
     {
-        UIManager.Instance.WaitForScreenMaskFinished(action);
+        UIManager.Instance.WaitForScreenMaskFinished(action, isStart);
+    }
+
+    /// <summary>
+    /// 载入下一场景
+    /// </summary>
+    public void LoadNextScene()
+    {
+        ScenesManager.Instance.LoadNextScene();
+    }
+
+    /// <summary>
+    /// 设置对话框是否可点击
+    /// </summary>
+    /// <param name="interactable">是否可点击</param>
+    public void SetDialogueUIInteractable(bool interactable = true)
+    {
+        UIManager.Instance.SetDialogueUIInteractable(interactable);
+    }
+
+    /// <summary>
+    /// 显示/隐藏选择框
+    /// </summary>
+    /// <param name="show"></param>
+    public void DisplayChoicePanel(bool show = false, int choicesCount = 0)
+    {
+        UIManager.Instance.DisplayChoicePanel(show, choicesCount);
     }
 }

@@ -37,6 +37,21 @@ public class GameEvent : ISerializationCallbackReceiver
     public string eventData;
 
     /// <summary>
+    /// 选择跳转id
+    /// </summary>
+    public int jumpId;
+
+    /// <summary>
+    /// 非选择主动跳转id
+    /// </summary>
+    public int toId;
+
+    /// <summary>
+    /// 非选择主动目标id
+    /// </summary>
+    public int toDesId;
+
+    /// <summary>
     /// 反序列化后，信息转为对象
     /// </summary>
     public void OnAfterDeserialize()
@@ -70,35 +85,48 @@ public class Wrapper
 
 public enum CharacterType
 {
-    Sky = 1,
-    Yuki = 2,
-    Jing = 3,
-    Tsuki = 4,
-    PangBai = 5,
-    StrangeA = 6,
-    StrangeB = 7,
-    StrangeC = 8
+    Blank,
+    Sky,
+    Yuki,
+    Jing,
+    Tsuki,
+    PangBai,
+    StrangeA,
+    StrangeB,
+    StrangeC
 }
 
 public enum EventType
 {
+    Blank,
+
     /// <summary>
     /// 对话事件，事件数据为剧本
     /// </summary>
-    Dialogue = 1,
+    Dialogue,
 
     /// <summary>
-    /// 选择事件
+    /// 选择事件，数据为字符串，每个选项以 | 隔开
     /// </summary>
-    Choose = 2,
+    Choice,
 
     /// <summary>
-    /// 音效事件，事件数据为音效文件
+    /// 音效事件，数据为音效文件
     /// </summary>
-    Sound = 3,
+    Sound,
 
     /// <summary>
     /// 关闭对话框
     /// </summary>
-    CloseDialogue = 4
+    CloseDialogue,
+
+    /// <summary>
+    /// 载入下一场景
+    /// </summary>
+    LoadNextScene,
+
+    /// <summary>
+    /// 载入初始界面
+    /// </summary>
+    LoadMenuScene
 }

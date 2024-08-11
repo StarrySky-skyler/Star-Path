@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32e5cda2514139f4ea7a4b290641743d
+guid: 8b1bf0b9825b283418f5d173d285f3f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -136,64 +136,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_1_0
+      name: lty2_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 513
-        width: 331
-        height: 82
+        x: 3
+        y: 186
+        width: 495
+        height: 199
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 45, y: 26, z: 47, w: 32}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f5fcf55670e3434eaa7e9eca44aea45
-      internalID: 346907922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_1_1
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 239
-        width: 333
-        height: 281
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 48, y: 34, z: 43, w: 36}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84ba21702995e1f49a8c748173fc1596
-      internalID: 2103334440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_1_2
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 7
-        width: 690
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea17ddfca0eec3540bc6f71f799be37d
-      internalID: -374617221
+      spriteID: 09aa262288709df439e5a3165b6f96a9
+      internalID: -1170142886
       vertices: []
       indices: 
       edges: []
@@ -209,9 +167,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_1_0: 346907922
-      UI_1_1: 2103334440
-      UI_1_2: -374617221
+      lty2_0: -1170142886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
