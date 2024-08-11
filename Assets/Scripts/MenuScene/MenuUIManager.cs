@@ -38,7 +38,7 @@ public class MenuUIManager : MonoBehaviour
     {
         FullScreenMask.SetActive(true);
         ScreenMask screenMask = FullScreenMask.GetComponent<ScreenMask>();
-        while (!screenMask.isFinished)
+        while (!screenMask.IsFinished)
         {
             yield return null;
         }

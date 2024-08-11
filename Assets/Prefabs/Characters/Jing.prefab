@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2845711229870861065}
   - component: {fileID: 6390943188606563610}
   - component: {fileID: 6942159151021669719}
-  m_Layer: 0
+  - component: {fileID: 1894500842868124065}
+  m_Layer: 3
   m_Name: Jing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39, y: 0.23688006}
   m_EdgeRadius: 0
+--- !u!114 &1894500842868124065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722800078909398963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue: []

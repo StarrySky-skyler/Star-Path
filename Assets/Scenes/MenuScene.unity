@@ -2679,7 +2679,7 @@ PrefabInstance:
     - target: {fileID: 5828954494797786801, guid: 9a137548ded33174b904d5c6fc39b521,
         type: 3}
       propertyPath: m_Name
-      value: ScreenMask
+      value: EndScreenMask
       objectReference: {fileID: 0}
     - target: {fileID: 5828954494797786801, guid: 9a137548ded33174b904d5c6fc39b521,
         type: 3}

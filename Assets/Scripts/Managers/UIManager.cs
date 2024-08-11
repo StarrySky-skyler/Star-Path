@@ -169,7 +169,7 @@ public class UIManager : MonoBehaviour
         // 如果为起始遮罩
         if (isStart)
         {
-            while (!startScreenMask.GetComponent<ScreenMask>().isFinished)
+            while (!startScreenMask.GetComponent<ScreenMask>().IsFinished)
             {
                 yield return null;
             }
@@ -179,7 +179,7 @@ public class UIManager : MonoBehaviour
         else
         {
             endScreenMask.SetActive(true);
-            while (!endScreenMask.GetComponent<ScreenMask>().isFinished)
+            while (!endScreenMask.GetComponent<ScreenMask>().IsFinished)
             {
                 yield return null;
             }

@@ -28,7 +28,7 @@ public class StartWords : MonoBehaviour
     IEnumerator WaitMask()
     {
         // 等待初始遮罩完成
-        while (!startMask.isFinished)
+        while (!startMask.IsFinished)
         {
             yield return null;
         }
@@ -38,7 +38,7 @@ public class StartWords : MonoBehaviour
         EndMask.SetActive(true);
 
         // 等待结束遮罩完成
-        while (!endMask.isFinished)
+        while (!endMask.IsFinished)
         {
             yield return null;
         }

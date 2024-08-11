@@ -5,18 +5,29 @@ using UnityEngine.UI;
 
 public class ScreenMask : MonoBehaviour
 {
-    // 逐渐黑屏 / 逐渐亮屏
-    public bool isToBlack;
     // 运行状态
-    public bool isFinished;
+    public bool IsFinished { get; set; }
 
     // 全屏遮罩
     private RawImage rawImageScreen;
+    // 逐渐黑屏 / 逐渐亮屏
+    private bool isToBlack;
 
     private void Awake()
     {
         rawImageScreen = GetComponent<RawImage>();
-        isFinished = false;
+        IsFinished = false;
+        switch (gameObject.name)
+        {
+            case "StartScreenMask":
+                isToBlack = false;
+                break;
+            case "EndScreenMask":
+                isToBlack = true;
+                break;
+            default:
+                break;
+        }
     }
 
     void Update()
@@ -30,7 +41,7 @@ public class ScreenMask : MonoBehaviour
             }
             else
             {
-                isFinished = true;
+                IsFinished = true;
             }
         }
         // 亮屏过场
@@ -42,7 +53,7 @@ public class ScreenMask : MonoBehaviour
             }
             else
             {
-                isFinished = true;
+                IsFinished = true;
             }
         }
     }

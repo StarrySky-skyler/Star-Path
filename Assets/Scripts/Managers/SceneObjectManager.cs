@@ -32,8 +32,9 @@ public class SceneObjectManager : MonoBehaviour
         minDistanceSceneObject = null;
         minDistanceGameObject = null;
         // 获取玩家周围的碰撞盒
-        Vector2 position = new Vector2(player.transform.position.x, player.transform.position.y);
-        RaycastHit2D[] hit = Physics2D.RaycastAll(position, playerControl.vector2Towards, 0.4f, layerMask);
+        Vector2 position = new Vector2(player.transform.position.x, player.transform.position.y - 0.164f);
+        Debug.DrawRay(position, playerControl.vector2Towards, Color.blue);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(position, playerControl.vector2Towards, 1f, layerMask);
         //Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.4f, layerMask);
         // 获取最短距离和对应物体
         foreach (var collider in hit)
