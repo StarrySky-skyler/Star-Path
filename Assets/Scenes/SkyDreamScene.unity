@@ -133,7 +133,8 @@ GameObject:
   - component: {fileID: 37662125}
   - component: {fileID: 37662124}
   - component: {fileID: 37662126}
-  m_Layer: 0
+  - component: {fileID: 37662127}
+  m_Layer: 3
   m_Name: WoodenGuiZi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,6 +253,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &37662127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37662123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u6709\u88C2\u7EB9\u7684\u67DC\u5B50\uFF0C\u4E3A\u4EC0\u4E48\u4F1A\u51FA\u73B0\u5728\u8FD9\u513F\uFF1F"
 --- !u!1 &70087292
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +501,8 @@ GameObject:
   - component: {fileID: 397791517}
   - component: {fileID: 397791516}
   - component: {fileID: 397791518}
-  m_Layer: 0
+  - component: {fileID: 397791519}
+  m_Layer: 3
   m_Name: WoodenChair2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,6 +621,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.42188516}
   m_EdgeRadius: 0
+--- !u!114 &397791519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397791515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u6905\u5B50\u5F88\u5B8C\u6574\uFF0C\u6CA1\u6709\u4EFB\u4F55\u4F7F\u7528\u7684\u75D5\u8FF9\uFF0C\u521A\u521A\u6765\u7684\u4EBA\u5E94\u8BE5\u5F88\u7231\u5E72\u51C0"
 --- !u!1 &472896670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4668,7 +4700,8 @@ GameObject:
   - component: {fileID: 1900931865}
   - component: {fileID: 1900931864}
   - component: {fileID: 1900931866}
-  m_Layer: 0
+  - component: {fileID: 1900931867}
+  m_Layer: 3
   m_Name: WoodenChair1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4787,6 +4820,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.42887798}
   m_EdgeRadius: 0
+--- !u!114 &1900931867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900931863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u6905\u5B50\u4E0A\u6709\u7740\u78E8\u635F\u7684\u75D5\u8FF9\uFF0C\u521A\u521A\u6216\u8BB8\u6709\u4EBA\u6765\u8FC7"
 --- !u!1 &2109496972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,6 +4893,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenClock
       objectReference: {fileID: 0}
+    - target: {fileID: 1939173540600964864, guid: 8db304fbd01c1b04195200de4c65f0d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8478933376726808326, guid: 8db304fbd01c1b04195200de4c65f0d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4898,8 +4951,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1939173540600964864, guid: 8db304fbd01c1b04195200de4c65f0d8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3150395503202870286}
   m_SourcePrefab: {fileID: 100100000, guid: 8db304fbd01c1b04195200de4c65f0d8, type: 3}
+--- !u!1 &3150395503202870285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1939173540600964864, guid: 8db304fbd01c1b04195200de4c65f0d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3150395503202870284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3150395503202870286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150395503202870285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactCount: 0
+  objectDialogue:
+  - "\u6C38\u4E0D\u505C\u606F\u7684\u949F\uFF0C\u7CBE\u51C6\uFF1F\u5730\u8BB0\u5F55\u7740\u65F6\u95F4\uFF0C\u6211\u597D\u50CF\u5728\u54EA\u91CC\u89C1\u8FC7"
 --- !u!1001 &4372409072708625257
 PrefabInstance:
   m_ObjectHideFlags: 0
