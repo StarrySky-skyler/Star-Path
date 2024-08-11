@@ -37,6 +37,21 @@ public class GameEvent : ISerializationCallbackReceiver
     public string eventData;
 
     /// <summary>
+    /// 选择跳转id
+    /// </summary>
+    public int jumpId;
+
+    /// <summary>
+    /// 非选择主动跳转id
+    /// </summary>
+    public int toId;
+
+    /// <summary>
+    /// 非选择主动目标id
+    /// </summary>
+    public int toDesId;
+
+    /// <summary>
     /// 反序列化后，信息转为对象
     /// </summary>
     public void OnAfterDeserialize()
@@ -91,12 +106,12 @@ public enum EventType
     Dialogue,
 
     /// <summary>
-    /// 选择事件
+    /// 选择事件，数据为字符串，每个选项以 | 隔开
     /// </summary>
-    Choose,
+    Choice,
 
     /// <summary>
-    /// 音效事件，事件数据为音效文件
+    /// 音效事件，数据为音效文件
     /// </summary>
     Sound,
 
@@ -108,5 +123,10 @@ public enum EventType
     /// <summary>
     /// 载入下一场景
     /// </summary>
-    LoadNextScene
+    LoadNextScene,
+
+    /// <summary>
+    /// 载入初始界面
+    /// </summary>
+    LoadMenuScene
 }

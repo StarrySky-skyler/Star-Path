@@ -9,11 +9,15 @@ public class GameManager : MonoBehaviour
     // 单例
     public static GameManager Instance;
 
+    // z键是否可用
+    public bool interactableZ;
+
     void Awake()
     {
         Instance = this;
         // 限制最高帧率200
         Application.targetFrameRate = 200;
+        interactableZ = true;
     }
 
     private void Start()
@@ -30,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         HandleFullScreen();
         HandleCursorDisplay();
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && interactableZ)
         {
             HandleKeyZ();
         }
@@ -164,32 +168,74 @@ public class GameManager : MonoBehaviour
                 SetDialogueUICharacterName(nextEvent.characterType);
                 SetDialogueUIContent(nextEvent.eventData);
                 DisplayDialogueUI(true);
+                DisplayChoicePanel(false);
+                SetDialogueUIInteractable(true);
+                // 处理非选择的剧情跳转
+                if (nextEvent.toId != 0)
+                {
+                    bool activate = true;
+                    while (activate)
+                    {
+                        GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                        if (next.toDesId == nextEvent.toId)
+                        {
+                            GameEventManager.Instance.eventIndex -= 1;
+                            activate = false;
+                        }
+                    }
+                }
                 break;
-            // 选择事件
-            case EventType.Choose:
-                Debug.Log("触发多项选择事件");
 
+            // 选择事件
+            case EventType.Choice:
+                Debug.Log("触发多项选择事件");
+                SetDialogueUIInteractable(false);
+                DisplayChoicePanel(true, GameEventManager.Instance.GetChoicesCount());
+                Cursor.lockState = CursorLockMode.None;
                 break;
+
             // 音效事件
             case EventType.Sound:
                 Debug.Log("触发播放音效事件");
+                PlaySound(nextEvent.eventData);
                 break;
+
             // 关闭对话框事件
             case EventType.CloseDialogue:
                 Debug.Log("触发关闭对话框事件");
                 DisplayDialogueUI(false);
                 GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
                 break;
+
             // 载入下一场景事件
             case EventType.LoadNextScene:
                 Debug.Log("触发载入下一场景事件");
                 DisplayDialogueUI(false);
+                DisplayChoicePanel(false);
                 Action loadNext = new Action(ScenesManager.Instance.LoadNextScene);
                 WaitForScreenMaskFinished(loadNext, false);
                 break;
+
+            case EventType.LoadMenuScene:
+                Debug.Log("载入初始界面");
+                DisplayChoicePanel(false);
+                DisplayDialogueUI(false);
+                GameEventManager.Instance.eventIndex = 0;
+                Action loadMenu = new Action(LoadMenuSceneAction);
+                WaitForScreenMaskFinished(loadMenu, false);
+                break;
+
             default:
                 break;
         }
+    }
+
+    /// <summary>
+    /// 载入初始场景委托回调
+    /// </summary>
+    private void LoadMenuSceneAction()
+    {
+        SceneManager.LoadScene(0);
     }
 
     /// <summary>
@@ -208,5 +254,23 @@ public class GameManager : MonoBehaviour
     public void LoadNextScene()
     {
         ScenesManager.Instance.LoadNextScene();
+    }
+
+    /// <summary>
+    /// 设置对话框是否可点击
+    /// </summary>
+    /// <param name="interactable">是否可点击</param>
+    public void SetDialogueUIInteractable(bool interactable = true)
+    {
+        UIManager.Instance.SetDialogueUIInteractable(interactable);
+    }
+
+    /// <summary>
+    /// 显示/隐藏选择框
+    /// </summary>
+    /// <param name="show"></param>
+    public void DisplayChoicePanel(bool show = false, int choicesCount = 0)
+    {
+        UIManager.Instance.DisplayChoicePanel(show, choicesCount);
     }
 }

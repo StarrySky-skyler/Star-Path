@@ -13,7 +13,7 @@ public class GameEventManager
 
     private static GameEventManager instance;
     // 事件索引
-    private int eventIndex = 0;
+    public int eventIndex = 0;
 
     // 私有构造器
     private GameEventManager()
@@ -128,5 +128,26 @@ public class GameEventManager
             default:
                 return "null";
         }
+    }
+
+    /// <summary>
+    /// 获取多选按钮文本
+    /// </summary>
+    /// <param name="choicesCount">选项数</param>
+    /// <returns>按钮文本数组</returns>
+    public string[] GetChoicesContent(int choicesCount)
+    {
+        string[] contents = GameEvents[eventIndex - 1].eventData.Split('|');
+
+        return contents;
+    }
+
+    /// <summary>
+    /// 获取选项数
+    /// </summary>
+    /// <returns>选项数</returns>
+    public int GetChoicesCount()
+    {
+        return GameEvents[eventIndex - 1].eventData.Split('|').Length;
     }
 }

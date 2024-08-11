@@ -74,6 +74,169 @@
             "characterString": "Jing",
             "eventString": "Dialogue",
             "eventData": "你来解答一下，双星系统围绕同一点做匀速圆周运动时，这个共同点又是整个系统的什么？"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "Choice",
+            "eventData": "不知道|随便蒙一个吧|让我先想想|质心"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "核心",
+            "jumpId": 1
+        },
+        {
+            "characterString": "Jing",
+            "eventString": "Dialogue",
+            "eventData": "这个中心点是<color=#FF6666>质心</color>，上课注意集中精神，这节课你站着听",
+            "jumpId": 0
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "<color=#FF6666>BE2：或许有时候犹豫也是种智慧？</color>"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "characterString": "Jing",
+            "eventString": "Dialogue",
+            "eventData": "对，坐下吧，不要有下次",
+            "jumpId": 3
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "<color=#FF6666>BE1：你太厉害了啊喂</color>"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "就在犹豫不决时，同桌偷偷递给你一张纸条",
+            "jumpId": 2
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "<color=#E855A4>“质心”</color>"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "啊，这个点是整个系统的质心。一般来说，在该系统中天体的质量越大，它就离这个点越近"
+        },
+        {
+            "characterString": "Jing",
+            "eventString": "Dialogue",
+            "eventData": "咳咳，坐下吧，以后不要看到快放学了就走神"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（静对你的好感度+10\n同学们对你的好感度+5\n你对静的震慑力+5）\n（ps：此类数值无实际作用，仅作视觉展示）"
+        },
+        {
+            "characterString": "Jing",
+            "eventString": "Dialogue",
+            "eventData": "啊，那么，我们接下来讲双星模型的相关公式......"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "看着窗外随风飘落的枫叶，听着静的讲课声，过去的回忆浮上心头。"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "因为父母工作原因，我转来这所高中读高三，成绩长期垫底，过一天算一天，之前玩的好的几个朋友现在也没怎么联系了..."
+        },
+        {
+            "characterString":"Blank",
+            "eventString":"Sound",
+            "eventData":"bell"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString":"Dialogue",
+            "eventData":"放学的铃声打断了思绪"
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"（去找同桌说声谢谢吧）"
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"哎，刚刚多亏你了同桌，我叫星痕sky，你叫什么名字？"
+        },
+        {
+            "characterString":"Yuki",
+            "eventString":"Dialogue",
+            "eventData":"那个...你好，我叫<color=#FF66FF>星梦yuki</color>"
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"星梦yuki，那以后多多关注啦，对了，放学你走东门回家吗？"
+        },
+        {
+            "characterString":"Yuki",
+            "eventString":"Dialogue",
+            "eventData":"唔，是的..."
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"（看起来她不太爱说话，有点紧张啊，那可不行。社牛如我，做点什么报答一下她呢？）"
+        },
+        {
+            "characterString":"Blank",
+            "eventString":"Choice",
+            "eventData":"请她吃东西|给她送礼物"
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"正巧我也走东门回家，我听说那边开了一家很好吃的店，这个点过去刚好人很少，一起尝尝吗？",
+            "jumpId":0,
+            "toId":1
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"正巧我也走东门回家，一起吗？",
+            "jumpId":1
+        },
+        {
+            "characterString":"Yuki",
+            "eventString":"Dialogue",
+            "eventData":"诶诶诶？一起吗？这个。。。我平时都是一个人回家的",
+            "toDesId":1
+        },
+        {
+            "characterString":"Sky",
+            "eventString":"Dialogue",
+            "eventData":"啊？那多无聊啊，走吧，路上还可以一起聊聊天什么的"
+        },
+        {
+            "characterString":"Blank",
+            "eventString":"CloseDialogue",
+            "eventData":""
+        },
+        {
+            "characterString":"Blank",
+            "eventString":"LoadNextScene",
+            "eventData":""
         }
     ]
 }

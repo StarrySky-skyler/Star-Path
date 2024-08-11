@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,12 +17,19 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI tmpDialogueCharacter;
     // TMP剧情内容文字组件
     public TextMeshProUGUI tmpDialogueContent;
+    // 对话框点击按钮
+    public Button buttonDialogue;
+
     // 全屏遮罩
     public GameObject startScreenMask;
     public GameObject endScreenMask;
 
+    // 选择框父物体
+    public GameObject buttonChoicesParent;
     // 选择框
     public GameObject[] buttonChoices;
+    // 选择框文本
+    public TextMeshProUGUI[] tmpChoices;
 
     // 是否正在逐字输出
     public bool IsOutputingDialogue { get; private set; }
@@ -35,19 +43,70 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 多选框点击调用函数
+    /// </summary>
+    /// <param name="id">按钮id</param>
+    public void ButtonChoiceClick(int id)
+    {
+        bool activate = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        while (activate)
+        {
+            GameEvent next = GameEventManager.Instance.LoadNextEvent();
+            if (next.jumpId == id)
+            {
+                GameEventManager.Instance.eventIndex -= 1;
+                GameManager.Instance.LoadNextEvent();
+                activate = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 显示/隐藏选择框
+    /// </summary>
+    /// <param name="show"></param>
+    public void DisplayChoicePanel(bool show = false, int choicesCount = 0)
+    {
+        buttonChoicesParent.SetActive(show);
+        // 隐藏所有按钮
+        foreach (var btn in buttonChoices)
+        {
+            btn.SetActive(false);
+        }
+        // 显示按钮数对应的按钮
+        for (int i = 0; i < choicesCount; i++)
+        {
+            buttonChoices[i].SetActive(true);
+        }
+        // 显示按钮文本
+        if (show)
+        {
+            string[] contents = GameEventManager.Instance.GetChoicesContent(choicesCount);
+            for (global::System.Int32 i = 0; i < contents.Length; i++)
+            {
+                tmpChoices[i].text = contents[i];
+            }
+        }
+    }
+
+    /// <summary>
     /// 显示对话框
     /// </summary>
     /// <param name="show">是否显示</param>
     public void DisplayDialogueUI(bool show = false)
     {
-        if (show)
-        {
-            parentDialogueUI.SetActive(true);
-        }
-        else
-        {
-            parentDialogueUI.SetActive(false);
-        }
+        parentDialogueUI.SetActive(show);
+    }
+
+    /// <summary>
+    /// 设置对话框是否可点击
+    /// </summary>
+    /// <param name="interactable">是否可点击</param>
+    public void SetDialogueUIInteractable(bool interactable = true)
+    {
+        buttonDialogue.interactable = interactable;
+        GameManager.Instance.interactableZ = interactable;
     }
 
     /// <summary>
