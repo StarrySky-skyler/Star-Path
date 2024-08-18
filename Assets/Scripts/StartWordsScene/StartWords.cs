@@ -1,22 +1,22 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartWords : MonoBehaviour
 {
     // 开始全屏遮罩
-    public GameObject StartMask;
-    // 结束全屏遮罩
-    public GameObject EndMask;
+    public GameObject startMask;
 
-    private ScreenMask startMask;
-    private ScreenMask endMask;
+    // 结束全屏遮罩
+    public GameObject endMask;
+
+    private ScreenMask _startMask;
+    private ScreenMask _endMask;
 
     private void Awake()
     {
-        startMask = StartMask.GetComponent<ScreenMask>();
-        endMask = EndMask.GetComponent<ScreenMask>();
+        _startMask = startMask.GetComponent<ScreenMask>();
+        _endMask = endMask.GetComponent<ScreenMask>();
     }
 
     void Start()
@@ -28,17 +28,17 @@ public class StartWords : MonoBehaviour
     IEnumerator WaitMask()
     {
         // 等待初始遮罩完成
-        while (!startMask.IsFinished)
+        while (!_startMask.IsFinished)
         {
             yield return null;
         }
 
-        Destroy(StartMask);
+        Destroy(startMask);
         yield return new WaitForSeconds(5);
-        EndMask.SetActive(true);
+        endMask.SetActive(true);
 
         // 等待结束遮罩完成
-        while (!endMask.IsFinished)
+        while (!_endMask.IsFinished)
         {
             yield return null;
         }

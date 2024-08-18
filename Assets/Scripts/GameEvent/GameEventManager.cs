@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -11,9 +10,10 @@ public class GameEventManager
 {
     public List<GameEvent> GameEvents { get; private set; }
 
-    private static GameEventManager instance;
+    private static GameEventManager _instance;
+
     // 事件索引
-    public int eventIndex = 0;
+    public int EventIndex = 0;
 
     // 私有构造器
     private GameEventManager()
@@ -28,12 +28,13 @@ public class GameEventManager
         get
         {
             // 如果单例不存在
-            if (instance == null)
+            if (_instance == null)
             {
                 // 创建单例
-                instance = new GameEventManager();
+                _instance = new GameEventManager();
             }
-            return instance;
+
+            return _instance;
         }
     }
 
@@ -44,12 +45,12 @@ public class GameEventManager
     /// <param name="eventType">事件类型枚举</param>
     /// <param name="eventData">事件数据</param>
     public void AddEvent(CharacterType character = CharacterType.Blank,
-                         EventType eventType = EventType.CloseDialogue,
-                         string eventData = "")
+        EventType eventType = EventType.CloseDialogue,
+        string eventData = "")
     {
         GameEvent gameEvent = new GameEvent();
-        gameEvent.characterType = character;
-        gameEvent.eventType = eventType;
+        gameEvent.CharacterType = character;
+        gameEvent.EventType = eventType;
         gameEvent.eventData = eventData;
         GameEvents.Add(gameEvent);
     }
@@ -63,10 +64,11 @@ public class GameEventManager
         string json = JsonUtility.ToJson(new Wrapper() { list = GameEvents }, true);
         // utf8 编码写入
         using (StreamWriter writer = new StreamWriter(Application.streamingAssetsPath + "/EventData.json",
-                                                            false, Encoding.UTF8))
+                   false, Encoding.UTF8))
         {
             writer.Write(json);
         }
+
         Debug.Log("将数据写入EventData.json完成");
     }
 
@@ -78,10 +80,11 @@ public class GameEventManager
         string content;
         // 以 utf8 读取文件
         using (StreamReader reader = new StreamReader(Application.streamingAssetsPath + "/EventData.json",
-                                                      Encoding.UTF8))
+                   Encoding.UTF8))
         {
             content = reader.ReadToEnd();
         }
+
         GameEvents = JsonUtility.FromJson<Wrapper>(content).list;
     }
 
@@ -90,9 +93,9 @@ public class GameEventManager
     /// </summary>
     public GameEvent LoadNextEvent()
     {
-        if (eventIndex < GameEvents.Count)
+        if (EventIndex < GameEvents.Count)
         {
-            return GameEvents[eventIndex++];
+            return GameEvents[EventIndex++];
         }
         else
         {
@@ -137,7 +140,7 @@ public class GameEventManager
     /// <returns>按钮文本数组</returns>
     public string[] GetChoicesContent(int choicesCount)
     {
-        string[] contents = GameEvents[eventIndex - 1].eventData.Split('|');
+        string[] contents = GameEvents[EventIndex - 1].eventData.Split('|');
 
         return contents;
     }
@@ -148,6 +151,6 @@ public class GameEventManager
     /// <returns>选项数</returns>
     public int GetChoicesCount()
     {
-        return GameEvents[eventIndex - 1].eventData.Split('|').Length;
+        return GameEvents[EventIndex - 1].eventData.Split('|').Length;
     }
 }

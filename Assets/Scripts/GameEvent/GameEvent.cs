@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +11,7 @@ public class GameEvent : ISerializationCallbackReceiver
     /// <summary>
     /// 角色枚举
     /// </summary>
-    [NonSerialized]
-    public CharacterType characterType;
+    [NonSerialized] public CharacterType CharacterType;
 
     /// <summary>
     /// 角色枚举对应的字符串
@@ -23,8 +21,7 @@ public class GameEvent : ISerializationCallbackReceiver
     /// <summary>
     /// 事件类型枚举
     /// </summary>
-    [NonSerialized]
-    public EventType eventType;
+    [NonSerialized] public EventType EventType;
 
     /// <summary>
     /// 事件类型对应的字符串
@@ -60,8 +57,8 @@ public class GameEvent : ISerializationCallbackReceiver
         CharacterType type = (CharacterType)Enum.Parse(typeof(CharacterType), characterString);
         EventType type2 = (EventType)Enum.Parse(typeof(EventType), eventString);
         // 枚举保存
-        characterType = type;
-        eventType = type2;
+        CharacterType = type;
+        EventType = type2;
     }
 
     /// <summary>
@@ -69,8 +66,8 @@ public class GameEvent : ISerializationCallbackReceiver
     /// </summary>
     public void OnBeforeSerialize()
     {
-        characterString = characterType.ToString();
-        eventString = eventType.ToString();
+        characterString = CharacterType.ToString();
+        eventString = EventType.ToString();
     }
 }
 

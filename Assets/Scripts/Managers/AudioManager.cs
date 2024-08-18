@@ -1,26 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    public AudioSource BgmPlayer;              // 背景音乐播放组件
-    public AudioSource SoundPlayer;            // 点击音效播放组件
+    public AudioSource bgmPlayer; // 背景音乐播放组件
+    public AudioSource soundPlayer; // 点击音效播放组件
 
     private void Awake()
     {
         Instance = this;
-        BgmPlayer.loop = true;
-        SoundPlayer.loop = false;
+        bgmPlayer.loop = true;
+        soundPlayer.loop = false;
     }
 
     void Start()
     {
-        if (!BgmPlayer.isPlaying)
+        if (!bgmPlayer.isPlaying)
         {
-            BgmPlayer.Play();
+            bgmPlayer.Play();
         }
     }
 
@@ -31,6 +29,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(string soundName)
     {
         AudioClip clip = Resources.Load<AudioClip>("AudioClips/Sound/" + soundName);
-        SoundPlayer.PlayOneShot(clip);
+        soundPlayer.PlayOneShot(clip);
     }
 }

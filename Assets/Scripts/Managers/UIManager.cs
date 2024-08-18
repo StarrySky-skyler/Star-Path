@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,8 +10,10 @@ public class UIManager : MonoBehaviour
 
     // 对话框父物体
     public GameObject parentDialogueUI;
+
     // TMP角色名文字组件
     public TextMeshProUGUI tmpDialogueCharacter;
+
     // TMP剧情内容文字组件
     public TextMeshProUGUI tmpDialogueContent;
 
@@ -24,13 +23,16 @@ public class UIManager : MonoBehaviour
 
     // 选择框父物体
     public GameObject buttonChoicesParent;
+
     // 选择框
     public GameObject[] buttonChoices;
+
     // 选择框文本
     public TextMeshProUGUI[] tmpChoices;
 
     // 是否正在逐字输出
     public bool IsOutputingDialogue { get; private set; }
+
     // 是否跳过逐字输出
     public bool NeedSkip { get; set; }
 
@@ -38,6 +40,8 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
         IsOutputingDialogue = false;
+        startScreenMask.SetActive(true);
+        endScreenMask.SetActive(false);
     }
 
     /// <summary>
@@ -53,7 +57,7 @@ public class UIManager : MonoBehaviour
             GameEvent next = GameEventManager.Instance.LoadNextEvent();
             if (next.jumpId == id)
             {
-                GameEventManager.Instance.eventIndex -= 1;
+                GameEventManager.Instance.EventIndex -= 1;
                 GameManager.Instance.LoadNextEvent();
                 activate = false;
             }
@@ -72,11 +76,13 @@ public class UIManager : MonoBehaviour
         {
             btn.SetActive(false);
         }
+
         // 显示按钮数对应的按钮
         for (int i = 0; i < choicesCount; i++)
         {
             buttonChoices[i].SetActive(true);
         }
+
         // 显示按钮文本
         if (show)
         {
@@ -151,6 +157,7 @@ public class UIManager : MonoBehaviour
                 yield break;
             }
         }
+
         IsOutputingDialogue = false;
     }
 
@@ -173,6 +180,7 @@ public class UIManager : MonoBehaviour
             {
                 yield return null;
             }
+
             restOperation();
         }
         // 结束遮罩
@@ -183,6 +191,7 @@ public class UIManager : MonoBehaviour
             {
                 yield return null;
             }
+
             restOperation();
         }
     }

@@ -237,6 +237,11 @@
             "characterString":"Blank",
             "eventString":"LoadNextScene",
             "eventData":""
+        },
+        {
+            "characterString":"PangBai",
+            "eventString":"Dialogue",
+            "eventData":"星梦yuki加入同行队伍"
         }
     ]
 }

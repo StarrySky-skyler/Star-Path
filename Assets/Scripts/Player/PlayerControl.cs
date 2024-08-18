@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,27 +5,28 @@ public class PlayerControl : MonoBehaviour
 {
     // 允许移动
     public bool allowMove;
+
     // 玩家朝向
     public Vector2 vector2Towards;
 
-    private Animator animator;
-    private Rigidbody2D rigidbody2;
+    private Animator _animator;
+    private Rigidbody2D _rigidbody2;
 
     // 移动速度
-    private float moveSpeed;
+    private float _moveSpeed;
 
     // 是否移动状态
-    private bool isMove;
+    private bool _isMove;
 
     void Awake()
     {
         // 获取组件
-        animator = GetComponent<Animator>();
-        rigidbody2 = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _rigidbody2 = GetComponent<Rigidbody2D>();
 
         allowMove = true;
-        isMove = false;
-        moveSpeed = 5.5f;
+        _isMove = false;
+        _moveSpeed = 5.5f;
     }
 
     private void Start()
@@ -37,7 +35,7 @@ public class PlayerControl : MonoBehaviour
         // 如果是教室场景，玩家默认朝上
         if (SceneManager.GetActiveScene().name == "ClassroomScene")
         {
-            animator.SetFloat("VerticalValue", 1f);
+            _animator.SetFloat("VerticalValue", 1f);
         }
     }
 
@@ -57,20 +55,21 @@ public class PlayerControl : MonoBehaviour
         // 玩家移动
         if ((horizontalValue != 0 || verticalValue != 0) && allowMove)
         {
-            isMove = true;
+            _isMove = true;
             vector2Towards = new Vector2(horizontalValue, verticalValue);
-            Vector2 speed = moveSpeed * vector2Towards;
-            rigidbody2.velocity = speed;
-            animator.SetFloat("HorizontalValue", horizontalValue);
-            animator.SetFloat("VerticalValue", verticalValue);
+            Vector2 speed = _moveSpeed * vector2Towards;
+            _rigidbody2.velocity = speed;
+            _animator.SetFloat("HorizontalValue", horizontalValue);
+            _animator.SetFloat("VerticalValue", verticalValue);
         }
         // 玩家停止移动
         else
         {
-            rigidbody2.velocity = Vector2.zero;
-            isMove = false;
+            _rigidbody2.velocity = Vector2.zero;
+            _isMove = false;
         }
-        animator.SetBool("IsMove", isMove);
+
+        _animator.SetBool("IsMove", _isMove);
     }
 
     /// <summary>
@@ -80,15 +79,15 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
-            moveSpeed = 9f;
+            _moveSpeed = 9f;
         }
         else if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            moveSpeed = 9f;
+            _moveSpeed = 9f;
         }
         else
         {
-            moveSpeed = 5.5f;
+            _moveSpeed = 5.5f;
         }
     }
 }
