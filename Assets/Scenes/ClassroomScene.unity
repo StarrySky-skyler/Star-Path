@@ -4404,6 +4404,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5215814222118880978, guid: 2c02c78f5e813c34baafdcc4f08d44a2,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6483443315305891124, guid: 2c02c78f5e813c34baafdcc4f08d44a2,
         type: 3}
       propertyPath: m_IsActive

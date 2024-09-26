@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class PlayerControl : MonoBehaviour
 {
     // 允许移动
-    public bool allowMove;
+    public bool AllowMove { get; set; }
 
     // 玩家朝向
-    public Vector2 vector2Towards;
+    public Vector2 Vector2Towards { get; set; }
 
     private Animator _animator;
-    private Rigidbody2D _rigidbody2;
+    private Rigidbody2D _rigidbody;
 
     // 移动速度
     private float _moveSpeed;
@@ -22,9 +22,9 @@ public class PlayerControl : MonoBehaviour
     {
         // 获取组件
         _animator = GetComponent<Animator>();
-        _rigidbody2 = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
 
-        allowMove = true;
+        AllowMove = true;
         _isMove = false;
         _moveSpeed = 5.5f;
     }
@@ -53,19 +53,19 @@ public class PlayerControl : MonoBehaviour
         float horizontalValue = Input.GetAxisRaw("Horizontal");
         float verticalValue = Input.GetAxisRaw("Vertical");
         // 玩家移动
-        if ((horizontalValue != 0 || verticalValue != 0) && allowMove)
+        if ((horizontalValue != 0 || verticalValue != 0) && AllowMove)
         {
             _isMove = true;
-            vector2Towards = new Vector2(horizontalValue, verticalValue);
-            Vector2 speed = _moveSpeed * vector2Towards;
-            _rigidbody2.velocity = speed;
+            Vector2Towards = new Vector2(horizontalValue, verticalValue);
+            Vector2 speed = _moveSpeed * Vector2Towards;
+            _rigidbody.velocity = speed;
             _animator.SetFloat("HorizontalValue", horizontalValue);
             _animator.SetFloat("VerticalValue", verticalValue);
         }
         // 玩家停止移动
         else
         {
-            _rigidbody2.velocity = Vector2.zero;
+            _rigidbody.velocity = Vector2.zero;
             _isMove = false;
         }
 

@@ -29,6 +29,9 @@ public class UIManager : MonoBehaviour
 
     // 选择框文本
     public TextMeshProUGUI[] tmpChoices;
+    
+    // 剧情完成后的提示箭头
+    public GameObject dialogueNextTip;
 
     // 是否正在逐字输出
     public bool IsOutputingDialogue { get; private set; }
@@ -42,6 +45,7 @@ public class UIManager : MonoBehaviour
         IsOutputingDialogue = false;
         startScreenMask.SetActive(true);
         endScreenMask.SetActive(false);
+        dialogueNextTip.SetActive(false);
     }
 
     /// <summary>
@@ -57,7 +61,7 @@ public class UIManager : MonoBehaviour
             GameEvent next = GameEventManager.Instance.LoadNextEvent();
             if (next.jumpId == id)
             {
-                GameEventManager.Instance.EventIndex -= 1;
+                GameEventManager.EventIndex -= 1;
                 GameManager.Instance.LoadNextEvent();
                 activate = false;
             }
@@ -109,7 +113,7 @@ public class UIManager : MonoBehaviour
     /// <param name="interactable">是否可点击</param>
     public void SetDialogueUIInteractable(bool interactable = true)
     {
-        GameManager.Instance.interactableZ = interactable;
+        GameManager.Instance.InteractableZ = interactable;
     }
 
     /// <summary>
@@ -140,7 +144,8 @@ public class UIManager : MonoBehaviour
     {
         IsOutputingDialogue = true;
         tmpDialogueContent.text = "";
-        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = false;
+        dialogueNextTip.SetActive(false);
+        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = false;
         // 遍历对话框内容
         foreach (var letter in content)
         {
@@ -152,6 +157,7 @@ public class UIManager : MonoBehaviour
             else
             {
                 tmpDialogueContent.text = content;
+                dialogueNextTip.SetActive(true);
                 IsOutputingDialogue = false;
                 NeedSkip = false;
                 yield break;
@@ -159,6 +165,7 @@ public class UIManager : MonoBehaviour
         }
 
         IsOutputingDialogue = false;
+        dialogueNextTip.SetActive(true);
     }
 
     /// <summary>

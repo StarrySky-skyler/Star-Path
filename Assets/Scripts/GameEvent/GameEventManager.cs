@@ -13,7 +13,7 @@ public class GameEventManager
     private static GameEventManager _instance;
 
     // 事件索引
-    public int EventIndex = 0;
+    public static int EventIndex;
 
     // 私有构造器
     private GameEventManager()
@@ -108,12 +108,12 @@ public class GameEventManager
     /// </summary>
     /// <param name="characterType">角色枚举</param>
     /// <returns>角色名字符串</returns>
-    public string GetCharacterName(CharacterType characterType)
+    public static string GetCharacterName(CharacterType characterType)
     {
         switch (characterType)
         {
             case CharacterType.Sky:
-                return "<color=#29AFC8>星痕sky</color>";
+                return "<color=#29AFC8>绘星tsuki</color>";
             case CharacterType.Yuki:
                 return "<color=#DC84BA>星梦yuki</color>";
             case CharacterType.Jing:

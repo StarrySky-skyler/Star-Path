@@ -48,7 +48,7 @@
         {
             "characterString": "StrangeC",
             "eventString": "Dialogue",
-            "eventData": "星痕sky...星痕sky..."
+            "eventData": "绘星tsuki...绘星tsuki..."
         },
         {
             "characterString": "Blank",
@@ -58,7 +58,7 @@
         {
             "characterString": "StrangeC",
             "eventString": "Dialogue",
-            "eventData": "星痕sky！"
+            "eventData": "绘星tsuki！"
         },
         {
             "characterString": "Blank",
@@ -142,7 +142,12 @@
         {
             "characterString": "PangBai",
             "eventString": "Dialogue",
-            "eventData": "（静对你的好感度+10\n同学们对你的好感度+5\n你对静的震慑力+5）\n（ps：此类数值无实际作用，仅作视觉展示）"
+            "eventData": "静对你的好感度+10\n同学们对你的好感度+5\n你对静的震慑力+5"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（提示酱：此类数值无实际作用，仅作视觉展示，wink~）"
         },
         {
             "characterString": "Jing",
@@ -167,22 +172,22 @@
         {
             "characterString": "PangBai",
             "eventString":"Dialogue",
-            "eventData":"放学的铃声打断了思绪"
+            "eventData":"放学的铃声打断了我的思绪"
         },
         {
             "characterString":"Sky",
             "eventString":"Dialogue",
-            "eventData":"（去找同桌说声谢谢吧）"
+            "eventData":"（要不去找同桌说声谢谢吧）"
         },
         {
             "characterString":"Sky",
             "eventString":"Dialogue",
-            "eventData":"哎，刚刚多亏你了同桌，我叫星痕sky，你叫什么名字？"
+            "eventData":"哎，刚刚多亏你了同桌，我叫绘星tsuki，以后有什么事需要帮忙尽管找我"
         },
         {
             "characterString":"Yuki",
             "eventString":"Dialogue",
-            "eventData":"那个...你好，我叫<color=#FF66FF>星梦yuki</color>"
+            "eventData":"唔啊，那个...我叫<color=#FF66FF>星梦yuki</color>"
         },
         {
             "characterString":"Sky",
@@ -192,7 +197,7 @@
         {
             "characterString":"Yuki",
             "eventString":"Dialogue",
-            "eventData":"唔，是的..."
+            "eventData":"是...是的..."
         },
         {
             "characterString":"Sky",
@@ -220,7 +225,7 @@
         {
             "characterString":"Yuki",
             "eventString":"Dialogue",
-            "eventData":"诶诶诶？一起吗？这个。。。我平时都是一个人回家的",
+            "eventData":"诶诶诶？一起吗？那个。。。我平时都是一个人回家的",
             "toDesId":1
         },
         {
@@ -241,7 +246,12 @@
         {
             "characterString":"PangBai",
             "eventString":"Dialogue",
-            "eventData":"星梦yuki加入同行队伍"
+            "eventData":"（提示酱：星梦yuki加入同行队伍）"
+        },
+        {
+            "characterString":"Blank",
+            "eventString":"CloseDialogue",
+            "eventData":""
         }
     ]
 }
