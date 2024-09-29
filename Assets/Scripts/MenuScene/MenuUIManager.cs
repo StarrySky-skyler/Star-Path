@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,7 @@ public class MenuUIManager : MonoBehaviour
     public GameObject btnLayoutMain;            // 主界面所有按钮Layout
     public GameObject panelArchive;             // 存档UI
     public GameObject panelHelp;                // 帮助UI
-    public GameObject FullScreenMask;           // 全屏遮罩
+    public GameObject fullScreenMask;           // 全屏遮罩
 
     private void Start()
     {
@@ -36,8 +35,8 @@ public class MenuUIManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator WaitForScreenMask()
     {
-        FullScreenMask.SetActive(true);
-        ScreenMask screenMask = FullScreenMask.GetComponent<ScreenMask>();
+        fullScreenMask.SetActive(true);
+        ScreenMask screenMask = fullScreenMask.GetComponent<ScreenMask>();
         while (!screenMask.IsFinished)
         {
             yield return null;

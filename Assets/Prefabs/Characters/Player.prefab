@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: -6.9491, y: -0.3488, z: 0}
   m_LocalScale: {x: 4.1580553, y: 4.1580553, z: 4.1580553}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8796843788048523310}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8984309938132650132
@@ -193,4 +194,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a2ae25eef47c7469d43df4d396febf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowMove: 0
+--- !u!1 &4307719437341316160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8796843788048523310}
+  m_Layer: 0
+  m_Name: ColliderPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8796843788048523310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307719437341316160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.1902, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6742614500701213082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

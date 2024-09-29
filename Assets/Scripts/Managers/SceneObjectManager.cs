@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SceneObjectManager : MonoBehaviour
@@ -8,45 +6,32 @@ public class SceneObjectManager : MonoBehaviour
     public static SceneObjectManager Instance;
 
     // 玩家
-    private GameObject player;
-    private PlayerControl playerControl;
+    private GameObject _player;
+    private PlayerControl _playerControl;
+    private Transform _playerColliderPoint;
 
-    // 玩家最近有碰撞盒物体的距离
-    private float minDistance;
-    public GameObject minDistanceGameObject;
-    private SceneObject minDistanceSceneObject;
-    private LayerMask layerMask;
+    public GameObject ClosestGameObject { get; private set; }
+    private LayerMask _layerMask;
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
-        playerControl = player.GetComponent<PlayerControl>();
-        minDistance = float.MaxValue;
-        layerMask = 1 << 3;
+        _player = GameObject.FindWithTag("Player");
+        _playerControl = _player.GetComponent<PlayerControl>();
+        _layerMask = 1 << 3;
+        _playerColliderPoint = _player.transform.Find("ColliderPoint");
         Instance = this;
     }
 
     private void Update()
     {
-        minDistance = float.MaxValue;
-        minDistanceSceneObject = null;
-        minDistanceGameObject = null;
+        ClosestGameObject = null;
         // 获取玩家周围的碰撞盒
-        Vector2 position = new Vector2(player.transform.position.x, player.transform.position.y - 0.164f);
-        Debug.DrawRay(position, playerControl.vector2Towards, Color.blue);
-        RaycastHit2D[] hit = Physics2D.RaycastAll(position, playerControl.vector2Towards, 1f, layerMask);
-        //Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.4f, layerMask);
-        // 获取最短距离和对应物体
-        foreach (var collider in hit)
+        Vector2 position = new Vector2(_playerColliderPoint.position.x, _playerColliderPoint.position.y);
+        Debug.DrawRay(position, _playerControl.Vector2Towards, Color.blue);
+        RaycastHit2D hit = Physics2D.Raycast(position, _playerControl.Vector2Towards, 1f, _layerMask);
+        if (hit.collider)
         {
-            Vector2 colliderPosition = new Vector2(collider.transform.position.x, collider.transform.position.y);
-            float distance = Vector2.Distance(position, colliderPosition);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                minDistanceGameObject = collider.collider.gameObject;
-                minDistanceSceneObject = minDistanceGameObject.GetComponent<SceneObject>();
-            }
+            ClosestGameObject = hit.collider.gameObject;
         }
     }
 
@@ -55,38 +40,38 @@ public class SceneObjectManager : MonoBehaviour
     /// </summary>
     public void HandleObjectInteract()
     {
-        playerControl.allowMove = false;
-        GameManager.Instance.loadMainDialogue = false;
+        _playerControl.AllowMove = false;
+        GameManager.Instance.LoadMainDialogue = false;
 
         HandleDialogue();
-
     }
 
     /// <summary>
     /// 处理场景物品交互对话框
     /// </summary>
-    /// <param name="contents">交互显示的文字，按交互次数排列</param>
     private void HandleDialogue()
     {
         // 如果对话框未显示
-        if (!GameManager.Instance.dialogueDisplayStatus)
+        if (!GameManager.Instance.DialogueDisplayStatus)
         {
             string content;
+            SceneObject closestSceneObject = ClosestGameObject.GetComponent<SceneObject>();
 
-            if (minDistanceSceneObject.interactCount < minDistanceSceneObject.objectDialogue.Length)
+            if (closestSceneObject.InteractCount < closestSceneObject.objectDialogue.Length)
             {
-                content = minDistanceSceneObject.objectDialogue[minDistanceSceneObject.interactCount++];
+                content = closestSceneObject.objectDialogue[closestSceneObject.InteractCount];
+                closestSceneObject.AddInteractCount();
             }
             else
             {
-                content = minDistanceSceneObject.objectDialogue[^1];
+                content = closestSceneObject.objectDialogue[^1];
             }
 
-            GameManager.Instance.SetDialogueUICharacterName(CharacterType.PangBai);
+            GameManager.Instance.SetDialogueUICharacterName(closestSceneObject.speaker);
             GameManager.Instance.SetDialogueUIContent(content);
             GameManager.Instance.DisplayDialogueUI(true);
-            GameManager.Instance.DisplayChoicePanel(false);
-            GameManager.Instance.SetDialogueUIInteractable(true);
+            GameManager.Instance.DisplayChoicePanel();
+            GameManager.Instance.SetDialogueUIInteractable();
         }
     }
 }

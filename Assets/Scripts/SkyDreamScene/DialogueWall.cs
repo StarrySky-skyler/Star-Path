@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueWall : MonoBehaviour
@@ -10,10 +8,7 @@ public class DialogueWall : MonoBehaviour
         {
             Debug.Log($"触发剧情碰撞，当前物体名为{gameObject.name}");
             GameManager.Instance.LoadNextEvent();
-            if (gameObject.name != "DialogueWall5")
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,28 +8,31 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     // z键是否可用
-    public bool interactableZ;
+    public bool InteractableZ { get; set; }
+
     // 是否加载主剧情
-    public bool loadMainDialogue;
+    public bool LoadMainDialogue { get; set; }
+
     // 对话框显示状态
-    public bool dialogueDisplayStatus;
+    public bool DialogueDisplayStatus { get; set; }
 
     void Awake()
     {
         Instance = this;
-        // 限制最高帧率200
-        Application.targetFrameRate = 200;
-        interactableZ = true;
-        loadMainDialogue = true;
+        // 限制最高帧率160
+        Application.targetFrameRate = 160;
+        InteractableZ = true;
+        LoadMainDialogue = true;
     }
 
     private void Start()
     {
         foreach (var gameEvent in GameEventManager.Instance.GameEvents)
         {
-            Debug.Log($"{gameEvent.characterType}:\n{gameEvent.eventData}");
+            Debug.Log($"{gameEvent.CharacterType}:\n{gameEvent.eventData}");
         }
-        Action rest = new Action(restStart);
+
+        Action rest = RestStart;
         WaitForScreenMaskFinished(rest);
     }
 
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         HandleFullScreen();
         HandleCursorDisplay();
-        dialogueDisplayStatus = UIManager.Instance.parentDialogueUI.activeSelf;
+        DialogueDisplayStatus = UIManager.Instance.parentDialogueUI.activeSelf;
         // 按下z键 且 允许继续剧情
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// 剩下的start代码（委托需要）
     /// </summary>
-    private void restStart()
+    private void RestStart()
     {
         // 加载剧情
         LoadNextEvent();
@@ -70,22 +71,22 @@ public class GameManager : MonoBehaviour
         else
         {
             // 加载主线剧情
-            if (loadMainDialogue && interactableZ)
+            if (LoadMainDialogue && InteractableZ)
             {
                 LoadNextEvent();
             }
             // 加载场景物品交互对话
             else
             {
-                if (SceneObjectManager.Instance.minDistanceGameObject != null)
+                if (SceneObjectManager.Instance.ClosestGameObject != null)
                 {
                     // 对话框显示，关闭对话框
-                    if (dialogueDisplayStatus)
+                    if (DialogueDisplayStatus)
                     {
                         Debug.Log("触发关闭场景物品交互对话框事件");
-                        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
-                        DisplayDialogueUI(false);
-                        interactableZ = false;
+                        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = true;
+                        DisplayDialogueUI();
+                        InteractableZ = false;
                     }
                     // 对话框隐藏，显示物品交互对话
                     else
@@ -134,7 +135,7 @@ public class GameManager : MonoBehaviour
     /// <returns>角色名字符串</returns>
     public string GetCharacterName(CharacterType characterType)
     {
-        return GameEventManager.Instance.GetCharacterName(characterType);
+        return GameEventManager.GetCharacterName(characterType);
     }
 
     /// <summary>
@@ -144,6 +145,15 @@ public class GameManager : MonoBehaviour
     public void PlaySound(string soundName)
     {
         AudioManager.Instance.PlaySound(soundName);
+    }
+    
+    /// <summary>
+    /// 播放/切换bgm
+    /// </summary>
+    /// <param name="bgmName">bgm文件名（不加后缀）</param>
+    public void PlayBgm(string bgmName)
+    {
+        AudioManager.Instance.PlayBgm(bgmName);
     }
 
     /// <summary>
@@ -191,32 +201,69 @@ public class GameManager : MonoBehaviour
     {
         // 获取下一事件
         GameEvent nextEvent = GameEventManager.Instance.LoadNextEvent();
-        loadMainDialogue = true;
-        switch (nextEvent.eventType)
+        LoadMainDialogue = true;
+        switch (nextEvent.EventType)
         {
             // 对话事件
             case EventType.Dialogue:
                 Debug.Log("触发对话事件");
-                SetDialogueUIInteractable(true);
-                SetDialogueUICharacterName(nextEvent.characterType);
+                SetDialogueUIInteractable();
+                SetDialogueUICharacterName(nextEvent.CharacterType);
                 SetDialogueUIContent(nextEvent.eventData);
                 DisplayDialogueUI(true);
-                DisplayChoicePanel(false);
-                SetDialogueUIInteractable(true);
+                DisplayChoicePanel();
+                SetDialogueUIInteractable();
                 // 处理非选择的剧情跳转
                 if (nextEvent.toId != 0)
                 {
-                    bool activate = true;
+                    var activate = true;
                     while (activate)
                     {
                         GameEvent next = GameEventManager.Instance.LoadNextEvent();
                         if (next.toDesId == nextEvent.toId)
                         {
-                            GameEventManager.Instance.eventIndex -= 1;
+                            GameEventManager.EventIndex -= 1;
                             activate = false;
                         }
                     }
                 }
+                
+                // 处理礼物相关
+                if (nextEvent.giftDetect == 1)
+                {
+                    var giftData = GiftOperate.Instance.ReadGift();
+                    bool activate;
+                    switch (giftData.giftType)
+                    {
+                        // 吃东西
+                        case 1:
+                            activate = true;
+                            while (activate)
+                            {
+                                GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                                if (next.giftDesId == 1)
+                                {
+                                    GameEventManager.EventIndex -= 1;
+                                    activate = false;
+                                }
+                            }
+                            break;
+                        // 送礼物
+                        case 2:
+                            activate = true;
+                            while (activate)
+                            {
+                                GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                                if (next.giftDesId == 2)
+                                {
+                                    GameEventManager.EventIndex -= 1;
+                                    activate = false;
+                                }
+                            }
+                            break;
+                    }
+                }
+
                 break;
 
             // 选择事件
@@ -232,35 +279,38 @@ public class GameManager : MonoBehaviour
                 Debug.Log("触发播放音效事件");
                 PlaySound(nextEvent.eventData);
                 break;
+            
+            // bgm事件
+            case EventType.Bgm:
+                Debug.Log("触发切换bgm事件");
+                PlayBgm(nextEvent.eventData);
+                break;
 
             // 关闭对话框事件
             case EventType.CloseDialogue:
                 Debug.Log("触发关闭对话框事件");
-                DisplayDialogueUI(false);
-                interactableZ = false;
-                loadMainDialogue = false;
-                GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = true;
+                DisplayDialogueUI();
+                InteractableZ = false;
+                LoadMainDialogue = false;
+                GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = true;
                 break;
 
             // 载入下一场景事件
             case EventType.LoadNextScene:
                 Debug.Log("触发载入下一场景事件");
-                DisplayDialogueUI(false);
-                DisplayChoicePanel(false);
-                Action loadNext = new Action(ScenesManager.Instance.LoadNextScene);
+                DisplayDialogueUI();
+                DisplayChoicePanel();
+                Action loadNext = ScenesManager.Instance.LoadNextScene;
                 WaitForScreenMaskFinished(loadNext, false);
                 break;
 
             case EventType.LoadMenuScene:
                 Debug.Log("载入初始界面");
-                DisplayChoicePanel(false);
-                DisplayDialogueUI(false);
-                GameEventManager.Instance.eventIndex = 0;
-                Action loadMenu = new Action(LoadMenuSceneAction);
+                DisplayChoicePanel();
+                DisplayDialogueUI();
+                GameEventManager.EventIndex = 0;
+                Action loadMenu = LoadMenuSceneAction;
                 WaitForScreenMaskFinished(loadMenu, false);
-                break;
-
-            default:
                 break;
         }
     }
@@ -304,6 +354,7 @@ public class GameManager : MonoBehaviour
     /// 显示/隐藏选择框
     /// </summary>
     /// <param name="show"></param>
+    /// <param name="choicesCount"></param>
     public void DisplayChoicePanel(bool show = false, int choicesCount = 0)
     {
         UIManager.Instance.DisplayChoicePanel(show, choicesCount);

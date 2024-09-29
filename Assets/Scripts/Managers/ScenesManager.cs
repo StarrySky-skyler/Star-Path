@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,12 +25,11 @@ public class ScenesManager : MonoBehaviour
         for (int i = 0; i < sceneCount; i++)
         {
             string[] strs = SceneUtility.GetScenePathByBuildIndex(i).Split('/');
-            string str = strs[strs.Length - 1];
+            string str = strs[^1];
             strs = str.Split('.');
             str = strs[0];
             if (currentSceneName == str)
             {
-
                 SceneManager.LoadScene(i + 1);
                 break;
             }

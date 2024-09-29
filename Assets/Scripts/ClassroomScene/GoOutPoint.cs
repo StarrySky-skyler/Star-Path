@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GoOutPoint : MonoBehaviour
@@ -10,9 +8,9 @@ public class GoOutPoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // 禁止移动
-            collision.gameObject.GetComponent<PlayerControl>().allowMove = false;
+            collision.gameObject.GetComponent<PlayerControl>().AllowMove = false;
             // 等待结束遮罩，载入回家的路场景
-            Action nextOperation = new Action(GameManager.Instance.LoadNextScene);
+            Action nextOperation = GameManager.Instance.LoadNextEvent;
             GameManager.Instance.WaitForScreenMaskFinished(nextOperation, false);
         }
     }

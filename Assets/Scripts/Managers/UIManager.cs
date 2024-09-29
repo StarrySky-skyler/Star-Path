@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
+using System.IO;
+using System.Text;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,8 +12,10 @@ public class UIManager : MonoBehaviour
 
     // 对话框父物体
     public GameObject parentDialogueUI;
+
     // TMP角色名文字组件
     public TextMeshProUGUI tmpDialogueCharacter;
+
     // TMP剧情内容文字组件
     public TextMeshProUGUI tmpDialogueContent;
 
@@ -24,13 +25,19 @@ public class UIManager : MonoBehaviour
 
     // 选择框父物体
     public GameObject buttonChoicesParent;
+
     // 选择框
     public GameObject[] buttonChoices;
+
     // 选择框文本
     public TextMeshProUGUI[] tmpChoices;
 
+    // 剧情完成后的提示箭头
+    public GameObject dialogueNextTip;
+
     // 是否正在逐字输出
     public bool IsOutputingDialogue { get; private set; }
+
     // 是否跳过逐字输出
     public bool NeedSkip { get; set; }
 
@@ -38,6 +45,9 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
         IsOutputingDialogue = false;
+        startScreenMask.SetActive(true);
+        endScreenMask.SetActive(false);
+        dialogueNextTip.SetActive(false);
     }
 
     /// <summary>
@@ -46,16 +56,29 @@ public class UIManager : MonoBehaviour
     /// <param name="id">按钮id</param>
     public void ButtonChoiceClick(int id)
     {
-        bool activate = true;
+        var activate = true;
         Cursor.lockState = CursorLockMode.Locked;
         while (activate)
         {
             GameEvent next = GameEventManager.Instance.LoadNextEvent();
             if (next.jumpId == id)
             {
-                GameEventManager.Instance.eventIndex -= 1;
+                GameEventManager.EventIndex -= 1;
                 GameManager.Instance.LoadNextEvent();
                 activate = false;
+            }
+
+            // 保存礼物数据
+            switch (next.jumpId)
+            {
+                // 吃东西
+                case 1:
+                    GiftOperate.Instance.WriteGift(1);
+                    break;
+                // 送礼物
+                case 2:
+                    GiftOperate.Instance.WriteGift(2);
+                    break;
             }
         }
     }
@@ -72,11 +95,13 @@ public class UIManager : MonoBehaviour
         {
             btn.SetActive(false);
         }
+
         // 显示按钮数对应的按钮
         for (int i = 0; i < choicesCount; i++)
         {
             buttonChoices[i].SetActive(true);
         }
+
         // 显示按钮文本
         if (show)
         {
@@ -103,7 +128,7 @@ public class UIManager : MonoBehaviour
     /// <param name="interactable">是否可点击</param>
     public void SetDialogueUIInteractable(bool interactable = true)
     {
-        GameManager.Instance.interactableZ = interactable;
+        GameManager.Instance.InteractableZ = interactable;
     }
 
     /// <summary>
@@ -134,7 +159,8 @@ public class UIManager : MonoBehaviour
     {
         IsOutputingDialogue = true;
         tmpDialogueContent.text = "";
-        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().allowMove = false;
+        dialogueNextTip.SetActive(false);
+        GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = false;
         // 遍历对话框内容
         foreach (var letter in content)
         {
@@ -146,12 +172,15 @@ public class UIManager : MonoBehaviour
             else
             {
                 tmpDialogueContent.text = content;
+                dialogueNextTip.SetActive(true);
                 IsOutputingDialogue = false;
                 NeedSkip = false;
                 yield break;
             }
         }
+
         IsOutputingDialogue = false;
+        dialogueNextTip.SetActive(true);
     }
 
     /// <summary>
@@ -173,6 +202,7 @@ public class UIManager : MonoBehaviour
             {
                 yield return null;
             }
+
             restOperation();
         }
         // 结束遮罩
@@ -183,6 +213,7 @@ public class UIManager : MonoBehaviour
             {
                 yield return null;
             }
+
             restOperation();
         }
     }

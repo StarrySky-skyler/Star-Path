@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +11,7 @@ public class GameEvent : ISerializationCallbackReceiver
     /// <summary>
     /// 角色枚举
     /// </summary>
-    [NonSerialized]
-    public CharacterType characterType;
+    [NonSerialized] public CharacterType CharacterType;
 
     /// <summary>
     /// 角色枚举对应的字符串
@@ -23,8 +21,7 @@ public class GameEvent : ISerializationCallbackReceiver
     /// <summary>
     /// 事件类型枚举
     /// </summary>
-    [NonSerialized]
-    public EventType eventType;
+    [NonSerialized] public EventType EventType;
 
     /// <summary>
     /// 事件类型对应的字符串
@@ -37,19 +34,29 @@ public class GameEvent : ISerializationCallbackReceiver
     public string eventData;
 
     /// <summary>
-    /// 选择跳转id
+    /// 选择按钮事件跳转目标id
     /// </summary>
     public int jumpId;
 
     /// <summary>
-    /// 非选择主动跳转id
+    /// 剧情读取到toId后，跳转到toDesId
     /// </summary>
     public int toId;
 
     /// <summary>
-    /// 非选择主动目标id
+    /// toId的目标剧情
     /// </summary>
     public int toDesId;
+
+    /// <summary>
+    /// 是否侦测礼物，0为无需跳转，1为需要跳转
+    /// </summary>
+    public int giftDetect;
+
+    /// <summary>
+    /// 礼物跳转id，1为吃东西，2为送礼物
+    /// </summary>
+    public int giftDesId;
 
     /// <summary>
     /// 反序列化后，信息转为对象
@@ -60,8 +67,8 @@ public class GameEvent : ISerializationCallbackReceiver
         CharacterType type = (CharacterType)Enum.Parse(typeof(CharacterType), characterString);
         EventType type2 = (EventType)Enum.Parse(typeof(EventType), eventString);
         // 枚举保存
-        characterType = type;
-        eventType = type2;
+        CharacterType = type;
+        EventType = type2;
     }
 
     /// <summary>
@@ -69,8 +76,8 @@ public class GameEvent : ISerializationCallbackReceiver
     /// </summary>
     public void OnBeforeSerialize()
     {
-        characterString = characterType.ToString();
-        eventString = eventType.ToString();
+        characterString = CharacterType.ToString();
+        eventString = EventType.ToString();
     }
 }
 
@@ -114,6 +121,11 @@ public enum EventType
     /// 音效事件，数据为音效文件
     /// </summary>
     Sound,
+    
+    /// <summary>
+    /// bgm事件，数据为bgm文件
+    /// </summary>
+    Bgm,
 
     /// <summary>
     /// 关闭对话框
