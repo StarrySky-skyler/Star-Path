@@ -8,6 +8,7 @@ public class SceneObjectManager : MonoBehaviour
     // 玩家
     private GameObject _player;
     private PlayerControl _playerControl;
+    private Transform _playerColliderPoint;
 
     public GameObject ClosestGameObject { get; private set; }
     private LayerMask _layerMask;
@@ -17,6 +18,7 @@ public class SceneObjectManager : MonoBehaviour
         _player = GameObject.FindWithTag("Player");
         _playerControl = _player.GetComponent<PlayerControl>();
         _layerMask = 1 << 3;
+        _playerColliderPoint = _player.transform.Find("ColliderPoint");
         Instance = this;
     }
 
@@ -24,10 +26,10 @@ public class SceneObjectManager : MonoBehaviour
     {
         ClosestGameObject = null;
         // 获取玩家周围的碰撞盒
-        Vector2 position = new Vector2(_player.transform.position.x, _player.transform.position.y - 0.164f);
+        Vector2 position = new Vector2(_playerColliderPoint.position.x, _playerColliderPoint.position.y);
         Debug.DrawRay(position, _playerControl.Vector2Towards, Color.blue);
         RaycastHit2D hit = Physics2D.Raycast(position, _playerControl.Vector2Towards, 1f, _layerMask);
-        if (hit.collider != null)
+        if (hit.collider)
         {
             ClosestGameObject = hit.collider.gameObject;
         }

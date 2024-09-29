@@ -34,19 +34,29 @@ public class GameEvent : ISerializationCallbackReceiver
     public string eventData;
 
     /// <summary>
-    /// 选择跳转id
+    /// 选择按钮事件跳转目标id
     /// </summary>
     public int jumpId;
 
     /// <summary>
-    /// 非选择主动跳转id
+    /// 剧情读取到toId后，跳转到toDesId
     /// </summary>
     public int toId;
 
     /// <summary>
-    /// 非选择主动目标id
+    /// toId的目标剧情
     /// </summary>
     public int toDesId;
+
+    /// <summary>
+    /// 是否侦测礼物，0为无需跳转，1为需要跳转
+    /// </summary>
+    public int giftDetect;
+
+    /// <summary>
+    /// 礼物跳转id，1为吃东西，2为送礼物
+    /// </summary>
+    public int giftDesId;
 
     /// <summary>
     /// 反序列化后，信息转为对象
@@ -111,6 +121,11 @@ public enum EventType
     /// 音效事件，数据为音效文件
     /// </summary>
     Sound,
+    
+    /// <summary>
+    /// bgm事件，数据为bgm文件
+    /// </summary>
+    Bgm,
 
     /// <summary>
     /// 关闭对话框

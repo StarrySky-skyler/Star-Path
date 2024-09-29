@@ -970,9 +970,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171797685111931612, guid: d79944bab5347a04480025cfc60fadfa,
         type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171797685111931612, guid: d79944bab5347a04480025cfc60fadfa,
+        type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c485f4440e5649340ac9bf5936b13686, type: 3}
+    - target: {fileID: 1171797685111931612, guid: d79944bab5347a04480025cfc60fadfa,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171797685111931612, guid: d79944bab5347a04480025cfc60fadfa,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -3,7 +3,7 @@
         {
             "characterString": "Sky",
             "eventString": "Dialogue",
-            "eventData": "啊，头好晕（扶住额头），这里是哪儿？"
+            "eventData": "啊，头好晕（扶住额头），这里是哪儿？是梦里吗？"
         },
         {
             "characterString": "Sky",
@@ -84,13 +84,13 @@
             "characterString": "Sky",
             "eventString": "Dialogue",
             "eventData": "核心",
-            "jumpId": 1
+            "jumpId": 2
         },
         {
             "characterString": "Jing",
             "eventString": "Dialogue",
             "eventData": "这个中心点是<color=#FF6666>质心</color>，上课注意集中精神，这节课你站着听",
-            "jumpId": 0
+            "jumpId": 1
         },
         {
             "characterString": "PangBai",
@@ -106,7 +106,7 @@
             "characterString": "Jing",
             "eventString": "Dialogue",
             "eventData": "对，坐下吧，不要有下次",
-            "jumpId": 3
+            "jumpId": 4
         },
         {
             "characterString": "PangBai",
@@ -122,7 +122,7 @@
             "characterString": "PangBai",
             "eventString": "Dialogue",
             "eventData": "就在犹豫不决时，同桌偷偷递给你一张纸条",
-            "jumpId": 2
+            "jumpId": 3
         },
         {
             "characterString": "PangBai",
@@ -213,14 +213,14 @@
             "characterString":"Sky",
             "eventString":"Dialogue",
             "eventData":"正巧我也走东门回家，我听说那边开了一家很好吃的店，这个点过去刚好人很少，一起尝尝吗？",
-            "jumpId":0,
+            "jumpId":1,
             "toId":1
         },
         {
             "characterString":"Sky",
             "eventString":"Dialogue",
             "eventData":"正巧我也走东门回家，一起吗？",
-            "jumpId":1
+            "jumpId":2
         },
         {
             "characterString":"Yuki",
@@ -252,6 +252,403 @@
             "characterString":"Blank",
             "eventString":"CloseDialogue",
             "eventData":""
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "对了，你喜欢听歌吗，我最近听到一首很好听的歌叫《星绊》"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "星...绊...唔，感觉这个名字好有意境，像是在描绘星间的羁绊，真好啊"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "哈哈哈是的，我带了耳机，给，一起听吧"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "Bgm",
+            "eventData": "星绊"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "哇，真的好好听！那个，谢谢(๑• . •๑)"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（星梦yuki对你的好感度+20）"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（提示酱：我才不会告诉你我开发星途的时候经常这首歌单曲循环呢）"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "哈哈哈，没什么啦。能和别人一起在好听的歌中畅想，本就非常可爱！"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "感觉这首歌将电音风格和甜美的声线融合，我emo的时候经常听这首歌，就像，我们并不遥远..."
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "嗯...（闭上眼）就像遨游在星海中，前方充满着希望和热情一样"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "唔，那个，听说你是转校生，是因为什么原因转到我们学校的呢？（好奇）"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "至于这个，我父母最近在这边找到不错的工作，就转过来了。虽然我成绩也一直垫底就是",
+            "giftDetect": 1
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "我到家了，那个谢谢你的陪伴...",
+            "giftDesId": 2
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "<color=#FF6666>不准谢！</color>对了，作为今天物理课你帮我的回报，这个送你\n（提示酱：请认真考虑哦，诶嘿）"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "Choice",
+            "eventData": "超级美丽星空限定版<color=#FF6666>日记本</color>|定制语录枫叶蝴蝶<color=#FF6666>书签</color>|最近很火的<color=#FF6666>明星周边</color>"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "唔哇，居然是我最喜欢的星空日记本，好开心啊~",
+            "jumpId": 1,
+            "toId": 2
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "唔哇，居然是我最喜欢的枫叶蝴蝶书签，好开心啊~",
+            "jumpId": 2,
+            "toId": 2
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "唔哇，居然是我最喜欢的周边，好开心啊~",
+            "jumpId": 3
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（星梦yuki对你的好感度+30）",
+            "toDesId": 2
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "哈哈哈，你高兴就好，时候不早了，那我先走了，拜拜，星梦yuki"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "白白，绘星tsuki"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "Yuki的身影渐渐远去..."
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "（嘶，刚刚那句“<color=#FF6666>不准谢</color>！”会不会有点太严厉了一点？yuki会怎么想呢）",
+            "toId": 4
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "【此处请脑补一个餐馆的场景，绘星（作者）太懒找素材了，见谅见谅hhh（捂脸）】",
+            "giftDesId": 1
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "到了就是这里，今天我请客"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "（请她吃什么好呢？）\n（提示酱：请认真考虑哦，诶嘿）"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "Choice",
+            "eventData": "闪电泡芙配醒时春山奶茶|马卡龙配清茶|超级无敌巨无霸圣代"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "你点了一份<color=#FF6666>超级无敌巨无霸圣代</color>",
+            "jumpId": 3
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "诶诶诶？虽然很感谢，但是根本吃不完啊喂"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "这不是还有我呢吗（坏笑）"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "啊啊啊啊，我生气了（佯嗔）\n（提示酱：佯嗔意为假装生气）"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（星梦yuki对你的好感度+10）"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "你和星梦yuki费了好大功夫终于吃完了",
+            "toId": 3
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "你点了一份<color=#FF8000>马卡龙</color>配<color=#33FF33>清茶</color>",
+            "jumpId": 2
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "很清纯的组合诶"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "马卡龙的甜和清茶的苦混合在一起，很适合放松的时候吃"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "哇你懂的好多啊，好久没像这样放松了"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（星梦yuki对你的好感度+15）"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "惬意的时光恰似一场「梦」，现在「梦」快醒了",
+            "toId": 3
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "你点了一份<color=#66B2FF>闪电泡芙</color>配<color=#FF66FF>醒时春山奶茶</color>",
+            "jumpId": 1
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "噗（捂嘴笑），好有新意的名字，不会是什么黑暗料理吧"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "咳咳，当然不是，你吃了就知道了"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "（尝了一口）"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "哇！真的好好吃，好久没这么有胃口了"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "哎哎，慢点慢点"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（星梦yuki对你的好感度+20）\n（提示酱：我最爱的闪电泡芙给我留一个啊！）"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "............快乐的时光总是转瞬即逝"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "那个谢谢...绘星tsuki，时间不早了，我先自己回去吧",
+            "toDesId": 3
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "好，拜拜，星梦yuki，路上注意安全"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "白白，绘星tsuki"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "（yuki刚刚好可爱啊，不对不对，我怎么直接叫yuki了？！）"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "LoadNextScene",
+            "eventData": "",
+            "toDesId": 4
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "一段时间后..."
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "（轻轻拍了拍你）tsuki，诶，tsuki，别睡了，快醒醒"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "啊—（揉了揉眼睛，打了个哈欠）yuki，怎么了吗"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "tsuki，过了这节课就放寒假了，你说到时候我们去哪里玩好呀"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "你想去哪里玩呢（wink）"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "（用力地想了一下）唔，不知道诶"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "此时静注意到了你，你们相视而笑"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "咳咳（一本正经）yuki，虽然你成绩还不错，但不要被我带坏了,现在还在上课呢（坏笑）"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（你对静的震慑度清零，静的<color=#FF6666>支援次数</color>+1）"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "那，yuki，放学再说，先听课吧"
+        },
+        {
+            "characterString":"Blank",
+            "eventString":"Sound",
+            "eventData":"bell"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "下课铃的响起，标志着高三上的结束，同学们也迎来了难得的寒假"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "呜呼！放假咯"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "好诶，终于放假啦。sky，你还没回答我呢，我们去哪里玩啊"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "你先猜猜看（坏笑）"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "图书馆！"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "图书馆我会睡着的（扶额）再猜猜"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "唔......啊，我想不出来"
+        },
+        {
+            "characterString": "Sky",
+            "eventString": "Dialogue",
+            "eventData": "嘿嘿明天我带你去就知道了，现在先回家吧"
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "第二天黄昏前..."
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "LoadNextScene",
+            "eventData": ""
         }
     ]
 }

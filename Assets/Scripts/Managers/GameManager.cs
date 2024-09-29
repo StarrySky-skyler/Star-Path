@@ -146,6 +146,15 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySound(soundName);
     }
+    
+    /// <summary>
+    /// 播放/切换bgm
+    /// </summary>
+    /// <param name="bgmName">bgm文件名（不加后缀）</param>
+    public void PlayBgm(string bgmName)
+    {
+        AudioManager.Instance.PlayBgm(bgmName);
+    }
 
     /// <summary>
     /// 显示对话框
@@ -218,6 +227,42 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
+                
+                // 处理礼物相关
+                if (nextEvent.giftDetect == 1)
+                {
+                    var giftData = GiftOperate.Instance.ReadGift();
+                    bool activate;
+                    switch (giftData.giftType)
+                    {
+                        // 吃东西
+                        case 1:
+                            activate = true;
+                            while (activate)
+                            {
+                                GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                                if (next.giftDesId == 1)
+                                {
+                                    GameEventManager.EventIndex -= 1;
+                                    activate = false;
+                                }
+                            }
+                            break;
+                        // 送礼物
+                        case 2:
+                            activate = true;
+                            while (activate)
+                            {
+                                GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                                if (next.giftDesId == 2)
+                                {
+                                    GameEventManager.EventIndex -= 1;
+                                    activate = false;
+                                }
+                            }
+                            break;
+                    }
+                }
 
                 break;
 
@@ -233,6 +278,12 @@ public class GameManager : MonoBehaviour
             case EventType.Sound:
                 Debug.Log("触发播放音效事件");
                 PlaySound(nextEvent.eventData);
+                break;
+            
+            // bgm事件
+            case EventType.Bgm:
+                Debug.Log("触发切换bgm事件");
+                PlayBgm(nextEvent.eventData);
                 break;
 
             // 关闭对话框事件

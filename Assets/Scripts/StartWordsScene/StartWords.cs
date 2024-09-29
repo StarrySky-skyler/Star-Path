@@ -34,7 +34,7 @@ public class StartWords : MonoBehaviour
         }
 
         Destroy(startMask);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         endMask.SetActive(true);
 
         // 等待结束遮罩完成

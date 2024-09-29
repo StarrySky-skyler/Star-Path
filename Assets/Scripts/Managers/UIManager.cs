@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using TMPro;
+using System.IO;
+using System.Text;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -29,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     // 选择框文本
     public TextMeshProUGUI[] tmpChoices;
-    
+
     // 剧情完成后的提示箭头
     public GameObject dialogueNextTip;
 
@@ -54,7 +56,7 @@ public class UIManager : MonoBehaviour
     /// <param name="id">按钮id</param>
     public void ButtonChoiceClick(int id)
     {
-        bool activate = true;
+        var activate = true;
         Cursor.lockState = CursorLockMode.Locked;
         while (activate)
         {
@@ -64,6 +66,19 @@ public class UIManager : MonoBehaviour
                 GameEventManager.EventIndex -= 1;
                 GameManager.Instance.LoadNextEvent();
                 activate = false;
+            }
+
+            // 保存礼物数据
+            switch (next.jumpId)
+            {
+                // 吃东西
+                case 1:
+                    GiftOperate.Instance.WriteGift(1);
+                    break;
+                // 送礼物
+                case 2:
+                    GiftOperate.Instance.WriteGift(2);
+                    break;
             }
         }
     }
