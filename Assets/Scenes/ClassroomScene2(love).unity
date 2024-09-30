@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: 1
   objectDialogue:
-  - "\u540C\u684C\u661F\u68A6yuki\u7684\u8BFE\u684C"
+  - "yuki\u7684\u8BFE\u684C\uFF0C\u6328\u5728\u6211\u7684\u8BFE\u684C\u65C1"
 --- !u!1 &844921067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,7 +3952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: 1
   objectDialogue:
-  - "\u8FD9\u662F\u6211\u7684\u8BFE\u684C\uFF0C\u6700\u719F\u6089\u7684\u5730\u65B9"
+  - "\u8FD9\u662F\u6211\u7684\u8BFE\u684C\uFF0C\u548Cyuki\u7684\u8BFE\u684C\u6328\u5728\u4E00\u8D77\uFF0C\u5145\u6EE1\u56DE\u5FC6\u7684\u5730\u65B9"
 --- !u!1 &2002127570
 GameObject:
   m_ObjectHideFlags: 0

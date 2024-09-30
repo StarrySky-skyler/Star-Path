@@ -411,7 +411,7 @@
         {
             "characterString": "Blank",
             "eventString": "Choice",
-            "eventData": "闪电泡芙配醒时春山奶茶|马卡龙配清茶|超级无敌巨无霸圣代"
+            "eventData": "<color=#66B2FF>闪电泡芙</color>配<color=#FF66FF>醒时春山奶茶</color>|<color=#FF8000>马卡龙</color>配<color=#33FF33>清茶</color>|<color=#FF6666>超级无敌巨无霸圣代</color>"
         },
         {
             "characterString": "PangBai",
@@ -511,7 +511,7 @@
         {
             "characterString": "PangBai",
             "eventString": "Dialogue",
-            "eventData": "（星梦yuki对你的好感度+20）\n（提示酱：我最爱的闪电泡芙给我留一个啊！）"
+            "eventData": "（星梦yuki对你的好感度+20）\n（提示酱：我最爱的<color=#66B2FF>闪电泡芙</color>给我留一个啊！）"
         },
         {
             "characterString": "PangBai",
@@ -608,7 +608,7 @@
         {
             "characterString": "Sky",
             "eventString": "Dialogue",
-            "eventData": "呜呼！放假咯"
+            "eventData": "芜湖！放假咯"
         },
         {
             "characterString": "Yuki",
