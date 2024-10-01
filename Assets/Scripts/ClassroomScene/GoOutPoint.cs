@@ -1,17 +1,22 @@
 using System;
+using Managers;
+using Player;
 using UnityEngine;
 
-public class GoOutPoint : MonoBehaviour
+namespace ClassroomScene
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class GoOutPoint : MonoBehaviour
     {
-        if (collision.gameObject.CompareTag("Player"))
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            // 禁止移动
-            collision.gameObject.GetComponent<PlayerControl>().AllowMove = false;
-            // 等待结束遮罩，载入回家的路场景
-            Action nextOperation = GameManager.Instance.LoadNextEvent;
-            GameManager.Instance.WaitForScreenMaskFinished(nextOperation, false);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // 禁止移动
+                collision.gameObject.GetComponent<PlayerControl>().AllowMove = false;
+                // 等待结束遮罩，载入回家的路场景
+                Action nextOperation = GameManager.Instance.LoadNextEvent;
+                GameManager.Instance.WaitForScreenMaskFinished(nextOperation, false);
+            }
         }
     }
 }

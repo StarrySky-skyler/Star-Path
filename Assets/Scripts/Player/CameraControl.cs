@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public class CameraControl : MonoBehaviour
+namespace Player
 {
-    private GameObject _player;
-    private Vector3 _relateVector;
-
-    void Awake()
+    public class CameraControl : MonoBehaviour
     {
-        _player = GameObject.FindWithTag("Player");
-    }
+        private GameObject _player;
+        private Vector3 _relateVector;
 
-    void Start()
-    {
-        _relateVector = transform.position - _player.transform.position;
-    }
+        void Awake()
+        {
+            _player = GameObject.FindWithTag("Player");
+        }
 
-    void Update()
-    {
-        // 相机跟随玩家
-        transform.position = _player.transform.position + _relateVector;
+        void Start()
+        {
+            _relateVector = transform.position - _player.transform.position;
+        }
+
+        void Update()
+        {
+            // 相机跟随玩家
+            transform.position = _player.transform.position + _relateVector;
+        }
     }
 }

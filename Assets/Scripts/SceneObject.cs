@@ -1,3 +1,4 @@
+using LocalDataHandler;
 using UnityEngine;
 
 public class SceneObject : MonoBehaviour
@@ -7,7 +8,7 @@ public class SceneObject : MonoBehaviour
     /// </summary>
     public int InteractCount { get; private set; }
 
-    public CharacterType speaker = CharacterType.Sky;
+    public CharacterType speaker;
 
     /// <summary>
     /// 交互对话

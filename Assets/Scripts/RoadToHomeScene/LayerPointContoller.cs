@@ -1,31 +1,31 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LayerPointContoller : MonoBehaviour
+namespace RoadToHomeScene
 {
-    private GameObject _player;
-
-    private void Awake()
+    public class LayerPointContoller : MonoBehaviour
     {
-        _player = GameObject.FindWithTag("Player");
-    }
+        private GameObject _player;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        var spriteRenderer = _player.GetComponent<SpriteRenderer>();
-        switch (gameObject.tag)
+        private void Awake()
         {
-            case "LayerPoint1":
-                spriteRenderer.sortingLayerName = "Layer 1";
-                break;
-            case "LayerPoint2":
-                spriteRenderer.sortingLayerName = "Layer 2";
-                break;
-            case "LayerPoint3":
-                spriteRenderer.sortingLayerName = "Layer 3";
-                break;
+            _player = GameObject.FindWithTag("Player");
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            var spriteRenderer = _player.GetComponent<SpriteRenderer>();
+            switch (gameObject.tag)
+            {
+                case "LayerPoint1":
+                    spriteRenderer.sortingLayerName = "Layer 1";
+                    break;
+                case "LayerPoint2":
+                    spriteRenderer.sortingLayerName = "Layer 2";
+                    break;
+                case "LayerPoint3":
+                    spriteRenderer.sortingLayerName = "Layer 3";
+                    break;
+            }
         }
     }
 }

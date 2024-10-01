@@ -1708,7 +1708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u79FB\u52A8:wsad\u6216\u4E0A\u4E0B\u5DE6\u53F3\u7BAD\u5934\n\u4EA4\u4E92/\u786E\u8BA4:z\n\u83DC\u5355/\u53D6\u6D88:x\n\u5168\u5C4F\u6A21\u5F0F\u5207\u6362:F11\n\u663E\u793A\u9F20\u6807\uFF1Aalt\n\u52A0\u901F\u5954\u8DD1\uFF1Ashift"
+  m_text: "\u79FB\u52A8:wsad\u6216\u4E0A\u4E0B\u5DE6\u53F3\u7BAD\u5934\n\n\u4EA4\u4E92/\u786E\u8BA4:z\n\u53D6\u6D88:x\n\u83DC\u5355:c\n\n\u5168\u5C4F\u6A21\u5F0F\u5207\u6362:F11\n\u663E\u793A\u9F20\u6807\uFF1Aalt\n\u52A0\u901F\u5954\u8DD1\uFF1Ashift"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7f10f5421651a14f840f36d02e9ea90, type: 2}
   m_sharedMaterial: {fileID: 8024750384803071300, guid: d7f10f5421651a14f840f36d02e9ea90,
@@ -1736,15 +1736,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 66.9
+  m_fontSizeBase: 66.9
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
