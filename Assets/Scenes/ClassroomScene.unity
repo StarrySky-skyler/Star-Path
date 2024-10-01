@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E0D\u505C\u6446\u52A8\u7684\u949F\uFF0C\u8C61\u5F81\u7740\u6C38\u6052..."
 --- !u!1 &295078079
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u9759\u7684\u8BB2\u53F0\uFF0C\u4E0D\u77E5\u9053\u91CC\u9762\u85CF\u4E86\u4EC0\u4E48\u5462"
   - "\u8981\u7FFB\u7FFB\u770B\u5417"
@@ -2176,7 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -2688,7 +2688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3040,7 +3040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3226,7 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3322,7 +3322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3418,7 +3418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3514,7 +3514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3610,7 +3610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3706,7 +3706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u5F88\u660E\u663E\uFF0C\u8FD9\u662F\u4E00\u5F20\u666E\u901A\u7684\u8BFE\u684C"
   - "\u4E00\u5F20\u8BFE\u684C\u800C\u5DF2..."
@@ -3802,7 +3802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -4043,7 +4043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"
@@ -4222,7 +4222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe5714389e4ab646994abb175af7912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 1
+  speaker: 0
   objectDialogue:
   - "\u4E00\u4E2A\u968F\u610F\u6446\u653E\u7684\u51F3\u5B50\uFF0C\u4F5C\u8005\u4E5F\u771F\u591F\u61D2\u7684"
   - "\u53EA\u662F\u4E00\u4E2A\u51F3\u5B50\uFF0C\u4E0D\u8FC7\u771F\u7684\u597D\u6321\u8DEF\u554A\u5582"

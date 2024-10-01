@@ -1,12 +1,12 @@
 ﻿{
     "list": [
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "啊，头好晕（扶住额头），这里是哪儿？是梦里吗？"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "总感觉<color=#FF6666>似曾相识</color>，四处走走看吧"
         },
@@ -81,7 +81,7 @@
             "eventData": "不知道|随便蒙一个吧|让我先想想|质心"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "核心",
             "jumpId": 2
@@ -95,7 +95,7 @@
         {
             "characterString": "PangBai",
             "eventString": "Dialogue",
-            "eventData": "<color=#FF6666>BE2：或许有时候犹豫也是种智慧？</color>"
+            "eventData": "<color=#FF6666>Bad Ending 2：或许有时候犹豫也是种智慧？</color>"
         },
         {
             "characterString": "Blank",
@@ -111,7 +111,7 @@
         {
             "characterString": "PangBai",
             "eventString": "Dialogue",
-            "eventData": "<color=#FF6666>BE1：你太厉害了啊喂</color>"
+            "eventData": "<color=#FF6666>Bad Ending 1：你太厉害了啊喂</color>"
         },
         {
             "characterString": "Blank",
@@ -130,7 +130,7 @@
             "eventData": "<color=#E855A4>“质心”</color>"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "啊，这个点是整个系统的质心。一般来说，在该系统中天体的质量越大，它就离这个点越近"
         },
@@ -175,12 +175,12 @@
             "eventData":"放学的铃声打断了我的思绪"
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"（要不去找同桌说声谢谢吧）"
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"哎，刚刚多亏你了同桌，我叫绘星tsuki，以后有什么事需要帮忙尽管找我"
         },
@@ -190,7 +190,7 @@
             "eventData":"唔啊，那个...我叫<color=#FF66FF>星梦yuki</color>"
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"星梦yuki，那以后多多关注啦，对了，放学你走东门回家吗？"
         },
@@ -200,7 +200,7 @@
             "eventData":"是...是的..."
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"（看起来她不太爱说话，有点紧张啊，那可不行。社牛如我，做点什么报答一下她呢？）"
         },
@@ -210,14 +210,14 @@
             "eventData":"请她吃东西|给她送礼物"
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"正巧我也走东门回家，我听说那边开了一家很好吃的店，这个点过去刚好人很少，一起尝尝吗？",
             "jumpId":1,
             "toId":1
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"正巧我也走东门回家，一起吗？",
             "jumpId":2
@@ -229,7 +229,7 @@
             "toDesId":1
         },
         {
-            "characterString":"Sky",
+            "characterString":"Tsuki",
             "eventString":"Dialogue",
             "eventData":"啊？那多无聊啊，走吧，路上还可以一起聊聊天什么的"
         },
@@ -254,7 +254,7 @@
             "eventData":""
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "对了，你喜欢听歌吗，我最近听到一首很好听的歌叫《星绊》"
         },
@@ -264,13 +264,13 @@
             "eventData": "星...绊...唔，感觉这个名字好有意境，像是在描绘星间的羁绊，真好啊"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "哈哈哈是的，我带了耳机，给，一起听吧"
         },
         {
             "characterString": "Blank",
-            "eventString": "Bgm",
+            "eventString": "PlayBgm",
             "eventData": "星绊"
         },
         {
@@ -294,7 +294,7 @@
             "eventData": "（提示酱：我才不会告诉你我开发星途的时候经常这首歌单曲循环呢）"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "哈哈哈，没什么啦。能和别人一起在好听的歌中畅想，本就非常可爱！"
         },
@@ -304,7 +304,7 @@
             "eventData": ""
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "感觉这首歌将电音风格和甜美的声线融合，我emo的时候经常听这首歌，就像，我们并不遥远..."
         },
@@ -324,7 +324,7 @@
             "eventData": "唔，那个，听说你是转校生，是因为什么原因转到我们学校的呢？（好奇）"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "至于这个，我父母最近在这边找到不错的工作，就转过来了。虽然我成绩也一直垫底就是",
             "giftDetect": 1
@@ -336,7 +336,7 @@
             "giftDesId": 2
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "<color=#FF6666>不准谢！</color>对了，作为今天物理课你帮我的回报，这个送你\n（提示酱：请认真考虑哦，诶嘿）"
         },
@@ -372,7 +372,7 @@
             "toDesId": 2
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "哈哈哈，你高兴就好，时候不早了，那我先走了，拜拜，星梦yuki"
         },
@@ -387,7 +387,7 @@
             "eventData": "Yuki的身影渐渐远去..."
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "（嘶，刚刚那句“<color=#FF6666>不准谢</color>！”会不会有点太严厉了一点？yuki会怎么想呢）",
             "toId": 4
@@ -399,12 +399,12 @@
             "giftDesId": 1
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "到了就是这里，今天我请客"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "（请她吃什么好呢？）\n（提示酱：请认真考虑哦，诶嘿）"
         },
@@ -425,7 +425,7 @@
             "eventData": "诶诶诶？虽然很感谢，但是根本吃不完啊喂"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "这不是还有我呢吗（坏笑）"
         },
@@ -457,7 +457,7 @@
             "eventData": "很清纯的组合诶"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "马卡龙的甜和清茶的苦混合在一起，很适合放松的时候吃"
         },
@@ -489,7 +489,7 @@
             "eventData": "噗（捂嘴笑），好有新意的名字，不会是什么黑暗料理吧"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "咳咳，当然不是，你吃了就知道了"
         },
@@ -504,7 +504,7 @@
             "eventData": "哇！真的好好吃，好久没这么有胃口了"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "哎哎，慢点慢点"
         },
@@ -525,7 +525,7 @@
             "toDesId": 3
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "好，拜拜，星梦yuki，路上注意安全"
         },
@@ -535,7 +535,7 @@
             "eventData": "白白，绘星tsuki"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "（yuki刚刚好可爱啊，不对不对，我怎么直接叫yuki了？！）"
         },
@@ -556,7 +556,7 @@
             "eventData": "（轻轻拍了拍你）tsuki，诶，tsuki，别睡了，快醒醒"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "啊—（揉了揉眼睛，打了个哈欠）yuki，怎么了吗"
         },
@@ -566,7 +566,7 @@
             "eventData": "tsuki，过了这节课就放寒假了，你说到时候我们去哪里玩好呀"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "你想去哪里玩呢（wink）"
         },
@@ -581,7 +581,7 @@
             "eventData": "此时静注意到了你，你们相视而笑"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "咳咳（一本正经）yuki，虽然你成绩还不错，但不要被我带坏了,现在还在上课呢（坏笑）"
         },
@@ -591,7 +591,7 @@
             "eventData": "（你对静的震慑度清零，静的<color=#FF6666>支援次数</color>+1）"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "那，yuki，放学再说，先听课吧"
         },
@@ -606,17 +606,17 @@
             "eventData": "下课铃的响起，标志着高三上的结束，同学们也迎来了难得的寒假"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "芜湖！放假咯"
         },
         {
             "characterString": "Yuki",
             "eventString": "Dialogue",
-            "eventData": "好诶，终于放假啦。sky，你还没回答我呢，我们去哪里玩啊"
+            "eventData": "好诶，终于放假啦。tsuki，你还没回答我呢，我们去哪里玩啊"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "你先猜猜看（坏笑）"
         },
@@ -626,7 +626,7 @@
             "eventData": "图书馆！"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "图书馆我会睡着的（扶额）再猜猜"
         },
@@ -636,7 +636,7 @@
             "eventData": "唔......啊，我想不出来"
         },
         {
-            "characterString": "Sky",
+            "characterString": "Tsuki",
             "eventString": "Dialogue",
             "eventData": "嘿嘿明天我带你去就知道了，现在先回家吧"
         },
@@ -644,6 +644,41 @@
             "characterString": "PangBai",
             "eventString": "Dialogue",
             "eventData": "第二天黄昏前..."
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "LoadNextScene",
+            "eventData": ""
+        },
+        {
+            "characterString": "PangBai",
+            "eventString": "Dialogue",
+            "eventData": "（yuki居住的小镇）"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "诶？前面是我家诶，tsuki，快告诉我到底是哪儿啊（拉着我的手晃着）"
+        },
+        {
+            "characterString": "Tsuki",
+            "eventString": "Dialogue",
+            "eventData": "保密（坏笑）往右一直走就到了"
+        },
+        {
+            "characterString": "Yuki",
+            "eventString": "Dialogue",
+            "eventData": "（嘟嘴）（小声说：切）yuki最讨厌你了~"
+        },
+        {
+            "characterString": "Blank",
+            "eventString": "CloseDialogue",
+            "eventData": ""
         },
         {
             "characterString": "Blank",
