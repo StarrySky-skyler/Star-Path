@@ -694,11 +694,6 @@
             "eventData": ""
         },
         {
-            "character": "PangBai",
-            "eventType": "Dialogue",
-            "eventData": "（秘密基地）"
-        },
-        {
             "character": "Blank",
             "eventType": "CloseDialogue",
             "eventData": ""
