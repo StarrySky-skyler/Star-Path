@@ -172,6 +172,11 @@ namespace LocalDataHandler
         /// <summary>
         /// 关闭画
         /// </summary>
-        ClosePaint
+        ClosePaint,
+        
+        /// <summary>
+        /// 显示下雨特效
+        /// </summary>
+        ShowRainEffect
     }
 }

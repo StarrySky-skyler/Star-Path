@@ -649,14 +649,14 @@
             "eventData": "嘿嘿明天我带你去就知道了，现在先回家吧"
         },
         {
-            "character": "PangBai",
-            "eventType": "Dialogue",
-            "eventData": "第二天黄昏前..."
-        },
-        {
             "character": "Blank",
             "eventType": "LoadNextScene",
             "eventData": ""
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "第二天黄昏前..."
         },
         {
             "character": "PangBai",
@@ -767,6 +767,11 @@
             "character": "PangBai",
             "eventType": "Dialogue",
             "eventData": "你们相偎而坐"
+        },
+        {
+            "character": "Blank",
+            "eventType": "ShowRainEffect",
+            "eventData": ""
         },
         {
             "character": "Yuki",

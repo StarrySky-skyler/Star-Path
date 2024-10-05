@@ -36,9 +36,9 @@ public class SceneTip : MonoBehaviour
     private void Start()
     {
         _text.text = Managers.ScenesManager.Instance.GetCurrentSceneName();
-        if (_text.text == "当前场景：???")
+        if (_text.text == "???")
         {
-            _text.color = new Color32(153, 41, 173, 255);
+            _text.color = new Color32(153, 41, 173, 0);
         }
         else
         {

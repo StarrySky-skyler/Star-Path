@@ -1,4 +1,5 @@
 using System;
+using JetBrains.Annotations;
 using LocalDataHandler;
 using Player;
 using UnityEngine;
@@ -24,34 +25,48 @@ namespace Managers
         // 允许z键
         private bool _allowZ;
         private PlayerControl _player;
+        
+        // 下雨粒子效果
+        [CanBeNull] private ParticleSystem _rainEffect;
 
-        void Awake()
+        private void Awake()
         {
             Instance = this;
             // 限制最高帧率160
             Application.targetFrameRate = 160;
+            // 初始化标志
             AllowLoadDialogue = true;
             LoadMainDialogue = true;
-            _player = GameObject.FindWithTag("Player").GetComponent<PlayerControl>();
             _allowZ = false;
+            
+            _player = GameObject.FindWithTag("Player").GetComponent<PlayerControl>();
+            // 获取下雨粒子系统
+            try
+            {
+                _rainEffect = GameObject.Find("Particle System_Rain").GetComponent<ParticleSystem>();
+            }
+            catch (NullReferenceException)
+            {
+                _rainEffect = null;
+            }
+            // 停止下雨
+            if (_rainEffect)
+            {
+                _rainEffect.Stop();
+            }
         }
 
         private void Start()
         {
-#if UNITY_EDITOR
-            foreach (var gameEvent in GameEventManager.Instance.GameEvents)
-            {
-                Debug.Log($"{gameEvent.CharacterType}:\n{gameEvent.eventData}");
-            }
-#endif
-            Action rest = RestStart;
+            // 等待全屏渐变动画完成后执行start
+            Action rest = AfterScreenMaskFallBack;
             WaitForScreenMaskFinished(rest);
         }
 
         private void Update()
         {
-            HandleFullScreen();
-            HandleCursorDisplay();
+            SwitchFullScreen();
+            SwitchCursorDisplay();
             DialogueDisplayStatus = UIManager.Instance.parentDialogueUI.activeSelf;
             // 按下z键 且 允许继续剧情
             if (Input.GetKeyDown(KeyCode.Z) && _allowZ)
@@ -63,7 +78,7 @@ namespace Managers
         /// <summary>
         /// 剩下的start代码（委托需要）
         /// </summary>
-        private void RestStart()
+        private void AfterScreenMaskFallBack()
         {
             _allowZ = true;
             UIManager.Instance.sceneTipTxt.gameObject.SetActive(true);
@@ -117,21 +132,18 @@ namespace Managers
         /// <summary>
         /// f11全屏
         /// </summary>
-        private void HandleFullScreen()
+        private void SwitchFullScreen()
         {
             if (Input.GetKeyDown(KeyCode.F11))
             {
                 Screen.fullScreen = !Screen.fullScreen;
-#if UNITY_EDITOR
-                Debug.Log($"切换全屏模式，当前全屏为{Screen.fullScreen}");
-#endif
             }
         }
 
         /// <summary>
         /// alt鼠标显示
         /// </summary>
-        private void HandleCursorDisplay()
+        private void SwitchCursorDisplay()
         {
             if (Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt))
             {
@@ -385,13 +397,26 @@ namespace Managers
                     Action loadMenu = LoadMenuSceneAction;
                     WaitForScreenMaskFinished(loadMenu, false);
                     break;
-                // TODO:秘密基地场景物品交互剧情
-                // TODO:下雨特效展示
                 // TODO:yuki画作展示相关的完善
                 // TODO:剧情完善
                 // TODO:背包系统（以下每个系统开发完成时，场景初添加Dialogue"Level Up!作者的开发能力提升了，你获得了xxx（提示酱：xxx)"这种
                 // TODO:战斗系统
                 // TODO:存档系统
+                case EventType.ShowRainEffect:
+#if UNITY_EDITOR
+                    Debug.Log("下雨事件");
+#endif
+                    if (_rainEffect)
+                    {
+                        _rainEffect.Play();
+                    }
+#if UNITY_EDITOR
+                    else
+                    {
+                        Debug.LogError("未找到下雨粒子系统物体");
+                    }
+#endif
+                    break;
                 case EventType.ShowPaint:
 #if UNITY_EDITOR
                     Debug.Log("展示yuki画事件");
