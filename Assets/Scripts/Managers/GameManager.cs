@@ -421,17 +421,19 @@ namespace Managers
 #if UNITY_EDITOR
                     Debug.Log("展示yuki画事件");
 #endif
-                    
+                    UIManager.Instance.DisplayYukiPainting(true);
                     break;
                 case EventType.PaintToBlack:
 #if UNITY_EDITOR
                     Debug.Log("yuki画变黑事件");
 #endif
+                    UIManager.Instance.SetYukiPaintingToBlack(true);
                     break;
                 case EventType.ClosePaint:
 #if UNITY_EDITOR
                     Debug.Log("关闭yuki画事件");
 #endif
+                    UIManager.Instance.DisplayYukiPainting(false);
                     break;
             }
         }

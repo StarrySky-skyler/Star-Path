@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
+using JetBrains.Annotations;
 using LocalDataHandler;
 using Player;
+using SecretBaseScene;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -39,6 +42,9 @@ namespace Managers
 
         // 场景提示文本
         public TextMeshProUGUI sceneTipTxt;
+
+        // yuki的画
+        [CanBeNull] public Image yukiPainting;
         
         // 是否正在逐字输出
         public bool IsOutputingDialogue { get; private set; }
@@ -54,6 +60,35 @@ namespace Managers
             endScreenMask.SetActive(false);
             dialogueNextTip.SetActive(false);
             sceneTipTxt.gameObject.SetActive(false);
+            if (yukiPainting)
+            {
+                yukiPainting.gameObject.SetActive(false);
+                yukiPainting.color = new Color(1F, 1F, 1F, 0F);
+            }
+        }
+
+        /// <summary>
+        /// 显示yuki的画
+        /// </summary>
+        /// <param name="show">显示/隐藏</param>
+        public void DisplayYukiPainting(bool show)
+        {
+            if (yukiPainting)
+            {
+                yukiPainting.gameObject.SetActive(show);
+            }
+        }
+
+        /// <summary>
+        /// 是否开始渐变为黑色
+        /// </summary>
+        /// <param name="allow"></param>
+        public void SetYukiPaintingToBlack(bool allow)
+        {
+            if (yukiPainting)
+            {
+                yukiPainting.GetComponent<YukiPaintingFade>().TurnBlack = allow;
+            }
         }
 
         /// <summary>

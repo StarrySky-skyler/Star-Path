@@ -659,11 +659,6 @@
             "eventData": "第二天黄昏前..."
         },
         {
-            "character": "PangBai",
-            "eventType": "Dialogue",
-            "eventData": "（yuki居住的小镇）"
-        },
-        {
             "character": "Blank",
             "eventType": "CloseDialogue",
             "eventData": ""
@@ -832,6 +827,11 @@
             "character": "Tsuki",
             "eventType": "Dialogue",
             "eventData": "......"
+        },
+        {
+            "character": "Blank",
+            "eventType": "ClosePaint",
+            "eventData": ""
         },
         {
             "character": "Tsuki",
