@@ -37,6 +37,9 @@ namespace Managers
         // 剧情完成后的提示箭头
         public GameObject dialogueNextTip;
 
+        // 场景提示文本
+        public TextMeshProUGUI sceneTipTxt;
+        
         // 是否正在逐字输出
         public bool IsOutputingDialogue { get; private set; }
 
@@ -50,6 +53,7 @@ namespace Managers
             startScreenMask.SetActive(true);
             endScreenMask.SetActive(false);
             dialogueNextTip.SetActive(false);
+            sceneTipTxt.gameObject.SetActive(false);
         }
 
         /// <summary>
@@ -68,19 +72,6 @@ namespace Managers
                     GameEventManager.EventIndex -= 1;
                     GameManager.Instance.LoadNextEvent();
                     activate = false;
-                }
-
-                // 保存礼物数据
-                switch (next.jumpId)
-                {
-                    // 吃东西
-                    case 1:
-                        ConfigsOperate.Instance.WriteGift(1);
-                        break;
-                    // 送礼物
-                    case 2:
-                        ConfigsOperate.Instance.WriteGift(2);
-                        break;
                 }
             }
         }
@@ -123,15 +114,6 @@ namespace Managers
         public void DisplayDialogueUI(bool show)
         {
             parentDialogueUI.SetActive(show);
-        }
-
-        /// <summary>
-        /// 设置对话框是否可点击
-        /// </summary>
-        /// <param name="interactable">是否可点击</param>
-        public void SetDialogueUIInteractable(bool interactable = true)
-        {
-            GameManager.Instance.InteractableZ = interactable;
         }
     
         /// <summary>

@@ -73,7 +73,7 @@ namespace Managers
                 GameManager.Instance.SetDialogueUI(closestSceneObject.speaker, content);
                 GameManager.Instance.DisplayDialogueUI(true);
                 GameManager.Instance.DisplayChoicePanel(false);
-                GameManager.Instance.SetDialogueUIInteractable();
+                GameManager.Instance.AllowLoadDialogue = true;
             }
         }
     }

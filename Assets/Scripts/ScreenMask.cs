@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class ScreenMask : MonoBehaviour
 {
+    // 渐变时间
+    public float fadeTime;
+    
     // 运行状态
     public bool IsFinished { get; private set; }
 
@@ -34,7 +37,7 @@ public class ScreenMask : MonoBehaviour
         {
             if (_rawImageScreen.color.a < 1)
             {
-                _rawImageScreen.color += new Color(0, 0, 0, Mathf.Lerp(0, 1, 0.5f) * Time.deltaTime);
+                _rawImageScreen.color += new Color(0, 0, 0, Mathf.Lerp(0, 1, fadeTime) * Time.deltaTime);
             }
             else
             {
@@ -46,7 +49,7 @@ public class ScreenMask : MonoBehaviour
         {
             if (_rawImageScreen.color.a > 0)
             {
-                _rawImageScreen.color -= new Color(0, 0, 0, Mathf.Lerp(0, 1, 0.55f) * Time.deltaTime);
+                _rawImageScreen.color -= new Color(0, 0, 0, Mathf.Lerp(0, 1, fadeTime) * Time.deltaTime);
             }
             else
             {

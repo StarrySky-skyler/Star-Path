@@ -6,7 +6,10 @@ namespace RoadToHomeScene
     {
         private GameObject _player;
         private GameObject _playerColliderPoint;
-        private SpriteRenderer _sprite;
+        // 场景物体精灵图
+        private SpriteRenderer _objSpriteSpriteRenderer;
+        // 玩家精灵图
+        private SpriteRenderer _playerSpriteRenderer;
 
         private int _sortingOrder;
 
@@ -14,8 +17,9 @@ namespace RoadToHomeScene
         {
             _player = GameObject.FindWithTag("Player");
             _playerColliderPoint = _player.transform.Find("ColliderPoint").gameObject;
-            _sprite = GetComponent<SpriteRenderer>();
-            _sortingOrder = _sprite.sortingOrder;
+            _objSpriteSpriteRenderer = GetComponent<SpriteRenderer>();
+            _sortingOrder = _objSpriteSpriteRenderer.sortingOrder;
+            _playerSpriteRenderer = _player.GetComponent<SpriteRenderer>();
         }
 
         private void Update()
@@ -25,17 +29,17 @@ namespace RoadToHomeScene
                 // 玩家在物体下方
                 if (transform.position.y > _playerColliderPoint.transform.position.y)
                 {
-                    _sprite.sortingOrder = _player.GetComponent<SpriteRenderer>().sortingOrder - 1;
+                    _objSpriteSpriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder - 1;
                 }
                 // 玩家在物体上方
                 else
                 {
-                    _sprite.sortingOrder = _player.GetComponent<SpriteRenderer>().sortingOrder + 1;
+                    _objSpriteSpriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + 1;
                 }
             }
             else
             {
-                _sprite.sortingOrder = _sortingOrder;
+                _objSpriteSpriteRenderer.sortingOrder = _sortingOrder;
             }
         }
     }

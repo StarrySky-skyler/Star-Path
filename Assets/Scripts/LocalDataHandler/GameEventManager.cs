@@ -72,8 +72,9 @@ namespace LocalDataHandler
             {
                 writer.Write(json);
             }
-
+#if UNITY_EDITOR
             Debug.Log("将数据写入EventData.json完成");
+#endif
         }
 
         /// <summary>

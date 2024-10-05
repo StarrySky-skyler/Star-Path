@@ -13,30 +13,37 @@ namespace Managers
         public static GameManager Instance;
 
         // z键是否可用
-        public bool InteractableZ { get; set; }
+        public bool AllowLoadDialogue { get; set; }
 
         // 是否加载主剧情
         public bool LoadMainDialogue { get; set; }
 
         // 对话框显示状态
-        public bool DialogueDisplayStatus { get; set; }
+        public bool DialogueDisplayStatus { get; private set; }
+
+        // 允许z键
+        private bool _allowZ;
+        private PlayerControl _player;
 
         void Awake()
         {
             Instance = this;
             // 限制最高帧率160
             Application.targetFrameRate = 160;
-            InteractableZ = true;
+            AllowLoadDialogue = true;
             LoadMainDialogue = true;
+            _player = GameObject.FindWithTag("Player").GetComponent<PlayerControl>();
+            _allowZ = false;
         }
 
         private void Start()
         {
+#if UNITY_EDITOR
             foreach (var gameEvent in GameEventManager.Instance.GameEvents)
             {
                 Debug.Log($"{gameEvent.CharacterType}:\n{gameEvent.eventData}");
             }
-
+#endif
             Action rest = RestStart;
             WaitForScreenMaskFinished(rest);
         }
@@ -47,7 +54,7 @@ namespace Managers
             HandleCursorDisplay();
             DialogueDisplayStatus = UIManager.Instance.parentDialogueUI.activeSelf;
             // 按下z键 且 允许继续剧情
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) && _allowZ)
             {
                 HandleKeyZ();
             }
@@ -58,6 +65,8 @@ namespace Managers
         /// </summary>
         private void RestStart()
         {
+            _allowZ = true;
+            UIManager.Instance.sceneTipTxt.gameObject.SetActive(true);
             // 加载剧情
             LoadNextEvent();
         }
@@ -65,7 +74,7 @@ namespace Managers
         /// <summary>
         /// 处理Z键
         /// </summary>
-        public void HandleKeyZ()
+        private void HandleKeyZ()
         {
             // 如果正在输出
             if (UIManager.Instance.IsOutputingDialogue)
@@ -76,22 +85,24 @@ namespace Managers
             else
             {
                 // 加载主线剧情
-                if (LoadMainDialogue && InteractableZ)
+                if (LoadMainDialogue && AllowLoadDialogue)
                 {
                     LoadNextEvent();
                 }
                 // 加载场景物品交互对话
                 else
                 {
-                    if (SceneObjectManager.Instance.ClosestGameObject != null)
+                    if (SceneObjectManager.Instance.ClosestGameObject)
                     {
                         // 对话框显示，关闭对话框
                         if (DialogueDisplayStatus)
                         {
+#if UNITY_EDITOR
                             Debug.Log("触发关闭场景物品交互对话框事件");
-                            GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = true;
+#endif
+                            _player.AllowMove = true;
                             DisplayDialogueUI(false);
-                            InteractableZ = false;
+                            AllowLoadDialogue = false;
                         }
                         // 对话框隐藏，显示物品交互对话
                         else
@@ -111,7 +122,9 @@ namespace Managers
             if (Input.GetKeyDown(KeyCode.F11))
             {
                 Screen.fullScreen = !Screen.fullScreen;
+#if UNITY_EDITOR
                 Debug.Log($"切换全屏模式，当前全屏为{Screen.fullScreen}");
+#endif
             }
         }
 
@@ -151,7 +164,7 @@ namespace Managers
         {
             AudioManager.Instance.PlaySound(soundName);
         }
-    
+
         /// <summary>
         /// 播放/切换bgm
         /// </summary>
@@ -160,7 +173,7 @@ namespace Managers
         {
             AudioManager.Instance.PlayBgm(bgmName);
         }
-        
+
         /// <summary>
         /// 停止bgm
         /// </summary>
@@ -200,6 +213,89 @@ namespace Managers
         }
 
         /// <summary>
+        /// 处理剧情跳转
+        /// </summary>
+        /// <param name="dataEvent">事件类型</param>
+        private void HandleDialogueJump(GameEvent dataEvent)
+        {
+            // 处理非选择的剧情跳转
+            if (dataEvent.toId != 0)
+            {
+                var activate = true;
+                while (activate)
+                {
+                    GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                    if (next.toDesId == dataEvent.toId)
+                    {
+                        GameEventManager.EventIndex -= 1;
+                        activate = false;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 处理吃东西/送礼物的跳转
+        /// </summary>
+        /// <param name="dataEvent">事件类型</param>
+        private void HandleGiftTypeJump(GameEvent dataEvent)
+        {
+            // 处理礼物相关
+            if (dataEvent.giftDetect != 1) return;
+
+            var giftData = ConfigsOperate.Instance.ReadGift();
+            bool activate;
+
+            switch (giftData.giftType)
+            {
+                // 吃东西
+                case 1:
+                    activate = true;
+                    while (activate)
+                    {
+                        GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                        if (next.giftDesId == 1)
+                        {
+                            GameEventManager.EventIndex -= 1;
+                            activate = false;
+                        }
+                    }
+
+                    break;
+                // 送礼物
+                case 2:
+                    activate = true;
+                    while (activate)
+                    {
+                        GameEvent next = GameEventManager.Instance.LoadNextEvent();
+                        if (next.giftDesId == 2)
+                        {
+                            GameEventManager.EventIndex -= 1;
+                            activate = false;
+                        }
+                    }
+
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 保存玩家选择具体礼物数据
+        /// </summary>
+        /// <param name="dataEvent">事件类型</param>
+        private void HandleSaveGift(GameEvent dataEvent)
+        {
+            if (dataEvent.saveGiftData)
+            {
+                ConfigsOperate.Instance.WriteGiftData(dataEvent.jumpId);
+            }
+            else if (dataEvent.saveGiftType)
+            {
+                ConfigsOperate.Instance.WriteGiftType(dataEvent.jumpId);
+            }
+        }
+
+        /// <summary>
         /// 载入下一事件并处理
         /// </summary>
         public void LoadNextEvent()
@@ -211,116 +307,99 @@ namespace Managers
             {
                 // 对话事件
                 case EventType.Dialogue:
+#if UNITY_EDITOR
                     Debug.Log("触发对话事件");
-                    SetDialogueUIInteractable();
+#endif
+                    // 初始化
+                    AllowLoadDialogue = true;
+                    // UI 设置
                     SetDialogueUI(nextEvent.CharacterType, nextEvent.eventData);
                     DisplayDialogueUI(true);
                     DisplayChoicePanel(false);
-                    SetDialogueUIInteractable();
-                    // 处理非选择的剧情跳转
-                    if (nextEvent.toId != 0)
-                    {
-                        var activate = true;
-                        while (activate)
-                        {
-                            GameEvent next = GameEventManager.Instance.LoadNextEvent();
-                            if (next.toDesId == nextEvent.toId)
-                            {
-                                GameEventManager.EventIndex -= 1;
-                                activate = false;
-                            }
-                        }
-                    }
-                
-                    // 处理礼物相关
-                    if (nextEvent.giftDetect == 1)
-                    {
-                        var giftData = ConfigsOperate.Instance.ReadGift();
-                        bool activate;
-                        switch (giftData.giftType)
-                        {
-                            // 吃东西
-                            case 1:
-                                activate = true;
-                                while (activate)
-                                {
-                                    GameEvent next = GameEventManager.Instance.LoadNextEvent();
-                                    if (next.giftDesId == 1)
-                                    {
-                                        GameEventManager.EventIndex -= 1;
-                                        activate = false;
-                                    }
-                                }
-                                break;
-                            // 送礼物
-                            case 2:
-                                activate = true;
-                                while (activate)
-                                {
-                                    GameEvent next = GameEventManager.Instance.LoadNextEvent();
-                                    if (next.giftDesId == 2)
-                                    {
-                                        GameEventManager.EventIndex -= 1;
-                                        activate = false;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-
+                    // 剧情跳转
+                    HandleDialogueJump(nextEvent);
+                    // 礼物
+                    HandleGiftTypeJump(nextEvent);
+                    HandleSaveGift(nextEvent);
                     break;
-
                 // 选择事件
                 case EventType.Choice:
+#if UNITY_EDITOR
                     Debug.Log("触发多项选择事件");
-                    SetDialogueUIInteractable(false);
+#endif
+                    AllowLoadDialogue = false;
                     DisplayChoicePanel(true, GameEventManager.Instance.GetChoicesCount());
                     Cursor.lockState = CursorLockMode.None;
                     break;
-
                 // 音效事件
                 case EventType.Sound:
+#if UNITY_EDITOR
                     Debug.Log("触发播放音效事件");
+#endif
                     PlaySound(nextEvent.eventData);
                     break;
-            
                 // 播放bgm事件
                 case EventType.PlayBgm:
+#if UNITY_EDITOR
                     Debug.Log("触发播放bgm事件");
+#endif
                     PlayBgm(nextEvent.eventData);
                     break;
-                
                 // 停止bgm事件
                 case EventType.StopBgm:
+#if UNITY_EDITOR
                     Debug.Log("触发停止Bgm事件");
+#endif
                     StopBgm();
                     break;
-
                 // 关闭对话框事件
                 case EventType.CloseDialogue:
+#if UNITY_EDITOR
                     Debug.Log("触发关闭对话框事件");
+#endif
                     DisplayDialogueUI(false);
-                    InteractableZ = false;
+                    AllowLoadDialogue = false;
                     LoadMainDialogue = false;
                     GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = true;
                     break;
-
                 // 载入下一场景事件
                 case EventType.LoadNextScene:
+#if UNITY_EDITOR
                     Debug.Log("触发载入下一场景事件");
+#endif
                     DisplayDialogueUI(false);
                     DisplayChoicePanel(false);
+                    AllowLoadDialogue = false;
+                    LoadMainDialogue = false;
+                    _allowZ = false;
                     Action loadNext = ScenesManager.Instance.LoadNextScene;
                     WaitForScreenMaskFinished(loadNext, false);
                     break;
-
                 case EventType.LoadMenuScene:
+#if UNITY_EDITOR
                     Debug.Log("载入初始界面");
+#endif
                     DisplayChoicePanel(false);
                     DisplayDialogueUI(false);
                     GameEventManager.EventIndex = 0;
                     Action loadMenu = LoadMenuSceneAction;
                     WaitForScreenMaskFinished(loadMenu, false);
+                    break;
+                case EventType.ShowPaint:
+#if UNITY_EDITOR
+                    Debug.Log("展示yuki画事件");
+#endif
+                    
+                    break;
+                case EventType.PaintToBlack:
+#if UNITY_EDITOR
+                    Debug.Log("yuki画变黑事件");
+#endif
+                    break;
+                case EventType.ClosePaint:
+#if UNITY_EDITOR
+                    Debug.Log("关闭yuki画事件");
+#endif
                     break;
             }
         }
@@ -349,15 +428,6 @@ namespace Managers
         public void LoadNextScene()
         {
             ScenesManager.Instance.LoadNextScene();
-        }
-
-        /// <summary>
-        /// 设置对话框是否可点击
-        /// </summary>
-        /// <param name="interactable">是否可点击</param>
-        public void SetDialogueUIInteractable(bool interactable = true)
-        {
-            UIManager.Instance.SetDialogueUIInteractable(interactable);
         }
 
         /// <summary>
