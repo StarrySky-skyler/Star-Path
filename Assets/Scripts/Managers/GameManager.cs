@@ -385,6 +385,12 @@ namespace Managers
                     Action loadMenu = LoadMenuSceneAction;
                     WaitForScreenMaskFinished(loadMenu, false);
                     break;
+                // TODO:秘密基地场景物品交互剧情
+                // TODO:yuki画作展示相关的完善
+                // TODO:剧情完善
+                // TODO:背包系统
+                // TODO:战斗系统
+                // TODO:存档系统
                 case EventType.ShowPaint:
 #if UNITY_EDITOR
                     Debug.Log("展示yuki画事件");
