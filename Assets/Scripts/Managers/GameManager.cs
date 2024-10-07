@@ -434,6 +434,20 @@ namespace Managers
 #endif
                     UIManager.Instance.DisplayYukiPainting(false);
                     break;
+                case EventType.BlackScreenMask:
+#if UNITY_EDITOR
+                    Debug.Log("剧情黑屏遮罩事件");
+#endif
+                    UIManager.Instance.WaitForScreenMaskFinished(isStart: false);
+                    break;
+                case EventType.WriteSentence:
+#if UNITY_EDITOR
+                    Debug.Log("玩家留言事件");
+#endif
+                    AllowLoadDialogue = false;
+                    Cursor.lockState = CursorLockMode.None;
+                    UIManager.Instance.DisplayPanelInputSentence(true);
+                    break;
             }
         }
 

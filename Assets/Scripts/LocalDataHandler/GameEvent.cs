@@ -177,6 +177,16 @@ namespace LocalDataHandler
         /// <summary>
         /// 显示下雨特效
         /// </summary>
-        ShowRainEffect
+        ShowRainEffect,
+        
+        /// <summary>
+        /// 黑屏遮罩
+        /// </summary>
+        BlackScreenMask,
+        
+        /// <summary>
+        /// 玩家在yuki日记本上留言
+        /// </summary>
+        WriteSentence
     }
 }

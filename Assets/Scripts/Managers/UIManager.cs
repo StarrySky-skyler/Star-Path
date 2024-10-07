@@ -45,7 +45,10 @@ namespace Managers
 
         // yuki的画
         [CanBeNull] public Image yukiPainting;
-        
+
+        // yuki日记留言
+        [CanBeNull] public GameObject panelInputSentence;
+
         // 是否正在逐字输出
         public bool IsOutputingDialogue { get; private set; }
 
@@ -65,6 +68,34 @@ namespace Managers
                 yukiPainting.gameObject.SetActive(false);
                 yukiPainting.color = new Color(1F, 1F, 1F, 0F);
             }
+
+            if (panelInputSentence)
+            {
+                panelInputSentence.SetActive(false);
+            }
+        }
+
+        /// <summary>
+        /// 显示输入面板
+        /// </summary>
+        /// <param name="status"></param>
+        public void DisplayPanelInputSentence(bool status)
+        {
+            if (!panelInputSentence) return;
+            panelInputSentence.SetActive(status);
+        }
+
+        /// <summary>
+        /// 确认给yuki日记的留言按钮点击
+        /// </summary>
+        public void BtnConfirmSentence()
+        {
+            if (!panelInputSentence) return;
+            // var inputField = panelInputSentence.transform.Find("Input_DiarySentence/Text Area/Text")
+            //     .GetComponent<TextMeshProUGUI>();
+            panelInputSentence.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            GameManager.Instance.LoadNextEvent();
         }
 
         /// <summary>
@@ -150,7 +181,7 @@ namespace Managers
         {
             parentDialogueUI.SetActive(show);
         }
-    
+
         /// <summary>
         /// 设置对话框内容
         /// </summary>
@@ -193,6 +224,7 @@ namespace Managers
                     yield break;
                 }
             }
+
             AudioManager.Instance.StopSound();
             IsOutputingDialogue = false;
             dialogueNextTip.SetActive(true);
@@ -203,7 +235,7 @@ namespace Managers
         /// </summary>
         /// <param name="action">剩下的操作</param>
         /// <param name="isStart">是否为起始遮罩</param>
-        public void WaitForScreenMaskFinished(Action action, bool isStart = true)
+        public void WaitForScreenMaskFinished([CanBeNull] Action action = null, bool isStart = true)
         {
             StartCoroutine(WaitMask(action, isStart));
         }
@@ -218,7 +250,7 @@ namespace Managers
                     yield return null;
                 }
 
-                restOperation();
+                restOperation?.Invoke();
             }
             // 结束遮罩
             else
@@ -229,7 +261,7 @@ namespace Managers
                     yield return null;
                 }
 
-                restOperation();
+                restOperation?.Invoke();
             }
         }
     }

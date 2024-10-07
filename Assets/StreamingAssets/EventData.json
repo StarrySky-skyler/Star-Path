@@ -856,7 +856,7 @@
         {
             "character": "Yuki",
             "eventType": "Dialogue",
-            "eventData": "sky，你会一直陪在我身边吗，我真的很害怕一个人"
+            "eventData": "tsuki，你会一直陪在我身边吗，我真的很害怕一个人"
         },
         {
             "character": "Blank",
@@ -887,7 +887,8 @@
         {
             "character": "Tsuki",
             "eventType": "Dialogue",
-            "eventData": "没事的，yuki，我就在这儿，哪也不去"
+            "eventData": "没事的，yuki，我就在这儿，哪也不去",
+            "jumpId": 2
         },
         {
             "character": "Tsuki",
@@ -898,6 +899,108 @@
             "character": "Tsuki",
             "eventType": "Dialogue",
             "eventData": "一定........."
+        },
+        {
+            "character": "Blank",
+            "eventType": "BlackScreenMask",
+            "eventData": ""
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "但世事总像个调皮的孩子，时不时制造点「惊喜」"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "父母的事业渐渐腾飞，你也转去了更好的学校"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE4：行动起来！（wink）</color>"
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "yuki，虽然很不想开口",
+            "jumpId": 3
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "但事实就是我不能一直在你身边的"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "yuki愣了一下，随后埋下了头，不再说话"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE5: 真是一次大胆的尝试呢</color>"
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "你一把抱住了yuki",
+            "jumpId": 4
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "啊，这是...你怎么突然..."
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "yuki，你独自承受很久了吧"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "我知道的，一定很累吧"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "现在，稍微放松一下吧，我就在这儿，哪也不去"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "......"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "tsuki，谢谢~可以留下一句话吗，我想写在今天的日记里"
+        },
+        {
+            "character": "Blank",
+            "eventType": "WriteSentence",
+            "eventData": ""
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "那晚，星空，草地，湖泊，留影和真挚的话..."
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadNextScene",
+            "eventData": ""
         }
     ]
 }

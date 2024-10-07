@@ -50,7 +50,7 @@ namespace Managers
             switch (currentSceneName)
             {
                 case "SkyDreamScene":
-                    return "???";
+                    return "梦境？";
                 case "ClassroomScene":
                     return "经常来的教室";
                 case "ClassroomScene2(love)":
