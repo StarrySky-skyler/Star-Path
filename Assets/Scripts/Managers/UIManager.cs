@@ -174,6 +174,7 @@ namespace Managers
             tmpDialogueContent.text = "";
             dialogueNextTip.SetActive(false);
             GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = false;
+            AudioManager.Instance.PlaySound("outputDialogue", true);
             // 遍历对话框内容
             foreach (var letter in content)
             {
@@ -188,10 +189,11 @@ namespace Managers
                     dialogueNextTip.SetActive(true);
                     IsOutputingDialogue = false;
                     NeedSkip = false;
+                    AudioManager.Instance.StopSound();
                     yield break;
                 }
             }
-
+            AudioManager.Instance.StopSound();
             IsOutputingDialogue = false;
             dialogueNextTip.SetActive(true);
         }

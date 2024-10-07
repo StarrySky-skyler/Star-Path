@@ -95,7 +95,7 @@
         {
             "character": "PangBai",
             "eventType": "Dialogue",
-            "eventData": "<color=#FF6666>Bad Ending 2：或许有时候犹豫也是种智慧？</color>"
+            "eventData": "<color=#FF6666>BE2：或许有时候犹豫也是种智慧？</color>"
         },
         {
             "character": "Blank",
@@ -111,7 +111,7 @@
         {
             "character": "PangBai",
             "eventType": "Dialogue",
-            "eventData": "<color=#FF6666>Bad Ending 1：你太厉害了啊喂</color>"
+            "eventData": "<color=#FF6666>BE1：你太厉害了啊喂</color>"
         },
         {
             "character": "Blank",
@@ -837,6 +837,67 @@
             "character": "Tsuki",
             "eventType": "Dialogue",
             "eventData": "但，yuki，承载画的画布可是三原色值都是255的白色"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "这幅画，我会和你一起绘制的！"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "随着谈心的深入，周围的一切都安静了下来，静静陪伴着..."
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "星空不知在何时显现"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "sky，你会一直陪在我身边吗，我真的很害怕一个人"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Choice",
+            "eventData": "沉默|会陪在yuki身边|不会陪在yuki身边|行动起来！"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "yuki从你的沉默中<color=#FF6666>似乎察觉到了什么</color>，不再言语",
+            "jumpId": 1
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "从那以后，你发现yuki有意在和你疏远......"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE3: 做点什么吧，后悔总比遗憾好，Ciallo~</color>"
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "没事的，yuki，我就在这儿，哪也不去"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "我会一直陪着你身边的"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "一定........."
         }
     ]
 }

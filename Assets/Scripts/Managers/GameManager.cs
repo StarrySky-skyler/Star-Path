@@ -397,7 +397,6 @@ namespace Managers
                     Action loadMenu = LoadMenuSceneAction;
                     WaitForScreenMaskFinished(loadMenu, false);
                     break;
-                // TODO:yuki画作展示相关的完善
                 // TODO:剧情完善
                 // TODO:背包系统（以下每个系统开发完成时，场景初添加Dialogue"Level Up!作者的开发能力提升了，你获得了xxx（提示酱：xxx)"这种
                 // TODO:战斗系统
