@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
+using JetBrains.Annotations;
 using LocalDataHandler;
 using Player;
+using SecretBaseScene;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -14,32 +17,30 @@ namespace Managers
 
         // 对话框父物体
         public GameObject parentDialogueUI;
-
         // TMP角色名文字组件
         public TextMeshProUGUI tmpDialogueCharacter;
-
         // TMP剧情内容文字组件
         public TextMeshProUGUI tmpDialogueContent;
-
         // 全屏遮罩
         public GameObject startScreenMask;
         public GameObject endScreenMask;
-
         // 选择框父物体
         public GameObject buttonChoicesParent;
-
         // 选择框
         public GameObject[] buttonChoices;
-
         // 选择框文本
         public TextMeshProUGUI[] tmpChoices;
-
         // 剧情完成后的提示箭头
         public GameObject dialogueNextTip;
+        // 场景提示文本
+        public TextMeshProUGUI sceneTipTxt;
+        // yuki的画
+        [CanBeNull] public Image yukiPainting;
+        // yuki日记留言
+        [CanBeNull] public GameObject panelInputSentence;
 
         // 是否正在逐字输出
         public bool IsOutputingDialogue { get; private set; }
-
         // 是否跳过逐字输出
         public bool NeedSkip { get; set; }
 
@@ -50,6 +51,64 @@ namespace Managers
             startScreenMask.SetActive(true);
             endScreenMask.SetActive(false);
             dialogueNextTip.SetActive(false);
+            sceneTipTxt.gameObject.SetActive(false);
+            if (yukiPainting)
+            {
+                yukiPainting.gameObject.SetActive(false);
+                yukiPainting.color = new Color(1F, 1F, 1F, 0F);
+            }
+
+            if (panelInputSentence)
+            {
+                panelInputSentence.SetActive(false);
+            }
+        }
+
+        /// <summary>
+        /// 显示输入面板
+        /// </summary>
+        /// <param name="status"></param>
+        public void DisplayPanelInputSentence(bool status)
+        {
+            if (!panelInputSentence) return;
+            panelInputSentence.SetActive(status);
+        }
+
+        /// <summary>
+        /// 确认给yuki日记的留言按钮点击
+        /// </summary>
+        public void BtnConfirmSentence()
+        {
+            if (!panelInputSentence) return;
+            // var inputField = panelInputSentence.transform.Find("Input_DiarySentence/Text Area/Text")
+            //     .GetComponent<TextMeshProUGUI>();
+            panelInputSentence.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            GameManager.Instance.LoadNextEvent();
+        }
+
+        /// <summary>
+        /// 显示yuki的画
+        /// </summary>
+        /// <param name="show">显示/隐藏</param>
+        public void DisplayYukiPainting(bool show)
+        {
+            if (yukiPainting)
+            {
+                yukiPainting.gameObject.SetActive(show);
+            }
+        }
+
+        /// <summary>
+        /// 是否开始渐变为黑色
+        /// </summary>
+        /// <param name="allow"></param>
+        public void SetYukiPaintingToBlack(bool allow)
+        {
+            if (yukiPainting)
+            {
+                yukiPainting.GetComponent<YukiPaintingFade>().TurnBlack = allow;
+            }
         }
 
         /// <summary>
@@ -68,19 +127,6 @@ namespace Managers
                     GameEventManager.EventIndex -= 1;
                     GameManager.Instance.LoadNextEvent();
                     activate = false;
-                }
-
-                // 保存礼物数据
-                switch (next.jumpId)
-                {
-                    // 吃东西
-                    case 1:
-                        ConfigsOperate.Instance.WriteGift(1);
-                        break;
-                    // 送礼物
-                    case 2:
-                        ConfigsOperate.Instance.WriteGift(2);
-                        break;
                 }
             }
         }
@@ -126,15 +172,6 @@ namespace Managers
         }
 
         /// <summary>
-        /// 设置对话框是否可点击
-        /// </summary>
-        /// <param name="interactable">是否可点击</param>
-        public void SetDialogueUIInteractable(bool interactable = true)
-        {
-            GameManager.Instance.InteractableZ = interactable;
-        }
-    
-        /// <summary>
         /// 设置对话框内容
         /// </summary>
         /// <param name="characterType">角色枚举类型</param>
@@ -157,6 +194,7 @@ namespace Managers
             tmpDialogueContent.text = "";
             dialogueNextTip.SetActive(false);
             GameObject.FindWithTag("Player").GetComponent<PlayerControl>().AllowMove = false;
+            AudioManager.Instance.PlaySound("outputDialogue", true);
             // 遍历对话框内容
             foreach (var letter in content)
             {
@@ -171,10 +209,12 @@ namespace Managers
                     dialogueNextTip.SetActive(true);
                     IsOutputingDialogue = false;
                     NeedSkip = false;
+                    AudioManager.Instance.StopSound();
                     yield break;
                 }
             }
 
+            AudioManager.Instance.StopSound();
             IsOutputingDialogue = false;
             dialogueNextTip.SetActive(true);
         }
@@ -184,7 +224,7 @@ namespace Managers
         /// </summary>
         /// <param name="action">剩下的操作</param>
         /// <param name="isStart">是否为起始遮罩</param>
-        public void WaitForScreenMaskFinished(Action action, bool isStart = true)
+        public void WaitForScreenMaskFinished([CanBeNull] Action action = null, bool isStart = true)
         {
             StartCoroutine(WaitMask(action, isStart));
         }
@@ -199,7 +239,7 @@ namespace Managers
                     yield return null;
                 }
 
-                restOperation();
+                restOperation?.Invoke();
             }
             // 结束遮罩
             else
@@ -210,7 +250,7 @@ namespace Managers
                     yield return null;
                 }
 
-                restOperation();
+                restOperation?.Invoke();
             }
         }
     }

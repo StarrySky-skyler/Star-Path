@@ -39,6 +39,8 @@ namespace Player
             {
                 _animator.SetFloat("VerticalValue", 1f);
             }
+
+            AllowMove = false;
         }
 
         void Update()

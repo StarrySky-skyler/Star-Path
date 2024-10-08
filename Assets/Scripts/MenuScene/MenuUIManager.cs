@@ -27,7 +27,6 @@ namespace MenuScene
         /// </summary>
         public void ButtonNewGameClick()
         {
-            Debug.Log("点击新游戏按钮");
             AudioManager.Instance.PlaySound("Hit");
             StartCoroutine(WaitForScreenMask());
         }
@@ -52,7 +51,6 @@ namespace MenuScene
         /// </summary>
         public void ButtonReadGameClick()
         {
-            Debug.Log("点击读取游戏按钮");
             AudioManager.Instance.PlaySound("Hit");
             // 隐藏主界面
             btnLayoutMain.SetActive(false);
@@ -65,7 +63,6 @@ namespace MenuScene
         /// </summary>
         public void ButtonHelpClick()
         {
-            Debug.Log("点击帮助按钮");
             AudioManager.Instance.PlaySound("Hit");
             // UI控制
             btnLayoutMain.SetActive(false);
@@ -77,7 +74,6 @@ namespace MenuScene
         /// </summary>
         public void ButtonExitClick()
         {
-            Debug.Log("点击退出游戏按钮");
 #if UNITY_EDITOR
             //如果是在编辑器环境下
             UnityEditor.EditorApplication.isPlaying = false;

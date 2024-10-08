@@ -40,7 +40,30 @@ namespace Managers
         public void PlaySound(string soundName)
         {
             AudioClip clip = Resources.Load<AudioClip>("AudioClips/Sound/" + soundName);
+            soundPlayer.loop = false;
             soundPlayer.PlayOneShot(clip);
+        }
+
+        /// <summary>
+        /// 循环播放音效
+        /// </summary>
+        /// <param name="soundName">音效文件名（不加后缀）</param>
+        /// <param name="loop"></param>
+        public void PlaySound(string soundName, bool loop)
+        {
+            AudioClip clip = Resources.Load<AudioClip>("AudioClips/Sound/" + soundName);
+            soundPlayer.loop = loop;
+            soundPlayer.clip = clip;
+            soundPlayer.Play();
+        }
+
+        /// <summary>
+        /// 停止播放音效
+        /// </summary>
+        public void StopSound()
+        {
+            soundPlayer.loop = false;
+            soundPlayer.Stop();
         }
 
         /// <summary>

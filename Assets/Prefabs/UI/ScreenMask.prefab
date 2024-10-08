@@ -85,5 +85,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52d3d630c93c4b4581c4e107cab2f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isToBlack: 1
-  isFinished: 0
+  fadeTime: 10

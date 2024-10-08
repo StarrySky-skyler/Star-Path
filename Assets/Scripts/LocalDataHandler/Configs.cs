@@ -20,6 +20,11 @@ namespace LocalDataHandler
         /// 礼物类型，1为吃东西，2为送礼物
         /// </summary>
         public int giftType;
+
+        /// <summary>
+        /// 礼物文本
+        /// </summary>
+        public string giftDetail;
     }
 
     public class ConfigsOperate
@@ -47,7 +52,7 @@ namespace LocalDataHandler
         /// </summary>
         private ConfigsOperate()
         {
-            _configs = new Configs();
+            _configs = ReadGift();
         }
 
 
@@ -67,16 +72,63 @@ namespace LocalDataHandler
         }
 
         /// <summary>
-        /// 设置礼物数据并保存
+        /// 设置礼物类型数据并保存
         /// </summary>
         /// <param name="giftType">礼物类型，1为吃东西，2为送礼物</param>
-        public void WriteGift(int giftType)
+        public void WriteGiftType(int giftType)
         {
             _configs.giftType = giftType;
             SaveGiftToJson();
         }
 
+        /// <summary>
+        /// 设置礼物具体选择数据并保存
+        /// </summary>
+        /// <param name="giftData">礼物数据，对应按钮id，吃东西：1=>闪电泡芙配醒时春山奶茶2=>马卡龙配清茶3=>超级无敌巨无霸圣代|送礼物：1=>超级美丽星空限定版日记本2=>定制语录枫叶蝴蝶书签3=>最近很火的明星周边</param>
+        public void WriteGiftData(int giftData)
+        {
+            switch (_configs.giftType)
+            {
+                case 1:
+                    switch (giftData)
+                    {
+                        case 1:
+                            _configs.giftDetail = "闪电泡芙配醒时春山奶茶";
+                            break;
+                        case 2:
+                            _configs.giftDetail = "马卡龙配清茶";
+                            break;
+                        case 3:
+                            _configs.giftDetail = "超级无敌巨无霸圣代";
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (giftData)
+                    {
+                        case 1:
+                            _configs.giftDetail = "超级美丽星空限定版日记本";
+                            break;
+                        case 2:
+                            _configs.giftDetail = "定制语录枫叶蝴蝶书签";
+                            break;
+                        case 3:
+                            _configs.giftDetail = "最近很火的明星周边";
+                            break;
+                    }
+                    break;
+            }
+
+            SaveGiftToJson();
+        }
+
         public Configs ReadGift()
+        {
+            UpdateGift();
+            return _configs;
+        }
+
+        private void UpdateGift()
         {
             string content;
             // 以 utf8 读取文件
@@ -85,9 +137,8 @@ namespace LocalDataHandler
             {
                 content = reader.ReadToEnd();
             }
-
+            
             _configs = JsonUtility.FromJson<Configs>(content);
-            return _configs;
         }
     }
 }

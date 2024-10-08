@@ -18,7 +18,7 @@ namespace LocalDataHandler
         /// <summary>
         /// 角色枚举对应的字符串
         /// </summary>
-        public string characterString;
+        public string character;
 
         /// <summary>
         /// 事件类型枚举
@@ -28,7 +28,7 @@ namespace LocalDataHandler
         /// <summary>
         /// 事件类型对应的字符串
         /// </summary>
-        public string eventString;
+        public string eventType;
 
         /// <summary>
         /// 事件数据
@@ -61,13 +61,23 @@ namespace LocalDataHandler
         public int giftDesId;
 
         /// <summary>
+        /// 是否保存当前礼物详细数据（非类型）
+        /// </summary>
+        public bool saveGiftData;
+
+        /// <summary>
+        /// 是否保存礼物类型
+        /// </summary>
+        public bool saveGiftType;
+
+        /// <summary>
         /// 反序列化后，信息转为对象
         /// </summary>
         public void OnAfterDeserialize()
         {
             // 字符串转枚举
-            CharacterType type = (CharacterType)Enum.Parse(typeof(CharacterType), characterString);
-            EventType type2 = (EventType)Enum.Parse(typeof(EventType), eventString);
+            CharacterType type = (CharacterType)Enum.Parse(typeof(CharacterType), character);
+            EventType type2 = (EventType)Enum.Parse(typeof(EventType), eventType);
             // 枚举保存
             CharacterType = type;
             EventType = type2;
@@ -78,8 +88,8 @@ namespace LocalDataHandler
         /// </summary>
         public void OnBeforeSerialize()
         {
-            characterString = CharacterType.ToString();
-            eventString = EventType.ToString();
+            character = CharacterType.ToString();
+            eventType = EventType.ToString();
         }
     }
 
@@ -147,6 +157,36 @@ namespace LocalDataHandler
         /// <summary>
         /// 载入初始界面
         /// </summary>
-        LoadMenuScene
+        LoadMenuScene,
+        
+        /// <summary>
+        /// 展示yuki的画
+        /// </summary>
+        ShowPaint,
+        
+        /// <summary>
+        /// 画变为全黑
+        /// </summary>
+        PaintToBlack,
+        
+        /// <summary>
+        /// 关闭画
+        /// </summary>
+        ClosePaint,
+        
+        /// <summary>
+        /// 显示下雨特效
+        /// </summary>
+        ShowRainEffect,
+        
+        /// <summary>
+        /// 黑屏遮罩
+        /// </summary>
+        BlackScreenMask,
+        
+        /// <summary>
+        /// 玩家在yuki日记本上留言
+        /// </summary>
+        WriteSentence
     }
 }

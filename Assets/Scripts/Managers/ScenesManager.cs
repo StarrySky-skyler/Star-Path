@@ -37,5 +37,33 @@ namespace Managers
                 }
             }
         }
+
+        /// <summary>
+        /// 获取当前场景名
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrentSceneName()
+        {
+            var currentScene = SceneManager.GetActiveScene();
+            var currentSceneName = currentScene.name;
+
+            switch (currentSceneName)
+            {
+                case "SkyDreamScene":
+                    return "梦境？";
+                case "ClassroomScene":
+                    return "经常来的教室";
+                case "ClassroomScene2(love)":
+                    return "有yuki的教室";
+                case "SecretBaseScene":
+                    return "秘密基地";
+                case "InFrontOfYukiHomeScene":
+                    return "yuki家前的公园";
+                case "RoadToHomeScene":
+                    return "放学回家的路上";
+            }
+
+            return "";
+        }
     }
 }

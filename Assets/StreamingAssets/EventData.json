@@ -1,688 +1,1005 @@
 ﻿{
     "list": [
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "啊，头好晕（扶住额头），这里是哪儿？是梦里吗？"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "总感觉<color=#FF6666>似曾相识</color>，四处走走看吧"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "StrangeA",
-            "eventString": "Dialogue",
+            "character": "StrangeA",
+            "eventType": "Dialogue",
             "eventData": "终于有人来了？好开心，好激动，我快无聊死了"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "StrangeB",
-            "eventString": "Dialogue",
+            "character": "StrangeB",
+            "eventType": "Dialogue",
             "eventData": "诶诶诶，你记得他是第几次来这里了吗？"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "StrangeA",
-            "eventString": "Dialogue",
+            "character": "StrangeA",
+            "eventType": "Dialogue",
             "eventData": "谁会记那种奇怪的东西啊，不过我跟你说，上次呀......"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "StrangeC",
-            "eventString": "Dialogue",
+            "character": "StrangeC",
+            "eventType": "Dialogue",
             "eventData": "绘星tsuki...绘星tsuki..."
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "StrangeC",
-            "eventString": "Dialogue",
+            "character": "StrangeC",
+            "eventType": "Dialogue",
             "eventData": "绘星tsuki！"
         },
         {
-            "characterString": "Blank",
-            "eventString": "LoadNextScene",
+            "character": "Blank",
+            "eventType": "LoadNextScene",
             "eventData": ""
         },
         {
-            "characterString": "Jing",
-            "eventString": "Dialogue",
+            "character": "Jing",
+            "eventType": "Dialogue",
             "eventData": "这可是高三上学期开学第一节物理课，你到底在没在听，又走神去了？"
         },
         {
-            "characterString": "Jing",
-            "eventString": "Dialogue",
+            "character": "Jing",
+            "eventType": "Dialogue",
             "eventData": "你来解答一下，双星系统围绕同一点做匀速圆周运动时，这个共同点又是整个系统的什么？"
         },
         {
-            "characterString": "Blank",
-            "eventString": "Choice",
+            "character": "Blank",
+            "eventType": "Choice",
             "eventData": "不知道|随便蒙一个吧|让我先想想|质心"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "核心",
             "jumpId": 2
         },
         {
-            "characterString": "Jing",
-            "eventString": "Dialogue",
+            "character": "Jing",
+            "eventType": "Dialogue",
             "eventData": "这个中心点是<color=#FF6666>质心</color>，上课注意集中精神，这节课你站着听",
             "jumpId": 1
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
-            "eventData": "<color=#FF6666>Bad Ending 2：或许有时候犹豫也是种智慧？</color>"
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE2：或许有时候犹豫也是种智慧？</color>"
         },
         {
-            "characterString": "Blank",
-            "eventString": "LoadMenuScene",
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
             "eventData": ""
         },
         {
-            "characterString": "Jing",
-            "eventString": "Dialogue",
+            "character": "Jing",
+            "eventType": "Dialogue",
             "eventData": "对，坐下吧，不要有下次",
             "jumpId": 4
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
-            "eventData": "<color=#FF6666>Bad Ending 1：你太厉害了啊喂</color>"
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE1：你太厉害了啊喂</color>"
         },
         {
-            "characterString": "Blank",
-            "eventString": "LoadMenuScene",
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
             "eventData": ""
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "就在犹豫不决时，同桌偷偷递给你一张纸条",
             "jumpId": 3
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "<color=#E855A4>“质心”</color>"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "啊，这个点是整个系统的质心。一般来说，在该系统中天体的质量越大，它就离这个点越近"
         },
         {
-            "characterString": "Jing",
-            "eventString": "Dialogue",
+            "character": "Jing",
+            "eventType": "Dialogue",
             "eventData": "咳咳，坐下吧，以后不要看到快放学了就走神"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "静对你的好感度+10\n同学们对你的好感度+5\n你对静的震慑力+5"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（提示酱：此类数值无实际作用，仅作视觉展示，wink~）"
         },
         {
-            "characterString": "Jing",
-            "eventString": "Dialogue",
+            "character": "Jing",
+            "eventType": "Dialogue",
             "eventData": "啊，那么，我们接下来讲双星模型的相关公式......"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "看着窗外随风飘落的枫叶，听着静的讲课声，过去的回忆浮上心头。"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "因为父母工作原因，我转来这所高中读高三，成绩长期垫底，过一天算一天，之前玩的好的几个朋友现在也没怎么联系了..."
         },
         {
-            "characterString":"Blank",
-            "eventString":"Sound",
+            "character":"Blank",
+            "eventType":"Sound",
             "eventData":"bell"
         },
         {
-            "characterString": "PangBai",
-            "eventString":"Dialogue",
+            "character": "PangBai",
+            "eventType":"Dialogue",
             "eventData":"放学的铃声打断了我的思绪"
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"（要不去找同桌说声谢谢吧）"
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"哎，刚刚多亏你了同桌，我叫绘星tsuki，以后有什么事需要帮忙尽管找我"
         },
         {
-            "characterString":"Yuki",
-            "eventString":"Dialogue",
+            "character":"Yuki",
+            "eventType":"Dialogue",
             "eventData":"唔啊，那个...我叫<color=#FF66FF>星梦yuki</color>"
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"星梦yuki，那以后多多关注啦，对了，放学你走东门回家吗？"
         },
         {
-            "characterString":"Yuki",
-            "eventString":"Dialogue",
+            "character":"Yuki",
+            "eventType":"Dialogue",
             "eventData":"是...是的..."
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"（看起来她不太爱说话，有点紧张啊，那可不行。社牛如我，做点什么报答一下她呢？）"
         },
         {
-            "characterString":"Blank",
-            "eventString":"Choice",
+            "character":"Blank",
+            "eventType":"Choice",
             "eventData":"请她吃东西|给她送礼物"
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"正巧我也走东门回家，我听说那边开了一家很好吃的店，这个点过去刚好人很少，一起尝尝吗？",
             "jumpId":1,
-            "toId":1
+            "toId":1,
+            "saveGiftType": true
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"正巧我也走东门回家，一起吗？",
-            "jumpId":2
+            "jumpId":2,
+            "saveGiftType": true
         },
         {
-            "characterString":"Yuki",
-            "eventString":"Dialogue",
+            "character":"Yuki",
+            "eventType":"Dialogue",
             "eventData":"诶诶诶？一起吗？那个。。。我平时都是一个人回家的",
             "toDesId":1
         },
         {
-            "characterString":"Tsuki",
-            "eventString":"Dialogue",
+            "character":"Tsuki",
+            "eventType":"Dialogue",
             "eventData":"啊？那多无聊啊，走吧，路上还可以一起聊聊天什么的"
         },
         {
-            "characterString":"Blank",
-            "eventString":"CloseDialogue",
+            "character":"Blank",
+            "eventType":"CloseDialogue",
             "eventData":""
         },
         {
-            "characterString":"Blank",
-            "eventString":"LoadNextScene",
+            "character":"Blank",
+            "eventType":"LoadNextScene",
             "eventData":""
         },
         {
-            "characterString":"PangBai",
-            "eventString":"Dialogue",
+            "character":"PangBai",
+            "eventType":"Dialogue",
             "eventData":"（提示酱：星梦yuki加入同行队伍）"
         },
         {
-            "characterString":"Blank",
-            "eventString":"CloseDialogue",
+            "character":"Blank",
+            "eventType":"CloseDialogue",
             "eventData":""
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "对了，你喜欢听歌吗，我最近听到一首很好听的歌叫《星绊》"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "星...绊...唔，感觉这个名字好有意境，像是在描绘星间的羁绊，真好啊"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "哈哈哈是的，我带了耳机，给，一起听吧"
         },
         {
-            "characterString": "Blank",
-            "eventString": "PlayBgm",
+            "character": "Blank",
+            "eventType": "PlayBgm",
             "eventData": "星绊"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "哇，真的好好听！那个，谢谢(๑• . •๑)"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（星梦yuki对你的好感度+20）"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（提示酱：我才不会告诉你我开发星途的时候经常这首歌单曲循环呢）"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "哈哈哈，没什么啦。能和别人一起在好听的歌中畅想，本就非常可爱！"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "感觉这首歌将电音风格和甜美的声线融合，我emo的时候经常听这首歌，就像，我们并不遥远..."
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "嗯...（闭上眼）就像遨游在星海中，前方充满着希望和热情一样"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "唔，那个，听说你是转校生，是因为什么原因转到我们学校的呢？（好奇）"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "至于这个，我父母最近在这边找到不错的工作，就转过来了。虽然我成绩也一直垫底就是",
             "giftDetect": 1
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "我到家了，那个谢谢你的陪伴...",
             "giftDesId": 2
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "<color=#FF6666>不准谢！</color>对了，作为今天物理课你帮我的回报，这个送你\n（提示酱：请认真考虑哦，诶嘿）"
         },
         {
-            "characterString": "Blank",
-            "eventString": "Choice",
+            "character": "Blank",
+            "eventType": "Choice",
             "eventData": "超级美丽星空限定版<color=#FF6666>日记本</color>|定制语录枫叶蝴蝶<color=#FF6666>书签</color>|最近很火的<color=#FF6666>明星周边</color>"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "唔哇，居然是我最喜欢的星空日记本，好开心啊~",
             "jumpId": 1,
-            "toId": 2
+            "toId": 2,
+            "saveGiftData": true
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "唔哇，居然是我最喜欢的枫叶蝴蝶书签，好开心啊~",
             "jumpId": 2,
-            "toId": 2
+            "toId": 2,
+            "saveGiftData": true
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "唔哇，居然是我最喜欢的周边，好开心啊~",
-            "jumpId": 3
+            "jumpId": 3,
+            "saveGiftData": true
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（星梦yuki对你的好感度+30）",
             "toDesId": 2
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "哈哈哈，你高兴就好，时候不早了，那我先走了，拜拜，星梦yuki"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "白白，绘星tsuki"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
-            "eventData": "Yuki的身影渐渐远去..."
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "yuki的身影渐渐远去..."
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "（嘶，刚刚那句“<color=#FF6666>不准谢</color>！”会不会有点太严厉了一点？yuki会怎么想呢）",
             "toId": 4
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "【此处请脑补一个餐馆的场景，绘星（作者）太懒找素材了，见谅见谅hhh（捂脸）】",
             "giftDesId": 1
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "到了就是这里，今天我请客"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "（请她吃什么好呢？）\n（提示酱：请认真考虑哦，诶嘿）"
         },
         {
-            "characterString": "Blank",
-            "eventString": "Choice",
+            "character": "Blank",
+            "eventType": "Choice",
             "eventData": "<color=#66B2FF>闪电泡芙</color>配<color=#FF66FF>醒时春山奶茶</color>|<color=#FF8000>马卡龙</color>配<color=#33FF33>清茶</color>|<color=#FF6666>超级无敌巨无霸圣代</color>"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "你点了一份<color=#FF6666>超级无敌巨无霸圣代</color>",
-            "jumpId": 3
+            "jumpId": 3,
+            "saveGiftData": true
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "诶诶诶？虽然很感谢，但是根本吃不完啊喂"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "这不是还有我呢吗（坏笑）"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "啊啊啊啊，我生气了（佯嗔）\n（提示酱：佯嗔意为假装生气）"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（星梦yuki对你的好感度+10）"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "你和星梦yuki费了好大功夫终于吃完了",
             "toId": 3
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "你点了一份<color=#FF8000>马卡龙</color>配<color=#33FF33>清茶</color>",
-            "jumpId": 2
+            "jumpId": 2,
+            "saveGiftData": true
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "很清纯的组合诶"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "马卡龙的甜和清茶的苦混合在一起，很适合放松的时候吃"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "哇你懂的好多啊，好久没像这样放松了"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（星梦yuki对你的好感度+15）"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "惬意的时光恰似一场「梦」，现在「梦」快醒了",
             "toId": 3
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "你点了一份<color=#66B2FF>闪电泡芙</color>配<color=#FF66FF>醒时春山奶茶</color>",
-            "jumpId": 1
+            "jumpId": 1,
+            "saveGiftData": true
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "噗（捂嘴笑），好有新意的名字，不会是什么黑暗料理吧"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "咳咳，当然不是，你吃了就知道了"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "（尝了一口）"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "哇！真的好好吃，好久没这么有胃口了"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "哎哎，慢点慢点"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（星梦yuki对你的好感度+20）\n（提示酱：我最爱的<color=#66B2FF>闪电泡芙</color>给我留一个啊！）"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "............快乐的时光总是转瞬即逝"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "那个谢谢...绘星tsuki，时间不早了，我先自己回去吧",
             "toDesId": 3
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "好，拜拜，星梦yuki，路上注意安全"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "白白，绘星tsuki"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "（yuki刚刚好可爱啊，不对不对，我怎么直接叫yuki了？！）"
         },
         {
-            "characterString": "Blank",
-            "eventString": "LoadNextScene",
+            "character": "Blank",
+            "eventType": "LoadNextScene",
             "eventData": "",
             "toDesId": 4
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "一段时间后..."
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "（轻轻拍了拍你）tsuki，诶，tsuki，别睡了，快醒醒"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "啊—（揉了揉眼睛，打了个哈欠）yuki，怎么了吗"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "tsuki，过了这节课就放寒假了，你说到时候我们去哪里玩好呀"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "你想去哪里玩呢（wink）"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "（用力地想了一下）唔，不知道诶"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "此时静注意到了你，你们相视而笑"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "咳咳（一本正经）yuki，虽然你成绩还不错，但不要被我带坏了,现在还在上课呢（坏笑）"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "（你对静的震慑度清零，静的<color=#FF6666>支援次数</color>+1）"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "那，yuki，放学再说，先听课吧"
         },
         {
-            "characterString":"Blank",
-            "eventString":"Sound",
+            "character":"Blank",
+            "eventType":"Sound",
             "eventData":"bell"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "下课铃的响起，标志着高三上的结束，同学们也迎来了难得的寒假"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "芜湖！放假咯"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "好诶，终于放假啦。tsuki，你还没回答我呢，我们去哪里玩啊"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "你先猜猜看（坏笑）"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "图书馆！"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "图书馆我会睡着的（扶额）再猜猜"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "唔......啊，我想不出来"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "嘿嘿明天我带你去就知道了，现在先回家吧"
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
+            "character": "Blank",
+            "eventType": "LoadNextScene",
+            "eventData": ""
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
             "eventData": "第二天黄昏前..."
         },
         {
-            "characterString": "Blank",
-            "eventString": "LoadNextScene",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "PangBai",
-            "eventString": "Dialogue",
-            "eventData": "（yuki居住的小镇）"
-        },
-        {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
-            "eventData": ""
-        },
-        {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "诶？前面是我家诶，tsuki，快告诉我到底是哪儿啊（拉着我的手晃着）"
         },
         {
-            "characterString": "Tsuki",
-            "eventString": "Dialogue",
+            "character": "Tsuki",
+            "eventType": "Dialogue",
             "eventData": "保密（坏笑）往右一直走就到了"
         },
         {
-            "characterString": "Yuki",
-            "eventString": "Dialogue",
+            "character": "Yuki",
+            "eventType": "Dialogue",
             "eventData": "（嘟嘴）（小声说：切）yuki最讨厌你了~"
         },
         {
-            "characterString": "Blank",
-            "eventString": "CloseDialogue",
+            "character": "Blank",
+            "eventType": "CloseDialogue",
             "eventData": ""
         },
         {
-            "characterString": "Blank",
-            "eventString": "LoadNextScene",
+            "character": "Blank",
+            "eventType": "LoadNextScene",
+            "eventData": ""
+        },
+        {
+            "character": "Blank",
+            "eventType": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "yuki，前面就到了"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "啊~（用手轻盖住嘴，打了个哈欠）"
+        },
+        {
+            "character": "Blank",
+            "eventType": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "（yuki时而跑到你前面，时而转身等你）"
+        },
+        {
+            "character": "Blank",
+            "eventType": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "那个，tsuki，还有多远啊，这条路好长..."
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "还有一小段吧，早知道应该带上自行车了（annoyed）"
+        },
+        {
+            "character": "Blank",
+            "eventType": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "绘星（作者）：自行车音效都找好了，但没有动画（annoyed）"
+        },
+        {
+            "character": "Blank",
+            "eventType": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "就在前面了"
+        },
+        {
+            "character": "Blank",
+            "eventType": "CloseDialogue",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "累了吗（略微皱眉）来坐会儿吧"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "你们相偎而坐"
+        },
+        {
+            "character": "Blank",
+            "eventType": "ShowRainEffect",
+            "eventData": ""
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "tsuki，其实...有一件事我隐瞒了你很久，但如果是你的话，我一定要说出来的"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "（轻抚yuki的头）没事的，我在听"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "嗯——我也不知道我是怎么了，或许是“弦”的原因吧..."
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "最近一两年心情很容易低落，后来慢慢地对所有事都提不起兴趣，我不知道是平静还是麻木"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "而且，有时我很难控制住自己，会做出很过分的事...（搓手，略微颤抖）"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "如果以绘画打比方的话，就像这样"
+        },
+        {
+            "character": "Blank",
+            "eventType": "ShowPaint",
+            "eventData": ""
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "我和重要的人的历程，就像这幅绚丽多彩的画"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "随着时间推移，这幅画的三原色渐渐地变成…零……"
+        },
+        {
+            "character": "Blank",
+            "eventType": "PaintToBlack",
+            "eventData": ""
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "最后…一片漆黑…………"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "......"
+        },
+        {
+            "character": "Blank",
+            "eventType": "ClosePaint",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "但，yuki，承载画的画布可是三原色值都是255的白色"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "这幅画，我会和你一起绘制的！"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "随着谈心的深入，周围的一切都安静了下来，静静陪伴着..."
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "星空不知在何时显现"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "tsuki，你会一直陪在我身边吗，我真的很害怕一个人"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Choice",
+            "eventData": "沉默|会陪在yuki身边|不会陪在yuki身边|行动起来！"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "yuki从你的沉默中<color=#FF6666>似乎察觉到了什么</color>，不再言语",
+            "jumpId": 1
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "从那以后，你发现yuki有意在和你疏远......"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE3: 做点什么吧，后悔总比遗憾好，Ciallo~</color>"
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "没事的，yuki，我就在这儿，哪也不去",
+            "jumpId": 2
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "我会一直陪着你身边的"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "一定........."
+        },
+        {
+            "character": "Blank",
+            "eventType": "BlackScreenMask",
+            "eventData": ""
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "但世事总像个调皮的孩子，时不时制造点「惊喜」"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "父母的事业渐渐腾飞，你也转去了更好的学校"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE4：行动起来！（wink）</color>"
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "yuki，虽然很不想开口",
+            "jumpId": 3
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "但事实就是我不能一直在你身边的"
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "yuki愣了一下，随后埋下了头，不再说话"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "<color=#FF6666>BE5: 真是一次大胆的尝试呢</color>"
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadMenuScene",
+            "eventData": ""
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "你一把抱住了yuki",
+            "jumpId": 4
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "啊，这是...你怎么突然..."
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "yuki，你独自承受很久了吧"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "我知道的，一定很累吧"
+        },
+        {
+            "character": "Tsuki",
+            "eventType": "Dialogue",
+            "eventData": "现在，稍微放松一下吧，我就在这儿，哪也不去"
+        },
+        {
+            "character": "Blank",
+            "eventType": "Dialogue",
+            "eventData": "......"
+        },
+        {
+            "character": "Yuki",
+            "eventType": "Dialogue",
+            "eventData": "tsuki，谢谢~可以留下一句话吗，我想写在今天的日记里"
+        },
+        {
+            "character": "Blank",
+            "eventType": "WriteSentence",
+            "eventData": ""
+        },
+        {
+            "character": "PangBai",
+            "eventType": "Dialogue",
+            "eventData": "那晚，星空，草地，湖泊，留影和真挚的话..."
+        },
+        {
+            "character": "Blank",
+            "eventType": "LoadNextScene",
             "eventData": ""
         }
     ]
