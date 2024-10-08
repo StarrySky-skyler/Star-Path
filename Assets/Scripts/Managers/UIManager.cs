@@ -17,41 +17,30 @@ namespace Managers
 
         // 对话框父物体
         public GameObject parentDialogueUI;
-
         // TMP角色名文字组件
         public TextMeshProUGUI tmpDialogueCharacter;
-
         // TMP剧情内容文字组件
         public TextMeshProUGUI tmpDialogueContent;
-
         // 全屏遮罩
         public GameObject startScreenMask;
         public GameObject endScreenMask;
-
         // 选择框父物体
         public GameObject buttonChoicesParent;
-
         // 选择框
         public GameObject[] buttonChoices;
-
         // 选择框文本
         public TextMeshProUGUI[] tmpChoices;
-
         // 剧情完成后的提示箭头
         public GameObject dialogueNextTip;
-
         // 场景提示文本
         public TextMeshProUGUI sceneTipTxt;
-
         // yuki的画
         [CanBeNull] public Image yukiPainting;
-
         // yuki日记留言
         [CanBeNull] public GameObject panelInputSentence;
 
         // 是否正在逐字输出
         public bool IsOutputingDialogue { get; private set; }
-
         // 是否跳过逐字输出
         public bool NeedSkip { get; set; }
 
